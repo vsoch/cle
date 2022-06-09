@@ -223,9 +223,10 @@ class ElfCorpus(Corpus):
             elif child.tag == "DW_TAG_lexical_block":
                 self.parse_lexical_block(child)
 
-            # Skip these
-            elif child.tag in ["DW_TAG_const_type", "DW_TAG_typedef", "DW_TAG_label"]:
+            # Skip these for now
+            elif child.tag in ["DW_TAG_const_type", "DW_TAG_typedef", "DW_TAG_label", "DW_TAG_template_type_param"]:
                 continue
+
             else:
                 raise Exception("Found new tag with subprogram children:\n%s" % child)
             if param:
@@ -335,10 +336,6 @@ class ElfCorpus(Corpus):
                 )
                 if loc:
                     return loc
-            import IPython
-
-            IPython.embed()
-            sys.exit()
 
         # Fallback to using dwarf location lists
         return self.parse_dwarf_location(die)
@@ -517,6 +514,25 @@ class ElfCorpus(Corpus):
             entry["count"] = "unknown"
         return entry
 
+    def parse_class_type(self, die):
+        """
+        Parse a class type
+        """
+        entry = {
+            "name": self.get_name(die),
+            "size": self.get_size(die),
+            "class": "Class",
+        }
+        fields = []
+        for child in die.iter_children():
+            if "DW_AT_external" in child.attributes:
+                continue
+            fields.append(self.parse_member(child))
+        if fields:
+            entry["fields"] = fields
+        self.underlying_types[die] = entry
+        return entry
+
     def parse_pointer(self, die):
         """
         Parse a pointer.
@@ -572,6 +588,9 @@ class ElfCorpus(Corpus):
                     "underlying_type": "unknown",
                 }
 
+        if type_die and type_die.tag == "DW_TAG_class_type":
+            return self.parse_class_type(type_die)
+
         if type_die and type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die)
 
@@ -613,6 +632,12 @@ class ElfCorpus(Corpus):
                 elif "underlying_type" in entry:
                     entry["underlying_type"] = self.parse_structure_type(type_die)
 
+            if type_die and type_die.tag == "DW_TAG_class_type":
+                if not entry:
+                    entry = self.parse_class_type(type_die)
+                elif "underlying_type" in entry:
+                    entry["underlying_type"] = self.parse_class_type(type_die)
+
             # Parse the underlying bits
             elif not entry:
                 entry = {
@@ -650,6 +675,16 @@ class ElfCorpus(Corpus):
             return "Struct"
         if die.tag == "DW_TAG_array_type":
             return "Array"
+        if die.tag == "DW_TAG_class_type":
+            return "Class"
+        if die.tag == "DW_TAG_pointer_type":
+            return "Pointer"
+        if die.tag == "DW_TAG_unspecified_type":
+            return "Unspecified"
+        print('UNKNOWN DIE CLASS')
+        import IPython
+        IPython.embed()
+        sys.exit()
         return "Unknown"
 
     def get_size(self, die):

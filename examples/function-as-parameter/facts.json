@@ -1,0 +1,48 @@
+{
+    "library": "/home/vanessa/Desktop/Code/cle/examples/inline/lib.so",
+    "locations": [
+        {
+            "variables": []
+        },
+        {
+            "function": {
+                "name": "_Z5startd",
+                "parameters": [
+                    {
+                        "size": 8,
+                        "name": "d",
+                        "type": "double",
+                        "class": "Float",
+                        "location": "%xmm0"
+                    }
+                ],
+                "return": {
+                    "type": "int",
+                    "size": 4,
+                    "class": "Integer",
+                    "location": "%rax"
+                }
+            }
+        },
+        {
+            "function": {
+                "name": "_Z3fooi",
+                "parameters": [
+                    {
+                        "size": 4,
+                        "name": "x",
+                        "type": "int",
+                        "class": "Integer",
+                        "location": "%rdi"
+                    }
+                ],
+                "return": {
+                    "type": "int",
+                    "size": 4,
+                    "class": "Integer",
+                    "location": "%rax"
+                }
+            }
+        }
+    ]
+}

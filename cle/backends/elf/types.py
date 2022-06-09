@@ -5,7 +5,10 @@ class ClassType:
     types = {
         "int": "Integer",
         "long int": "Integer",
+        "unsigned int": "Integer",
         "long unsigned int": "Integer",
+        # the type size_t is defined as unsigned long
+        "size_t": "Integer",
         "__int128": "Integer",
         "bool": "Boolean",
         "char": "Integral",

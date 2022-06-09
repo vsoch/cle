@@ -36,12 +36,17 @@ def classify(typ, count=0, die=None, return_classification=False, allocator=None
     """
     Main entrypoint to clsasify something
     """
+    # Don't handle this case right now
+    if "class" not in typ:
+        return
+
     cls = None
     count = count or typ.get("indirections", 0)
-    if count > 0:
+    print(typ)
+    if count > 0 or typ.get('class') == "Pointer":
         cls = classify_pointer(count)
 
-    elif typ["class"] in ["Scalar", "Integer", "Integral", "Float"]:
+    elif typ["class"] in ["Scalar", "Integer", "Integral", "Float", "Boolean"]:
         cls = classify_scalar(typ)
     elif typ["class"] == "Struct":
         cls = classify_struct(typ, allocator=allocator)
@@ -49,18 +54,20 @@ def classify(typ, count=0, die=None, return_classification=False, allocator=None
         cls = classify_union(typ, allocator=allocator)
     elif typ["class"] == "Array":
         cls = classify_array(typ, allocator=allocator)
+    elif typ["class"] == "Class":
+        cls = classify_class(typ, allocator=allocator)
 
-    if not cls:
+    # https://refspecs.linuxbase.org/elf/x86_64-abi-0.21.pdf
+    # A null pointer (for all types) has the value zero p 12 ABI document
+    elif typ["class"] == "Unspecified" and typ.get('size') == 0:
+        return "nullptr"
+
+    if cls is None:
         print("UNWRAP UNDERLYING TYPE IN CLASSIFY")
         import IPython
 
         IPython.embed()
 
-    # TODO DINOSAUR: need to get examples for the rest
-    # } else if (auto *t = underlying_type->getUnionType()) {
-    #  return classify(t);
-    # } else if (auto *t = underlying_type->getArrayType()) {
-    #  return classify(t);
     # } else if (auto *t = underlying_type->getEnumType()) {
     #  return classify(t);
     # } else if (auto *t = underlying_type->getFunctionType()) {
@@ -99,7 +106,7 @@ def classify_scalar(typ, size=None):
     size = size or typ.get("size", 0) * 8
 
     # Integral types
-    if typ["class"] in ["Integral", "Integer"]:  # TODO props.is_UTF?
+    if typ["class"] in ["Integral", "Integer", "Boolean"]:  # TODO props.is_UTF?
         if size > 128:
             return Classification(
                 "IntegerVec", [RegisterClass.SSE, RegisterClass.SSEUP]
@@ -223,11 +230,17 @@ def post_merge(lo, hi, size):
 
 
 def classify_struct(typ, allocator=None, return_classification=False):
+    return classify_aggregate(typ, allocator, return_classification, "Struct")
+
+def classify_class(typ, allocator=None, return_classification=False):
+    return classify_aggregate(typ, allocator, return_classification, "Class")
+
+def classify_aggregate(typ, allocator=None, return_classification=False, aggregate="Struct"):
     size = typ.get("size", 0)
 
     # If an object is larger than eight eightbyes (i.e., 64) class MEMORY.
     if size > 64:
-        return Classification("Struct", [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
+        return Classification(aggregate, [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
 
     ebs = []
     cur = Eightbyte()
@@ -262,7 +275,7 @@ def classify_struct(typ, allocator=None, return_classification=False):
             classes.append(
                 classify(eb.fields[0], return_classification=True, allocator=allocator)
             )
-
+    
     # for c in classes:
     #    print(c)
     #    # std::cout << static_cast<std::underlying_type_t<decltype(c)>>(c) << "\n";
