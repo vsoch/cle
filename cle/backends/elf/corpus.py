@@ -596,7 +596,7 @@ class ElfCorpus(Corpus):
             return entry
 
         # Struct
-        elif type_die and type_die.tag == "DW_TAG_structure_type":
+        if type_die and type_die.tag == "DW_TAG_structure_type":
             return self.parse_structure_type(type_die)
 
         # Otherwise, keep digging
@@ -619,8 +619,9 @@ class ElfCorpus(Corpus):
                     entry = self.parse_structure_type(type_die)
                 elif "underlying_type" in entry:
                     entry["underlying_type"] = self.parse_structure_type(type_die)
+                print(entry)
 
-            if type_die and type_die.tag == "DW_TAG_class_type":
+            elif type_die and type_die.tag == "DW_TAG_class_type":
                 if not entry:
                     entry = self.parse_class_type(type_die)
                 elif "underlying_type" in entry:

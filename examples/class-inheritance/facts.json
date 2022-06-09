@@ -27,11 +27,18 @@
                         "name": "b",
                         "class": "Pointer",
                         "underlying_type": {
-                            "type": "B",
+                            "name": "B",
                             "size": 4,
-                            "class": "Struct"
+                            "class": "Struct",
+                            "fields": [
+                                {
+                                    "name": "y",
+                                    "type": "int",
+                                    "size": 4,
+                                    "class": "Integer"
+                                }
+                            ]
                         },
-                        "type": "*B",
                         "indirections": 1,
                         "location": "%rsi"
                     },
