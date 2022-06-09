@@ -13,24 +13,11 @@
                         "name": "f",
                         "class": "Pointer",
                         "underlying_type": {
-                            "name": "Foo",
+                            "type": "Foo",
                             "size": 16,
-                            "class": "Struct",
-                            "fields": [
-                                {
-                                    "name": "i",
-                                    "type": "int",
-                                    "size": 4,
-                                    "class": "Integer"
-                                },
-                                {
-                                    "name": "d",
-                                    "type": "double",
-                                    "size": 8,
-                                    "class": "Float"
-                                }
-                            ]
+                            "class": "Struct"
                         },
+                        "type": "*Foo",
                         "indirections": 1,
                         "location": "%rdi"
                     }

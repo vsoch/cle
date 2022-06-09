@@ -8,6 +8,7 @@ from .location import get_register_from_expr, get_dwarf_from_expr
 from .types import ClassType
 from .variable_type import VariableType
 from ..corpus import Corpus
+from .decorator import cache_type
 
 import os
 import re
@@ -31,8 +32,10 @@ class ElfCorpus(Corpus):
         super().__init__(*args, **kwargs)
         self.seen = set()
         self.underlying_types = {}
-        # Export and import lookup
-        # self.
+
+        # Types cache of die -> json
+        self.types = {}
+        self.types_seen = set()
 
         # Keep track of ids we have parsed before (underlying types)
         self.lookup = set()
@@ -206,10 +209,6 @@ class ElfCorpus(Corpus):
                 param = self.parse_enumeration_type(child)
 
             elif child.tag == "DW_TAG_array_type":
-                print("ARRAY")
-                import IPython
-
-                IPython.embed()
                 param = self.parse_array_type(child)
 
             elif child.tag == "DW_TAG_structure_type":
@@ -223,8 +222,14 @@ class ElfCorpus(Corpus):
             elif child.tag == "DW_TAG_lexical_block":
                 self.parse_lexical_block(child)
 
-            # Skip these for now
-            elif child.tag in ["DW_TAG_const_type", "DW_TAG_typedef", "DW_TAG_label", "DW_TAG_template_type_param"]:
+            # Skip these for now (we will likely need to re-add some to parse)
+            elif child.tag in [
+                "DW_TAG_const_type",
+                "DW_TAG_typedef",
+                "DW_TAG_label",
+                "DW_TAG_template_type_param",
+                "DW_TAG_subroutine_type",
+            ]:
                 continue
 
             else:
@@ -314,30 +319,26 @@ class ElfCorpus(Corpus):
         to the corpus here when it is parsing DIEs.
         """
         # Envar to control (force) not using dwarf locations
-        experimental_parsing = True #(
-        #    os.environ.get("CLE_ELF_EXPERIMENTAL_PARSING") is not None
-        #)
+        experimental_parsing = True
+        # = os.environ.get("CLE_ELF_EXPERIMENTAL_PARSING") is not None
 
         # Can we parse based on an underlying type and arch?
         if experimental_parsing:
+            loc = None
             if not self.parser:
                 sys.exit(
                     "Experimental parsing selected by ABI for %s is not supported yet."
                     % self.arch.name
                 )
             underlying_type = underlying_type or self.parse_underlying_type(die)
+            allocator = allocator or self.parser.get_return_allocator()
             if underlying_type:
                 loc = self.parser.classify(
-                    underlying_type,
-                    die=die,
-                    allocator=allocator
-                    if not is_return
-                    else self.parser.get_return_allocator(),
+                    underlying_type, die=die, allocator=allocator
                 )
-                if loc:
-                    return loc
+            return loc
 
-        # Fallback to using dwarf location lists
+        # Without experimental uses dwarf location lists
         return self.parse_dwarf_location(die)
 
     def parse_dwarf_location(self, die):
@@ -533,20 +534,6 @@ class ElfCorpus(Corpus):
         self.underlying_types[die] = entry
         return entry
 
-    def parse_pointer(self, die):
-        """
-        Parse a pointer.
-        """
-        if "DW_AT_type" not in die.attributes:
-            l.debug("Cannot parse pointer %s without a type." % die)
-            return
-
-        entry = {"class": "Pointer", "size": self.get_size(die)}
-
-        # We already have one pointer indirection
-        entry["underlying_type"] = self.parse_underlying_type(die, 1)
-        return entry
-
     def parse_sibling(self, die):
         """
         Try parsing a sibling.
@@ -554,6 +541,7 @@ class ElfCorpus(Corpus):
         sibling = self.type_die_lookup.get(die.attributes["DW_AT_sibling"].value)
         return self.parse_underlying_type(sibling)
 
+    @cache_type
     def parse_underlying_type(self, die, indirections=0):
         """
         Given a type, parse down to the underlying type (and count pointer indirections)
@@ -681,8 +669,16 @@ class ElfCorpus(Corpus):
             return "Pointer"
         if die.tag == "DW_TAG_unspecified_type":
             return "Unspecified"
-        print('UNKNOWN DIE CLASS')
+        if die.tag == "DW_TAG_typedef":
+            return "TypeDef"
+        if die.tag == "DW_TAG_subroutine_type":
+            return "Function"
+        if die.tag == "DW_TAG_const_type":
+            return "Constant"
+
+        print("UNKNOWN DIE CLASS")
         import IPython
+
         IPython.embed()
         sys.exit()
         return "Unknown"
