@@ -44,11 +44,29 @@ class ElfCorpus(Corpus):
         """
         Add a global variable parsed from the dwarf.
         """
-        # DW_AT_external attribute if the variable is visible outside of its enclosing CU
-        if not "DW_AT_external" in die.attributes:
+        # static globals - internal linkage but file scope, only seen by CU where declared
+        # This variable cannot be part of an ABI discussion, like a local variable
+        if ("DW_AT_external" not in die.attributes) or (
+            "DW_AT_external" in die.attributes
+            and die.attributes["DW_AT_external"].value == 0
+        ):
+            direction = "none"
             return
-        entry = {"name": self.get_name(die), "size": self.get_size(die)}
+
+        # DW_AT_external attribute if the variable is visible outside of its enclosing CU
+        entry = {
+            "name": self.get_name(die),
+            "size": self.get_size(die),
+            "location": "var",
+        }
         entry.update(self.parse_underlying_type(die))
+
+        # DW_AT_declaration if present is an export, otherwise is an import
+        direction = "export"
+        if "DW_AT_declaration" in die.attributes:
+            direction = "import"
+
+        entry["direction"] = direction
         self.variables.append(entry)
 
     def add_dwarf_information_entry(self, die):
@@ -152,6 +170,7 @@ class ElfCorpus(Corpus):
         return_value = None
         if "DW_AT_type" in die.attributes:
             return_value = self.parse_underlying_type(die)
+            return_value["direction"] = "export"
             loc = self.parse_location(die, underlying_type=return_value, is_return=True)
             if loc:
                 return_value["location"] = loc
@@ -165,9 +184,7 @@ class ElfCorpus(Corpus):
 
         # Hold previous child for modifiers
         param = None
-
         for child in die.iter_children():
-
             # can either be inlined subroutine or format parameter
             if child.tag == "DW_TAG_formal_parameter":
                 param = {"size": self.get_size(child)}
@@ -241,6 +258,7 @@ class ElfCorpus(Corpus):
             entry["parameters"] = params
         if return_value:
             entry["return"] = return_value
+
         self.functions.append(entry)
 
     # TAGs to parse
@@ -270,7 +288,12 @@ class ElfCorpus(Corpus):
         }
         fields = []
         for child in die.iter_children():
-            fields.append(self.parse_member(child))
+            field = self.parse_member(child)
+
+            # Our default is import but Matt wants struct param fields to be exports
+            if "direction" not in field or field["direction"] != "both":
+                field["direction"] = "export"
+            fields.append(field)
         if fields:
             entry["fields"] = fields
         self.underlying_types[die] = entry
@@ -567,6 +590,7 @@ class ElfCorpus(Corpus):
                     "name": self.get_name(die),
                     "class": "Pointer",
                     "size": self.get_size(type_die),
+                    "direction": "both",
                 }
             else:
                 entry = {
@@ -574,6 +598,7 @@ class ElfCorpus(Corpus):
                     "class": "Pointer",
                     "size": self.get_size(type_die),
                     "underlying_type": "unknown",
+                    "direction": "both",
                 }
 
         if type_die and type_die.tag == "DW_TAG_class_type":
@@ -619,7 +644,6 @@ class ElfCorpus(Corpus):
                     entry = self.parse_structure_type(type_die)
                 elif "underlying_type" in entry:
                     entry["underlying_type"] = self.parse_structure_type(type_die)
-                print(entry)
 
             elif type_die and type_die.tag == "DW_TAG_class_type":
                 if not entry:
@@ -652,6 +676,8 @@ class ElfCorpus(Corpus):
         # Based on the underlying type, add a class
         if "class" not in entry:
             entry["class"] = self.add_class(type_die)
+        if "direction" not in entry:
+            entry["direction"] = "import"
         return entry
 
     def add_class(self, die):
