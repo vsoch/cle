@@ -5,14 +5,12 @@
             "variables": [
                 {
                     "name": "x",
-                    "size": 0,
                     "location": "var",
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export"
                 },
                 {
                     "name": "px",
-                    "size": 0,
                     "location": "var",
                     "type": "8f8ff3c9556390acc2ada555545d172c",
                     "direction": "export"

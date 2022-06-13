@@ -5,14 +5,12 @@
             "variables": [
                 {
                     "name": "_ZSt4cout",
-                    "size": 0,
                     "location": "var",
                     "type": "fece39f091ac182824f61be86c5a0397",
                     "direction": "import"
                 },
                 {
                     "name": "__dso_handle",
-                    "size": 0,
                     "location": "var",
                     "type": "a8bbba2375a5aa6921e80adb72718e60",
                     "direction": "import"

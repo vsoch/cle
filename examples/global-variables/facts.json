@@ -5,28 +5,24 @@
             "variables": [
                 {
                     "name": "inty",
-                    "size": 0,
                     "location": "var",
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export"
                 },
                 {
                     "name": "booley",
-                    "size": 0,
                     "location": "var",
                     "type": "5f699718a0f73b64af5190e051839f93",
                     "direction": "export"
                 },
                 {
                     "name": "doubley",
-                    "size": 0,
                     "location": "var",
                     "type": "308ad8129cac3a0bb414c01987309d1b",
                     "direction": "export"
                 },
                 {
                     "name": "intyterny",
-                    "size": 0,
                     "location": "var",
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "import"

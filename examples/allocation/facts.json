@@ -5,7 +5,6 @@
             "variables": [
                 {
                     "name": "__dso_handle",
-                    "size": 0,
                     "location": "var",
                     "type": "a8bbba2375a5aa6921e80adb72718e60",
                     "direction": "import"

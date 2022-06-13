@@ -5,7 +5,6 @@
             "variables": [
                 {
                     "name": "fixedSizeArray",
-                    "size": 0,
                     "location": "var",
                     "type": "6dd3e0b89ad7707fa4a10ea61767519f",
                     "direction": "export"

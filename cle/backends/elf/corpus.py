@@ -57,7 +57,6 @@ class ElfCorpus(Corpus):
         # DW_AT_external attribute if the variable is visible outside of its enclosing CU
         entry = {
             "name": self.get_name(die),
-            "size": self.get_size(die),
             "location": "var",
         }
 
