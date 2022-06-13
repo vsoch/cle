@@ -65,6 +65,12 @@ def classify(typ, count=0, die=None, return_classification=False, allocator=None
         cls = classify_array(typ, allocator=allocator)
     elif typ["class"] == "Class":
         cls = classify_class(typ, allocator=allocator)
+    elif typ["class"] == "Function":
+
+        # Functions that aren't pointers
+        cls = classify_function(typ, count)
+        if not cls:
+            return
 
     # https://refspecs.linuxbase.org/elf/x86_64-abi-0.21.pdf
     # A null pointer (for all types) has the value zero p 12 ABI document
@@ -332,15 +338,11 @@ def classify_enum(typ):
     return Classification("Enum", [RegisterClass.INTEGER, RegisterClass.NO_CLASS])
 
 
-def classify_function(typ):
-    print("CLASSIFY FUNC")
-    import IPython
-
-    IPython.embed()
-
+def classify_function(typ, count):
     # auto [underlying_type, ptr_cnt] = unwrap_underlying_type(t);
     if count > 0:
         return classify_pointer(count)
+    # Return no class
 
 
 def classify_field(field):

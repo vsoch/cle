@@ -2,33 +2,21 @@
     "library": "/home/vanessa/Desktop/Code/cle/examples/math/lib.so",
     "locations": [
         {
-            "variables": []
-        },
-        {
             "function": {
                 "name": "_ZN11MathLibrary10Arithmetic3AddEdd",
                 "parameters": [
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm0"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm1"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
                 "return": {
-                    "type": "double",
-                    "size": 8,
-                    "class": "Float",
-                    "direction": "export",
-                    "location": "%xmm0"
+                    "type": "5f66ab77d11088555799b0da0fbee9bf",
+                    "direction": "export"
                 }
             }
         },
@@ -37,26 +25,17 @@
                 "name": "_ZN11MathLibrary10Arithmetic8SubtractEdd",
                 "parameters": [
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm0"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm1"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
                 "return": {
-                    "type": "double",
-                    "size": 8,
-                    "class": "Float",
-                    "direction": "export",
-                    "location": "%xmm0"
+                    "type": "5f66ab77d11088555799b0da0fbee9bf",
+                    "direction": "export"
                 }
             }
         },
@@ -65,26 +44,17 @@
                 "name": "_ZN11MathLibrary10Arithmetic8MultiplyEdd",
                 "parameters": [
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm0"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm1"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
                 "return": {
-                    "type": "double",
-                    "size": 8,
-                    "class": "Float",
-                    "direction": "export",
-                    "location": "%xmm0"
+                    "type": "5f66ab77d11088555799b0da0fbee9bf",
+                    "direction": "export"
                 }
             }
         },
@@ -93,28 +63,27 @@
                 "name": "_ZN11MathLibrary10Arithmetic6DivideEdd",
                 "parameters": [
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm0"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 8,
-                        "type": "double",
-                        "class": "Float",
-                        "direction": "import",
-                        "location": "%xmm1"
+                        "size": 0,
+                        "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
                 "return": {
-                    "type": "double",
-                    "size": 8,
-                    "class": "Float",
-                    "direction": "export",
-                    "location": "%xmm0"
+                    "type": "5f66ab77d11088555799b0da0fbee9bf",
+                    "direction": "export"
                 }
             }
         }
-    ]
+    ],
+    "types": {
+        "5f66ab77d11088555799b0da0fbee9bf": {
+            "type": "double",
+            "size": 8,
+            "class": "Float",
+            "direction": "import"
+        }
+    }
 }
