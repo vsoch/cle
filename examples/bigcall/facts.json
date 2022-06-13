@@ -6,27 +6,21 @@
                 "name": "_Z7bigcallllllln",
                 "parameters": [
                     {
-                        "size": 0,
                         "type": "832037bcbd004730c7738b05d956e54e"
                     },
                     {
-                        "size": 0,
                         "type": "832037bcbd004730c7738b05d956e54e"
                     },
                     {
-                        "size": 0,
                         "type": "832037bcbd004730c7738b05d956e54e"
                     },
                     {
-                        "size": 0,
                         "type": "832037bcbd004730c7738b05d956e54e"
                     },
                     {
-                        "size": 0,
                         "type": "832037bcbd004730c7738b05d956e54e"
                     },
                     {
-                        "size": 0,
                         "type": "01733fcc0cdb3228cddebbe14f8728bf"
                     }
                 ]
@@ -37,12 +31,10 @@
                 "name": "main",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "argc",
                         "type": "1fd8c01bdca094933f920b41375cfed0"
                     },
                     {
-                        "size": 0,
                         "name": "argv",
                         "type": "8f2ec41872f539c9775c4888a8fcb8c8"
                     }

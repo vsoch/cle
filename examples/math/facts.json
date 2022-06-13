@@ -6,11 +6,9 @@
                 "name": "_ZN11MathLibrary10Arithmetic3AddEdd",
                 "parameters": [
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
@@ -25,11 +23,9 @@
                 "name": "_ZN11MathLibrary10Arithmetic8SubtractEdd",
                 "parameters": [
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
@@ -44,11 +40,9 @@
                 "name": "_ZN11MathLibrary10Arithmetic8MultiplyEdd",
                 "parameters": [
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],
@@ -63,11 +57,9 @@
                 "name": "_ZN11MathLibrary10Arithmetic6DivideEdd",
                 "parameters": [
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     },
                     {
-                        "size": 0,
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
                 ],

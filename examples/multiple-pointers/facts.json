@@ -17,7 +17,6 @@
                 "direction": "export",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "x",
                         "type": "ecd9d4ce937d63d69c2f95b986aea161"
                     }

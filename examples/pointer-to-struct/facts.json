@@ -6,7 +6,6 @@
                 "name": "_Z4FuncP8MyStruct",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "m",
                         "type": "8b829ee2cbb35040e95870030045427f"
                     }

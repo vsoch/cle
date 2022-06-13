@@ -15,7 +15,6 @@
                 "name": "_Z3foo3Foo",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "f",
                         "type": "546c513ca34a3298a3f0540500c438cd"
                     }

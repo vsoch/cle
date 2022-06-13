@@ -25,12 +25,10 @@
                 "direction": "export",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "one",
                         "type": "1fd8c01bdca094933f920b41375cfed0"
                     },
                     {
-                        "size": 0,
                         "name": "two",
                         "type": "a9abca9cde4863821b3b03dfb10c206e"
                     }
@@ -47,12 +45,10 @@
                 "direction": "export",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "argc",
                         "type": "1fd8c01bdca094933f920b41375cfed0"
                     },
                     {
-                        "size": 0,
                         "name": "argv",
                         "type": "8f2ec41872f539c9775c4888a8fcb8c8"
                     }

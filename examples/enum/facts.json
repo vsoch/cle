@@ -6,7 +6,6 @@
                 "name": "_Z11print_color5Color",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "r",
                         "type": "d2198c7c311b1ad8b126ca67f7eb9344"
                     }

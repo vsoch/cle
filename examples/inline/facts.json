@@ -6,7 +6,6 @@
                 "name": "_Z5startd",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "d",
                         "type": "5f66ab77d11088555799b0da0fbee9bf"
                     }
@@ -22,7 +21,6 @@
                 "name": "_Z3fooi",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "x",
                         "type": "1fd8c01bdca094933f920b41375cfed0"
                     }

@@ -205,7 +205,9 @@ class ElfCorpus(Corpus):
 
             # can either be inlined subroutine or format parameter
             if child.tag == "DW_TAG_formal_parameter":
-                param = {"size": self.get_size(child)}
+
+                # Size isn't included here because will be present with underlying type
+                param = {}
                 name = self.get_name(child)
                 if name != "unknown":
                     param["name"] = name

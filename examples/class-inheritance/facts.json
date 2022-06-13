@@ -6,22 +6,18 @@
                 "name": "_Z4func1AP1B1C1D",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "a",
                         "type": "308e7c0c4ed84449b2850937c1b6329e"
                     },
                     {
-                        "size": 0,
                         "name": "b",
                         "type": "23d73fd3bf1db9d21069f0bcbcf6c1de"
                     },
                     {
-                        "size": 0,
                         "name": "c",
                         "type": "0cc8ef179bac97bee2058ee65dadaaea"
                     },
                     {
-                        "size": 0,
                         "name": "d",
                         "type": "1e5ede4f6075bc5cdc8192cfdc757df9"
                     }

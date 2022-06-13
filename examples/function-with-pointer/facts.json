@@ -6,7 +6,6 @@
                 "name": "_Z3fooPi",
                 "parameters": [
                     {
-                        "size": 0,
                         "name": "x",
                         "type": "c41b8a141bcad4a428605abf45e1d143"
                     }
