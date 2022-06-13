@@ -24,16 +24,19 @@
                 "parameters": [
                     {
                         "name": "one",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "two",
-                        "type": "a9abca9cde4863821b3b03dfb10c206e"
+                        "type": "a9abca9cde4863821b3b03dfb10c206e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -44,16 +47,19 @@
                 "parameters": [
                     {
                         "name": "argc",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "argv",
-                        "type": "8f2ec41872f539c9775c4888a8fcb8c8"
+                        "type": "8f2ec41872f539c9775c4888a8fcb8c8",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },

@@ -385,10 +385,10 @@ class ElfCorpus(Corpus):
                 )
             underlying_type = underlying_type or self.parse_underlying_type(die)
             allocator = allocator or self.parser.get_return_allocator()
-            if underlying_type:
-                loc = self.parser.classify(
-                    underlying_type, die=die, allocator=allocator
-                )
+            if underlying_type:         
+                # Get the actual type information                
+                typ = self.types[underlying_type['type']]
+                loc = self.parser.classify(typ, die=die, allocator=allocator, types=self.types)
             return loc
 
         # Without experimental uses dwarf location lists

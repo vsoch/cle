@@ -7,12 +7,14 @@
                 "parameters": [
                     {
                         "name": "m",
-                        "type": "8b829ee2cbb35040e95870030045427f"
+                        "type": "8b829ee2cbb35040e95870030045427f",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         }

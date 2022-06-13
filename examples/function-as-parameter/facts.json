@@ -22,10 +22,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EPv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "324dd7a46bec864caeb14787047f9f23"
+                        "type": "324dd7a46bec864caeb14787047f9f23",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -35,7 +37,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr9_M_addrefEv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -45,7 +48,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr10_M_releaseEv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -55,12 +59,14 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptr6_M_getEv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "f2b0ca3bcf3764576e9e717de3c3f4c0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -69,7 +75,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4Ev",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -79,10 +86,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4ERKS0_",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf"
+                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -92,10 +101,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EDn",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "4d32363e7d7c9c3b394e6c4e0c5b8ac7"
+                        "type": "4d32363e7d7c9c3b394e6c4e0c5b8ac7",
+                        "location": "nullptr"
                     }
                 ]
             }
@@ -105,10 +116,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EOS0_",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf"
+                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -118,15 +131,18 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptraSERKS0_",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf"
+                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -135,15 +151,18 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptraSEOS0_",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf"
+                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -152,10 +171,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrD4Ev",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -165,10 +186,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr4swapERS0_",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf"
+                        "type": "0d8fa4346f2d89ecda5ebc6cb132d2bf",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -178,12 +201,14 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptrcvbEv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "5f699718a0f73b64af5190e051839f93",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -192,12 +217,14 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptr20__cxa_exception_typeEv",
                 "parameters": [
                     {
-                        "type": "a7060da1fbefad218cb9977148d07b16"
+                        "type": "a7060da1fbefad218cb9977148d07b16",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "5760fd2e4cba800a70d987c90968703e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -206,7 +233,8 @@
                 "name": "_ZSt17rethrow_exceptionNSt15__exception_ptr13exception_ptrE",
                 "parameters": [
                     {
-                        "type": "4e09d20bc12c6cef45521ba14a7d3db2"
+                        "type": "4e09d20bc12c6cef45521ba14a7d3db2",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -216,10 +244,12 @@
                 "name": "_ZNSt11char_traitsIcE6assignERcRKc",
                 "parameters": [
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -229,15 +259,18 @@
                 "name": "_ZNSt11char_traitsIcE2eqERKcS2_",
                 "parameters": [
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "5f699718a0f73b64af5190e051839f93",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -246,15 +279,18 @@
                 "name": "_ZNSt11char_traitsIcE2ltERKcS2_",
                 "parameters": [
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "5f699718a0f73b64af5190e051839f93",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -263,18 +299,22 @@
                 "name": "_ZNSt11char_traitsIcE7compareEPKcS2_m",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -283,12 +323,14 @@
                 "name": "_ZNSt11char_traitsIcE6lengthEPKc",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -297,18 +339,22 @@
                 "name": "_ZNSt11char_traitsIcE4findEPKcmRS1_",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "8e0b53139770278fd33dc1716ca0eaa7",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -317,18 +363,22 @@
                 "name": "_ZNSt11char_traitsIcE4moveEPcPKcm",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "bef14b3864ba041e4f82d1bec657845a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -337,18 +387,22 @@
                 "name": "_ZNSt11char_traitsIcE4copyEPcPKcm",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "91a7a2ff48b75757fb986c900fe12593",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -357,18 +411,22 @@
                 "name": "_ZNSt11char_traitsIcE6assignEPcmc",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "65259a1b73b8b95b0f0998d3e7a9bd72",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -377,12 +435,14 @@
                 "name": "_ZNSt11char_traitsIcE12to_char_typeERKi",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -391,12 +451,14 @@
                 "name": "_ZNSt11char_traitsIcE11to_int_typeERKc",
                 "parameters": [
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -405,15 +467,18 @@
                 "name": "_ZNSt11char_traitsIcE11eq_int_typeERKiS2_",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "5f699718a0f73b64af5190e051839f93",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -422,7 +487,8 @@
                 "name": "_ZNSt11char_traitsIcE3eofEv",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -431,12 +497,14 @@
                 "name": "_ZNSt11char_traitsIcE7not_eofERKi",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -445,7 +513,8 @@
                 "name": "_ZNSt8ios_base4InitC4Ev",
                 "parameters": [
                     {
-                        "type": "9a5d2412827833e80920eaeaee7c4d15"
+                        "type": "9a5d2412827833e80920eaeaee7c4d15",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -455,10 +524,12 @@
                 "name": "_ZNSt8ios_base4InitD4Ev",
                 "parameters": [
                     {
-                        "type": "9a5d2412827833e80920eaeaee7c4d15"
+                        "type": "9a5d2412827833e80920eaeaee7c4d15",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -468,7 +539,8 @@
                 "name": "_ZNSt8ios_base4InitC4ERKS0_",
                 "parameters": [
                     {
-                        "type": "9a5d2412827833e80920eaeaee7c4d15"
+                        "type": "9a5d2412827833e80920eaeaee7c4d15",
+                        "location": "%rdi"
                     },
                     {
                         "type": "9527d92cc194a2afe0ea497ca8144a43"
@@ -481,7 +553,8 @@
                 "name": "_ZNSt8ios_base4InitaSERKS0_",
                 "parameters": [
                     {
-                        "type": "9a5d2412827833e80920eaeaee7c4d15"
+                        "type": "9a5d2412827833e80920eaeaee7c4d15",
+                        "location": "%rdi"
                     },
                     {
                         "type": "9527d92cc194a2afe0ea497ca8144a43"
@@ -498,15 +571,18 @@
                 "name": "_ZNSolsEi",
                 "parameters": [
                     {
-                        "type": "98a92cb24e64def4fc6e2acf57835b42"
+                        "type": "98a92cb24e64def4fc6e2acf57835b42",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "fece39f091ac182824f61be86c5a0397",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -515,15 +591,18 @@
                 "name": "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c",
                 "parameters": [
                     {
-                        "type": "fece39f091ac182824f61be86c5a0397"
+                        "type": "fece39f091ac182824f61be86c5a0397",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "fece39f091ac182824f61be86c5a0397",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -532,15 +611,18 @@
                 "name": "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc",
                 "parameters": [
                     {
-                        "type": "fece39f091ac182824f61be86c5a0397"
+                        "type": "fece39f091ac182824f61be86c5a0397",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "fece39f091ac182824f61be86c5a0397",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -549,12 +631,14 @@
                 "name": "btowc",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -563,12 +647,14 @@
                 "name": "fgetwc",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -577,18 +663,22 @@
                 "name": "fgetws",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "f6d99cb0fe479fbbdd1fab83dcf74de3",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -597,15 +687,18 @@
                 "name": "fputwc",
                 "parameters": [
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -614,15 +707,18 @@
                 "name": "fputws",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -631,15 +727,18 @@
                 "name": "fwide",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -648,15 +747,18 @@
                 "name": "fwprintf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -665,15 +767,18 @@
                 "name": "__isoc99_fwscanf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -682,12 +787,14 @@
                 "name": "getwc",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -696,7 +803,8 @@
                 "name": "getwchar",
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -705,18 +813,22 @@
                 "name": "mbrlen",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -725,21 +837,26 @@
                 "name": "mbrtowc",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -748,12 +865,14 @@
                 "name": "mbsinit",
                 "parameters": [
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -762,21 +881,26 @@
                 "name": "mbsrtowcs",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -785,15 +909,18 @@
                 "name": "putwc",
                 "parameters": [
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -802,12 +929,14 @@
                 "name": "putwchar",
                 "parameters": [
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -816,18 +945,22 @@
                 "name": "swprintf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -836,15 +969,18 @@
                 "name": "__isoc99_swscanf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -853,15 +989,18 @@
                 "name": "ungetwc",
                 "parameters": [
                     {
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -870,18 +1009,22 @@
                 "name": "vfwprintf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -890,18 +1033,22 @@
                 "name": "__isoc99_vfwscanf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -910,21 +1057,26 @@
                 "name": "vswprintf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -933,18 +1085,22 @@
                 "name": "__isoc99_vswscanf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -953,15 +1109,18 @@
                 "name": "vwprintf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -970,15 +1129,18 @@
                 "name": "__isoc99_vwscanf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "391103004961e61b88dad7ccd6182ff3"
+                        "type": "391103004961e61b88dad7ccd6182ff3",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -987,18 +1149,22 @@
                 "name": "wcrtomb",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1007,15 +1173,18 @@
                 "name": "wcscat",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "328bf53d28b8a51de40c4e2eeb8c1bd0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1024,15 +1193,18 @@
                 "name": "wcscmp",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1041,15 +1213,18 @@
                 "name": "wcscoll",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1058,15 +1233,18 @@
                 "name": "wcscpy",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "7e65015258eda58f016d6e02e5cba74c",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1075,15 +1253,18 @@
                 "name": "wcscspn",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1092,21 +1273,26 @@
                 "name": "wcsftime",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "f5e676fcb1b1a99d1fb33452b3e65e95"
+                        "type": "f5e676fcb1b1a99d1fb33452b3e65e95",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1115,12 +1301,14 @@
                 "name": "wcslen",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1129,18 +1317,22 @@
                 "name": "wcsncat",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "97ccd04d2710920a2336f6180a915fb5",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1149,18 +1341,22 @@
                 "name": "wcsncmp",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1169,18 +1365,22 @@
                 "name": "wcsncpy",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "84ca858f071c536964c61b33bdb158d3",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1189,21 +1389,26 @@
                 "name": "wcsrtombs",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "bb3e2494d037abcf2ad771fb6e6a873f"
+                        "type": "bb3e2494d037abcf2ad771fb6e6a873f",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1212,15 +1417,18 @@
                 "name": "wcsspn",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1229,15 +1437,18 @@
                 "name": "wcstod",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -1246,15 +1457,18 @@
                 "name": "wcstof",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "65548ffbcaadd70764058ff4b5097cfb",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -1263,18 +1477,22 @@
                 "name": "wcstok",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "18044eca101be0f61e146b5d25bad148",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1283,18 +1501,22 @@
                 "name": "wcstol",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "832037bcbd004730c7738b05d956e54e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1303,18 +1525,22 @@
                 "name": "wcstoul",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1323,18 +1549,22 @@
                 "name": "wcsxfrm",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1343,12 +1573,14 @@
                 "name": "wctob",
                 "parameters": [
                     {
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1357,18 +1589,22 @@
                 "name": "wmemcmp",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1377,18 +1613,22 @@
                 "name": "wmemcpy",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "df1e5ae2fafd16fbd2598c88b1c2aaca",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1397,18 +1637,22 @@
                 "name": "wmemmove",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "bfaab0924205a21758fbc81e3b4bbcb7",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1417,18 +1661,22 @@
                 "name": "wmemset",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "e9cefb32ba50a13ccf3c596821fc7c52",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1437,12 +1685,14 @@
                 "name": "wprintf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1451,12 +1701,14 @@
                 "name": "__isoc99_wscanf",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1465,15 +1717,18 @@
                 "name": "wcschr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "c84e2c2bbf5de6bd52320b68c2e72c0f",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1482,15 +1737,18 @@
                 "name": "wcschr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "c84e2c2bbf5de6bd52320b68c2e72c0f",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1499,15 +1757,18 @@
                 "name": "wcspbrk",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "e5b3b9a5ea5ee39a7429d2123c080aaf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1516,15 +1777,18 @@
                 "name": "wcspbrk",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "e5b3b9a5ea5ee39a7429d2123c080aaf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1533,15 +1797,18 @@
                 "name": "wcsrchr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "87cf64774953dcdb37ac453349b1b442",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1550,15 +1817,18 @@
                 "name": "wcsrchr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "87cf64774953dcdb37ac453349b1b442",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1567,15 +1837,18 @@
                 "name": "wcsstr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "8191692c1e3092c51f93e93f57eacb7a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1584,15 +1857,18 @@
                 "name": "wcsstr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "8191692c1e3092c51f93e93f57eacb7a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1601,18 +1877,22 @@
                 "name": "wmemchr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "e8862a8c2243c0e3854cad32dcdb301f",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1621,18 +1901,22 @@
                 "name": "wmemchr",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "e8862a8c2243c0e3854cad32dcdb301f",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1641,15 +1925,18 @@
                 "name": "_ZN9__gnu_cxx3divExx",
                 "parameters": [
                     {
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "08b29a1fb7fa05b1ba4fc07d8496079a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1658,15 +1945,18 @@
                 "name": "wcstold",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "308ad8129cac3a0bb414c01987309d1b",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%st0"
                 }
             }
         },
@@ -1675,18 +1965,22 @@
                 "name": "wcstoll",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1695,18 +1989,22 @@
                 "name": "wcstoull",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "8d08d15be41917e376a14e577b323752"
+                        "type": "8d08d15be41917e376a14e577b323752",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6c50d3a67c64cc4cdfbee700b946253a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1715,15 +2013,18 @@
                 "name": "setlocale",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "b2dfb04418a849be3c5bde4649ffd994",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1732,7 +2033,8 @@
                 "name": "localeconv",
                 "return": {
                     "type": "d550b6f5d902748d9f207b0af8c8fb0f",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1741,12 +2043,14 @@
                 "name": "atexit",
                 "parameters": [
                     {
-                        "type": "1500d9caaf0a797b6b186f217c2eff8d"
+                        "type": "1500d9caaf0a797b6b186f217c2eff8d",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1755,12 +2059,14 @@
                 "name": "at_quick_exit",
                 "parameters": [
                     {
-                        "type": "1500d9caaf0a797b6b186f217c2eff8d"
+                        "type": "1500d9caaf0a797b6b186f217c2eff8d",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1769,12 +2075,14 @@
                 "name": "atof",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -1783,12 +2091,14 @@
                 "name": "atoi",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1797,12 +2107,14 @@
                 "name": "atol",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "832037bcbd004730c7738b05d956e54e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1811,24 +2123,30 @@
                 "name": "bsearch",
                 "parameters": [
                     {
-                        "type": "1130728610cf98bc021866c383997ea3"
+                        "type": "1130728610cf98bc021866c383997ea3",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1130728610cf98bc021866c383997ea3"
+                        "type": "1130728610cf98bc021866c383997ea3",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rcx"
                     },
                     {
-                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe"
+                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
                     "type": "717873ef54c88fcf2ca46569a23cd193",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1837,15 +2155,18 @@
                 "name": "div",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1be63eb326c29dee79ccc3eccd4f5fd9",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -1854,12 +2175,14 @@
                 "name": "getenv",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "17c81827c0379c97d41f2def617e59ca",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1868,15 +2191,18 @@
                 "name": "ldiv",
                 "parameters": [
                     {
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "8c1c64606e59bf29bcdc043122069ea9",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1885,15 +2211,18 @@
                 "name": "mblen",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1902,18 +2231,22 @@
                 "name": "mbstowcs",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1922,18 +2255,22 @@
                 "name": "mbtowc",
                 "parameters": [
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1942,16 +2279,20 @@
                 "name": "qsort",
                 "parameters": [
                     {
-                        "type": "324dd7a46bec864caeb14787047f9f23"
+                        "type": "324dd7a46bec864caeb14787047f9f23",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe"
+                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe",
+                        "location": "%rcx"
                     }
                 ]
             }
@@ -1961,7 +2302,8 @@
                 "name": "quick_exit",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1971,7 +2313,8 @@
                 "name": "rand",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -1980,7 +2323,8 @@
                 "name": "srand",
                 "parameters": [
                     {
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1990,15 +2334,18 @@
                 "name": "strtod",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -2007,18 +2354,22 @@
                 "name": "strtol",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "832037bcbd004730c7738b05d956e54e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2027,18 +2378,22 @@
                 "name": "strtoul",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2047,12 +2402,14 @@
                 "name": "system",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2061,18 +2418,22 @@
                 "name": "wcstombs",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "baa12c444fb169aa1d391f68b5c9002c"
+                        "type": "baa12c444fb169aa1d391f68b5c9002c",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2081,15 +2442,18 @@
                 "name": "wctomb",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2098,15 +2462,18 @@
                 "name": "lldiv",
                 "parameters": [
                     {
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "08b29a1fb7fa05b1ba4fc07d8496079a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2115,12 +2482,14 @@
                 "name": "atoll",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2129,18 +2498,22 @@
                 "name": "strtoll",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2149,18 +2522,22 @@
                 "name": "strtoull",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "6c50d3a67c64cc4cdfbee700b946253a",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2169,15 +2546,18 @@
                 "name": "strtof",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "65548ffbcaadd70764058ff4b5097cfb",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -2186,15 +2566,18 @@
                 "name": "strtold",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e"
+                        "type": "c4fac4dbfec2bf761ced5e240bb04c6e",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "308ad8129cac3a0bb414c01987309d1b",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%st0"
                 }
             }
         },
@@ -2203,7 +2586,8 @@
                 "name": "clearerr",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2213,12 +2597,14 @@
                 "name": "fclose",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2227,12 +2613,14 @@
                 "name": "feof",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2241,12 +2629,14 @@
                 "name": "ferror",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2255,12 +2645,14 @@
                 "name": "fflush",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2269,12 +2661,14 @@
                 "name": "fgetc",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2283,15 +2677,18 @@
                 "name": "fgetpos",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dc32b13e635b2a95abb04d4f5ad52e5d"
+                        "type": "dc32b13e635b2a95abb04d4f5ad52e5d",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2300,18 +2697,22 @@
                 "name": "fgets",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "d5732a242ba55a395a8df702b579c068",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2320,15 +2721,18 @@
                 "name": "fopen",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "9cd523b8566507baeb946ef4e6383207",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2337,21 +2741,26 @@
                 "name": "fread",
                 "parameters": [
                     {
-                        "type": "324dd7a46bec864caeb14787047f9f23"
+                        "type": "324dd7a46bec864caeb14787047f9f23",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2360,18 +2769,22 @@
                 "name": "freopen",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "d7f5eec266f6f7e86aac92fbed243bba",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2380,18 +2793,22 @@
                 "name": "fseek",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2400,15 +2817,18 @@
                 "name": "fsetpos",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dc32b13e635b2a95abb04d4f5ad52e5d"
+                        "type": "dc32b13e635b2a95abb04d4f5ad52e5d",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2417,12 +2837,14 @@
                 "name": "ftell",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "832037bcbd004730c7738b05d956e54e",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2431,12 +2853,14 @@
                 "name": "getc",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2445,7 +2869,8 @@
                 "name": "getchar",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2454,7 +2879,8 @@
                 "name": "perror",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2464,12 +2890,14 @@
                 "name": "remove",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2478,15 +2906,18 @@
                 "name": "rename",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2495,7 +2926,8 @@
                 "name": "rewind",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2505,10 +2937,12 @@
                 "name": "setbuf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -2518,21 +2952,26 @@
                 "name": "setvbuf",
                 "parameters": [
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdx"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2541,7 +2980,8 @@
                 "name": "tmpfile",
                 "return": {
                     "type": "70005ea08969e51e2862ed3b3f1238ee",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2550,12 +2990,14 @@
                 "name": "tmpnam",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "8b619b975820bc381457459f2a596c96",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2564,15 +3006,18 @@
                 "name": "ungetc",
                 "parameters": [
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9"
+                        "type": "dbb7fd65bf25b26cb5bad4d8343150f9",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2581,15 +3026,18 @@
                 "name": "iswctype",
                 "parameters": [
                     {
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2598,15 +3046,18 @@
                 "name": "towctrans",
                 "parameters": [
                     {
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     },
                     {
-                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe"
+                        "type": "5993d4e2e52e13fba13e9d88d71bf8fe",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "724f0b94c416f03c89c16150cf866e00",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2615,12 +3066,14 @@
                 "name": "wctrans",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "5993d4e2e52e13fba13e9d88d71bf8fe",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2629,12 +3082,14 @@
                 "name": "wctype",
                 "parameters": [
                     {
-                        "type": "a60c9fde6c2aa7556a531f0611d27179"
+                        "type": "a60c9fde6c2aa7556a531f0611d27179",
+                        "location": "%rdi"
                     }
                 ],
                 "return": {
                     "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2643,7 +3098,8 @@
                 "name": "main",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2653,20 +3109,24 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "y",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     },
                     {
                         "name": "func",
-                        "type": "1e4f3d1dc851c874018a59c1c11d6be6"
+                        "type": "1e4f3d1dc851c874018a59c1c11d6be6",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2676,16 +3136,19 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "y",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -2695,16 +3158,19 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "y",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         }

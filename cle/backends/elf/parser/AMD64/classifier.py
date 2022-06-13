@@ -33,10 +33,13 @@ def classify_pointer(count):
     )
 
 
-def classify(typ, count=0, die=None, return_classification=False, allocator=None):
+def classify(typ, count=0, die=None, return_classification=False, allocator=None, types=None):
     """
-    Main entrypoint to clsasify something
+    Main entrypoint to classify something
     """
+    # We need to look up types for fields, etc
+    types = types or {}
+
     # Don't handle this case right now
     if "class" not in typ:
         return
@@ -58,13 +61,13 @@ def classify(typ, count=0, die=None, return_classification=False, allocator=None
     elif typ["class"] == "Enum":
         cls = classify_enum(typ)
     elif typ["class"] == "Struct":
-        cls = classify_struct(typ, allocator=allocator)
+        cls = classify_struct(typ, allocator=allocator, types=types)
     elif typ["class"] == "Union":
-        cls = classify_union(typ, allocator=allocator)
+        cls = classify_union(typ, allocator=allocator, types=types)
     elif typ["class"] == "Array":
-        cls = classify_array(typ, allocator=allocator)
+        cls = classify_array(typ, allocator=allocator, types=types)
     elif typ["class"] == "Class":
-        cls = classify_class(typ, allocator=allocator)
+        cls = classify_class(typ, allocator=allocator, types=types)
     elif typ["class"] == "Function":
 
         # Functions that aren't pointers
@@ -238,16 +241,16 @@ def post_merge(lo, hi, size):
         hi = RegisterClass.SSE
 
 
-def classify_struct(typ, allocator=None, return_classification=False):
-    return classify_aggregate(typ, allocator, return_classification, "Struct")
+def classify_struct(typ, types, allocator=None, return_classification=False):
+    return classify_aggregate(typ, types, allocator, return_classification, "Struct")
 
 
-def classify_class(typ, allocator=None, return_classification=False):
-    return classify_aggregate(typ, allocator, return_classification, "Class")
+def classify_class(typ, types, allocator=None, return_classification=False):
+    return classify_aggregate(typ, types, allocator, return_classification, "Class")
 
 
 def classify_aggregate(
-    typ, allocator=None, return_classification=False, aggregate="Struct"
+    typ, types, allocator=None, return_classification=False, aggregate="Struct"
 ):
     size = typ.get("size", 0)
 
@@ -259,12 +262,15 @@ def classify_aggregate(
     cur = Eightbyte()
     added = False
     for f in typ.get("fields", []):
+        field = types.get(f.get('type'))
+        if not field:
+            continue
         added = False
-        if not cur.has_space_for(f):
+        if not cur.has_space_for(field):
             added = True
             ebs.append(cur)
             cur = Eightbyte()
-        cur.add(f)
+        cur.add(field)
 
     # If we didn't add the current eightbyte
     if not added and cur.size > 0:
@@ -278,12 +284,12 @@ def classify_aggregate(
         #    tmp.append(classify(f))
 
         if len(eb.fields) > 1:
-            c1 = classify(eb.fields[0], allocator=allocator, return_classification=True)
-            c2 = classify(eb.fields[1], allocator=allocator, return_classification=True)
+            c1 = classify(eb.fields[0], allocator=allocator, return_classification=True, types=types)
+            c2 = classify(eb.fields[1], allocator=allocator, return_classification=True, types=types)
             classes.append(merge(c1, c2))
         else:
             classes.append(
-                classify(eb.fields[0], allocator=allocator, return_classification=True)
+                classify(eb.fields[0], allocator=allocator, return_classification=True, types=types)
             )
 
     has_registers = False
@@ -298,14 +304,7 @@ def classify_aggregate(
     return classes
 
 
-def classify_fields(typ):
-    """
-    Classify the fields
-    """
-    return [classify(f) for f in typ.get("fields", [])]
-
-
-def classify_union(typ, allocator):
+def classify_union(typ, allocator, types):
     size = typ.get("size", 0)
     if size > 64:
         return Classification("Union", [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
@@ -315,7 +314,10 @@ def classify_union(typ, allocator):
 
     # We renamed members to fields
     for f in typ.get("fields", []):
-        c = classify(f, allocator=allocator, return_classification=True)
+        field = types.get(f.get('type'))
+        if not field:
+            continue
+        c = classify(field, allocator=allocator, return_classification=True, types=types)
         hi = merge(hi, c.classes[1])
         lo = merge(lo, c.classes[0])
 
@@ -324,14 +326,15 @@ def classify_union(typ, allocator):
     return Classification("Union", [lo, hi])
 
 
-def classify_array(typ, allocator):
+def classify_array(typ, allocator, types):
+    typ = types.get(typ.get('type'))
     size = typ.get("size", 0)
     if size > 64:
         return Classification("Array", [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
 
     # Just classify the base type
     base_type = {"class": ClassType.get(typ.get("type")), "size": size}
-    return classify(base_type, allocator=allocator, return_classification=True)
+    return classify(base_type, allocator=allocator, return_classification=True, types=types)
 
 
 def classify_enum(typ):
@@ -343,11 +346,3 @@ def classify_function(typ, count):
     if count > 0:
         return classify_pointer(count)
     # Return no class
-
-
-def classify_field(field):
-    print("CLASSIFY FIELD")
-    import IPython
-
-    IPython.embed()
-    return classify(field)

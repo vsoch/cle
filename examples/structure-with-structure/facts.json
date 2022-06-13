@@ -8,16 +8,19 @@
                 "parameters": [
                     {
                         "name": "argc",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "argv",
-                        "type": "8f2ec41872f539c9775c4888a8fcb8c8"
+                        "type": "8f2ec41872f539c9775c4888a8fcb8c8",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -28,20 +31,24 @@
                 "parameters": [
                     {
                         "name": "one",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "two",
-                        "type": "13920c2ccc832a5b2553f5903c226652"
+                        "type": "13920c2ccc832a5b2553f5903c226652",
+                        "location": "%rsi"
                     },
                     {
                         "name": "three",
-                        "type": "9b8b77baa8209d0dc21667ed2ff3f785"
+                        "type": "9b8b77baa8209d0dc21667ed2ff3f785",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         }

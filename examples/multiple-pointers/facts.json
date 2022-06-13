@@ -7,7 +7,8 @@
                 "direction": "export",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -18,7 +19,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }

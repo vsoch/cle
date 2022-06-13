@@ -8,16 +8,19 @@
                 "parameters": [
                     {
                         "name": "argc",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "argv",
-                        "type": "8f2ec41872f539c9775c4888a8fcb8c8"
+                        "type": "8f2ec41872f539c9775c4888a8fcb8c8",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -28,16 +31,19 @@
                 "parameters": [
                     {
                         "name": "one",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     },
                     {
                         "name": "arrayOfStructures",
-                        "type": "e77246b1d2bf9e524ab809347b77f22c"
+                        "type": "e77246b1d2bf9e524ab809347b77f22c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         }

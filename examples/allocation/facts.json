@@ -17,7 +17,8 @@
                 "direction": "export",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -34,7 +35,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -46,7 +48,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -58,7 +61,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -70,7 +74,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "f27deb18b4e22124900df0f1858d0fd8"
+                        "type": "f27deb18b4e22124900df0f1858d0fd8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -82,7 +87,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "3f8196f185d35e2551d50d0542caf4ae"
+                        "type": "3f8196f185d35e2551d50d0542caf4ae",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -94,7 +100,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -106,7 +113,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb"
+                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -118,7 +126,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "74e3bcdba928cd6901ec6f13628a72a4"
+                        "type": "74e3bcdba928cd6901ec6f13628a72a4",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -130,7 +139,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "251ba5521033493f21e959542089468c"
+                        "type": "251ba5521033493f21e959542089468c",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -142,7 +152,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e9c162be4d91116f11d3115b3c19b3fb"
+                        "type": "e9c162be4d91116f11d3115b3c19b3fb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -154,7 +165,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "dd8e53d310fc0bfa78f853163dc86f8f"
+                        "type": "dd8e53d310fc0bfa78f853163dc86f8f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -166,7 +178,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e7efc874c18fbe691d0385ff3fc9f954"
+                        "type": "e7efc874c18fbe691d0385ff3fc9f954",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -178,7 +191,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -190,7 +204,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -202,7 +217,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -214,7 +230,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -226,7 +243,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -238,7 +256,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -250,7 +269,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -262,7 +282,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -274,7 +295,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -286,7 +308,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e9c162be4d91116f11d3115b3c19b3fb"
+                        "type": "e9c162be4d91116f11d3115b3c19b3fb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -298,7 +321,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "dd8e53d310fc0bfa78f853163dc86f8f"
+                        "type": "dd8e53d310fc0bfa78f853163dc86f8f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -310,7 +334,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e7efc874c18fbe691d0385ff3fc9f954"
+                        "type": "e7efc874c18fbe691d0385ff3fc9f954",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -322,7 +347,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -334,7 +360,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -346,7 +373,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -358,7 +386,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "f27deb18b4e22124900df0f1858d0fd8"
+                        "type": "f27deb18b4e22124900df0f1858d0fd8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -370,7 +399,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "3f8196f185d35e2551d50d0542caf4ae"
+                        "type": "3f8196f185d35e2551d50d0542caf4ae",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -382,7 +412,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -394,7 +425,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb"
+                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -406,7 +438,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "74e3bcdba928cd6901ec6f13628a72a4"
+                        "type": "74e3bcdba928cd6901ec6f13628a72a4",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -418,7 +451,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "251ba5521033493f21e959542089468c"
+                        "type": "251ba5521033493f21e959542089468c",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -430,7 +464,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e9c162be4d91116f11d3115b3c19b3fb"
+                        "type": "e9c162be4d91116f11d3115b3c19b3fb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -442,7 +477,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "dd8e53d310fc0bfa78f853163dc86f8f"
+                        "type": "dd8e53d310fc0bfa78f853163dc86f8f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -454,7 +490,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e7efc874c18fbe691d0385ff3fc9f954"
+                        "type": "e7efc874c18fbe691d0385ff3fc9f954",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -466,7 +503,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -478,7 +516,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -490,7 +529,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -502,7 +542,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -514,7 +555,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c41b8a141bcad4a428605abf45e1d143"
+                        "type": "c41b8a141bcad4a428605abf45e1d143",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -526,7 +568,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -538,7 +581,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "d39da115c19907353d4cd80c8b4aa0bb"
+                        "type": "d39da115c19907353d4cd80c8b4aa0bb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -550,7 +594,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "19e98565cba533f4b1132dab88970610"
+                        "type": "19e98565cba533f4b1132dab88970610",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -562,7 +607,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77"
+                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -574,7 +620,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617"
+                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -586,7 +633,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bb1eececa2f4da5d5122aa4f9724a636"
+                        "type": "bb1eececa2f4da5d5122aa4f9724a636",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -598,7 +646,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "b54b4317e56dcaace25c0b0efdc93d40"
+                        "type": "b54b4317e56dcaace25c0b0efdc93d40",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -610,7 +659,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -622,7 +672,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -634,7 +685,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -646,7 +698,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -658,7 +711,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -670,7 +724,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -682,7 +737,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -694,7 +750,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -706,7 +763,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -718,7 +776,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617"
+                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -730,7 +789,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bb1eececa2f4da5d5122aa4f9724a636"
+                        "type": "bb1eececa2f4da5d5122aa4f9724a636",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -742,7 +802,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "b54b4317e56dcaace25c0b0efdc93d40"
+                        "type": "b54b4317e56dcaace25c0b0efdc93d40",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -754,7 +815,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -766,7 +828,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -778,7 +841,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -790,7 +854,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -802,7 +867,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c41b8a141bcad4a428605abf45e1d143"
+                        "type": "c41b8a141bcad4a428605abf45e1d143",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -814,7 +880,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -826,7 +893,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "d39da115c19907353d4cd80c8b4aa0bb"
+                        "type": "d39da115c19907353d4cd80c8b4aa0bb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -838,7 +906,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "19e98565cba533f4b1132dab88970610"
+                        "type": "19e98565cba533f4b1132dab88970610",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -850,7 +919,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77"
+                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -862,7 +932,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617"
+                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -874,7 +945,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bb1eececa2f4da5d5122aa4f9724a636"
+                        "type": "bb1eececa2f4da5d5122aa4f9724a636",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -886,7 +958,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "b54b4317e56dcaace25c0b0efdc93d40"
+                        "type": "b54b4317e56dcaace25c0b0efdc93d40",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -898,7 +971,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -910,7 +984,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -922,7 +997,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -934,7 +1010,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -946,7 +1023,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -958,7 +1036,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -970,7 +1049,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -982,7 +1062,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -994,7 +1075,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1006,7 +1088,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1018,7 +1101,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1030,7 +1114,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1042,7 +1127,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1054,7 +1140,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1066,7 +1153,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1078,7 +1166,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "05555f37102b4a3ff6e0a3cd939b9c3d"
+                        "type": "05555f37102b4a3ff6e0a3cd939b9c3d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1090,7 +1179,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "2e95ed4c955e2798f6ae3a0660cfe583"
+                        "type": "2e95ed4c955e2798f6ae3a0660cfe583",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1102,7 +1192,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "23865a59934a660b69c7be67220867af"
+                        "type": "23865a59934a660b69c7be67220867af",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1114,7 +1205,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "a440a74f8f213542db1cbe638e67177f"
+                        "type": "a440a74f8f213542db1cbe638e67177f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1126,7 +1218,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "51c16d3c75cb304ec151139a6bbf037f"
+                        "type": "51c16d3c75cb304ec151139a6bbf037f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1138,7 +1231,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bba7d17abb7fe8f4ed1cd4169646fbac"
+                        "type": "bba7d17abb7fe8f4ed1cd4169646fbac",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1150,7 +1244,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ebcb50c3973ad6e6c4e87ce454c0df09"
+                        "type": "ebcb50c3973ad6e6c4e87ce454c0df09",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1162,7 +1257,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5fdd2f03c1b3bc2e0cb9aef6850a6d8e"
+                        "type": "5fdd2f03c1b3bc2e0cb9aef6850a6d8e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1174,7 +1270,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "f73e244851d6839dcfa1ecd120238860"
+                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1186,7 +1283,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "2d3c98b256f8c9d491b7397779672578"
+                        "type": "2d3c98b256f8c9d491b7397779672578",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1198,7 +1296,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cf7a0dfcafd87f6b4b9d277a9e6b0ba8"
+                        "type": "cf7a0dfcafd87f6b4b9d277a9e6b0ba8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1210,7 +1309,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c431870fc760f3907c508fad72d661b4"
+                        "type": "c431870fc760f3907c508fad72d661b4",
+                        "location": "framebase+8"
                     }
                 ]
             }
@@ -1222,7 +1322,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bd668c17b568c6ef7558ce6c1411b11d"
+                        "type": "bd668c17b568c6ef7558ce6c1411b11d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1234,7 +1335,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9fd6eb9137cff8f68223d735d2b3eedd"
+                        "type": "9fd6eb9137cff8f68223d735d2b3eedd",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1246,7 +1348,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9eb6b166561b8985e3296616cde50464"
+                        "type": "9eb6b166561b8985e3296616cde50464",
+                        "location": "framebase+8"
                     }
                 ]
             }
@@ -1258,7 +1361,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "fdc5211544b45d762ae1988b1e5e8ca8"
+                        "type": "fdc5211544b45d762ae1988b1e5e8ca8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1270,7 +1374,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "42efda69970250ad861fc08821748ba3"
+                        "type": "42efda69970250ad861fc08821748ba3",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1282,7 +1387,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c36ad66c4ad0c427b0051ec0a7a92553"
+                        "type": "c36ad66c4ad0c427b0051ec0a7a92553",
+                        "location": "framebase+8"
                     }
                 ]
             }
@@ -1294,7 +1400,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "b819b153397c4765c72365a30484bd74"
+                        "type": "b819b153397c4765c72365a30484bd74",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1306,7 +1413,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6bdc0bbf37803adce8cc3395cc21fe2d"
+                        "type": "6bdc0bbf37803adce8cc3395cc21fe2d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1318,7 +1426,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "308ad8129cac3a0bb414c01987309d1b"
+                        "type": "308ad8129cac3a0bb414c01987309d1b",
+                        "location": "framebase+8"
                     }
                 ]
             }
@@ -1330,7 +1439,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cf68c028257bec12b7cd9bbc3454a93f"
+                        "type": "cf68c028257bec12b7cd9bbc3454a93f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1342,7 +1452,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ab1cfdab3f1edfc9322725e4011b0681"
+                        "type": "ab1cfdab3f1edfc9322725e4011b0681",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1354,7 +1465,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm0"
                     }
                 ]
             }
@@ -1366,7 +1478,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "947af566732f8678c97c38893be4614d"
+                        "type": "947af566732f8678c97c38893be4614d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1378,7 +1491,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "92d834b75b46e68855294c8f5f9e1943"
+                        "type": "92d834b75b46e68855294c8f5f9e1943",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1390,7 +1504,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "65548ffbcaadd70764058ff4b5097cfb"
+                        "type": "65548ffbcaadd70764058ff4b5097cfb",
+                        "location": "%xmm0"
                     }
                 ]
             }
@@ -1402,7 +1517,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "61b8618144ef6f2604670c94e888875d"
+                        "type": "61b8618144ef6f2604670c94e888875d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1414,7 +1530,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5b1c25262139cefe13a077d7d4c8a282"
+                        "type": "5b1c25262139cefe13a077d7d4c8a282",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1426,7 +1543,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6c50d3a67c64cc4cdfbee700b946253a"
+                        "type": "6c50d3a67c64cc4cdfbee700b946253a",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1438,7 +1556,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "15d2efb6673435469a47f902144f0572"
+                        "type": "15d2efb6673435469a47f902144f0572",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1450,7 +1569,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1f8d28737b9fb588436bc74f1014194d"
+                        "type": "1f8d28737b9fb588436bc74f1014194d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1462,7 +1582,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48"
+                        "type": "6d168f46b7d9e8b96a1ff9b171e0ad48",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1474,7 +1595,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "f27deb18b4e22124900df0f1858d0fd8"
+                        "type": "f27deb18b4e22124900df0f1858d0fd8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1486,7 +1608,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "3f8196f185d35e2551d50d0542caf4ae"
+                        "type": "3f8196f185d35e2551d50d0542caf4ae",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1498,7 +1621,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1510,7 +1634,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb"
+                        "type": "338a9d48579ba9cdc8ca1045ed8a53cb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1522,7 +1647,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "74e3bcdba928cd6901ec6f13628a72a4"
+                        "type": "74e3bcdba928cd6901ec6f13628a72a4",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1534,7 +1660,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "251ba5521033493f21e959542089468c"
+                        "type": "251ba5521033493f21e959542089468c",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1546,7 +1673,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e9c162be4d91116f11d3115b3c19b3fb"
+                        "type": "e9c162be4d91116f11d3115b3c19b3fb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1558,7 +1686,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "dd8e53d310fc0bfa78f853163dc86f8f"
+                        "type": "dd8e53d310fc0bfa78f853163dc86f8f",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1570,7 +1699,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e7efc874c18fbe691d0385ff3fc9f954"
+                        "type": "e7efc874c18fbe691d0385ff3fc9f954",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1582,7 +1712,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "f27deb18b4e22124900df0f1858d0fd8"
+                        "type": "f27deb18b4e22124900df0f1858d0fd8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1594,7 +1725,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "3f8196f185d35e2551d50d0542caf4ae"
+                        "type": "3f8196f185d35e2551d50d0542caf4ae",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1606,7 +1738,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "724f0b94c416f03c89c16150cf866e00"
+                        "type": "724f0b94c416f03c89c16150cf866e00",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1618,7 +1751,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5a5fb8d5857027a8ddbae2431267d535"
+                        "type": "5a5fb8d5857027a8ddbae2431267d535",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1630,7 +1764,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "299374d0ec5c95a296075a28cd15f805"
+                        "type": "299374d0ec5c95a296075a28cd15f805",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1642,7 +1777,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1654,7 +1790,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1666,7 +1803,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1678,7 +1816,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1690,7 +1829,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1702,7 +1842,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c41b8a141bcad4a428605abf45e1d143"
+                        "type": "c41b8a141bcad4a428605abf45e1d143",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1714,7 +1855,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1726,7 +1868,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "d39da115c19907353d4cd80c8b4aa0bb"
+                        "type": "d39da115c19907353d4cd80c8b4aa0bb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1738,7 +1881,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "19e98565cba533f4b1132dab88970610"
+                        "type": "19e98565cba533f4b1132dab88970610",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1750,7 +1894,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77"
+                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1762,7 +1907,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617"
+                        "type": "c93b1d5ac52aca88c6f9d23ef5aa4617",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1774,7 +1920,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "bb1eececa2f4da5d5122aa4f9724a636"
+                        "type": "bb1eececa2f4da5d5122aa4f9724a636",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1786,7 +1933,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "b54b4317e56dcaace25c0b0efdc93d40"
+                        "type": "b54b4317e56dcaace25c0b0efdc93d40",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1798,7 +1946,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1810,7 +1959,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c41b8a141bcad4a428605abf45e1d143"
+                        "type": "c41b8a141bcad4a428605abf45e1d143",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1822,7 +1972,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1834,7 +1985,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5a5fb8d5857027a8ddbae2431267d535"
+                        "type": "5a5fb8d5857027a8ddbae2431267d535",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1846,7 +1998,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "299374d0ec5c95a296075a28cd15f805"
+                        "type": "299374d0ec5c95a296075a28cd15f805",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1858,7 +2011,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e"
+                        "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1870,7 +2024,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "9e8d137b4ee3d16b512a8e930a6e1651"
+                        "type": "9e8d137b4ee3d16b512a8e930a6e1651",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1882,7 +2037,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "aa40a6dca73ca108911ead6891cccf92"
+                        "type": "aa40a6dca73ca108911ead6891cccf92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1894,7 +2050,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "832037bcbd004730c7738b05d956e54e"
+                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1906,7 +2063,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ecd9d4ce937d63d69c2f95b986aea161"
+                        "type": "ecd9d4ce937d63d69c2f95b986aea161",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1918,7 +2076,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "c41b8a141bcad4a428605abf45e1d143"
+                        "type": "c41b8a141bcad4a428605abf45e1d143",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1930,7 +2089,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "1fd8c01bdca094933f920b41375cfed0"
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1942,7 +2102,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "d39da115c19907353d4cd80c8b4aa0bb"
+                        "type": "d39da115c19907353d4cd80c8b4aa0bb",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1954,7 +2115,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "19e98565cba533f4b1132dab88970610"
+                        "type": "19e98565cba533f4b1132dab88970610",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1966,7 +2128,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77"
+                        "type": "cb0dd2f169dfa3b7b6cd32e3a051de77",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1978,7 +2141,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "6dbff68c12094247be5b232b61c78fe1"
+                        "type": "6dbff68c12094247be5b232b61c78fe1",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -1990,7 +2154,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "4a2a0e7178f9dd7856d4950e57957ded"
+                        "type": "4a2a0e7178f9dd7856d4950e57957ded",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2002,7 +2167,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+                        "type": "ee8eaa81ccacc2d49d87afa5ca1148a8",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2014,7 +2180,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "e68d507fc2a904939b3d5ce726935f92"
+                        "type": "e68d507fc2a904939b3d5ce726935f92",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2026,7 +2193,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "7b83152c088c4d5ef7cb159dd503209d"
+                        "type": "7b83152c088c4d5ef7cb159dd503209d",
+                        "location": "%rdi"
                     }
                 ]
             }
@@ -2038,7 +2206,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "5f699718a0f73b64af5190e051839f93"
+                        "type": "5f699718a0f73b64af5190e051839f93",
+                        "location": "%rdi"
                     }
                 ]
             }

@@ -6,15 +6,18 @@
                 "name": "_ZN11MathLibrary10Arithmetic3AddEdd",
                 "parameters": [
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm1"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -23,15 +26,18 @@
                 "name": "_ZN11MathLibrary10Arithmetic8SubtractEdd",
                 "parameters": [
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm1"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -40,15 +46,18 @@
                 "name": "_ZN11MathLibrary10Arithmetic8MultiplyEdd",
                 "parameters": [
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm1"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         },
@@ -57,15 +66,18 @@
                 "name": "_ZN11MathLibrary10Arithmetic6DivideEdd",
                 "parameters": [
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm0"
                     },
                     {
-                        "type": "5f66ab77d11088555799b0da0fbee9bf"
+                        "type": "5f66ab77d11088555799b0da0fbee9bf",
+                        "location": "%xmm1"
                     }
                 ],
                 "return": {
                     "type": "5f66ab77d11088555799b0da0fbee9bf",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%xmm0"
                 }
             }
         }

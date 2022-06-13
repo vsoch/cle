@@ -7,24 +7,29 @@
                 "parameters": [
                     {
                         "name": "a",
-                        "type": "308e7c0c4ed84449b2850937c1b6329e"
+                        "type": "308e7c0c4ed84449b2850937c1b6329e",
+                        "location": "%rdi"
                     },
                     {
                         "name": "b",
-                        "type": "23d73fd3bf1db9d21069f0bcbcf6c1de"
+                        "type": "23d73fd3bf1db9d21069f0bcbcf6c1de",
+                        "location": "%rsi"
                     },
                     {
                         "name": "c",
-                        "type": "0cc8ef179bac97bee2058ee65dadaaea"
+                        "type": "0cc8ef179bac97bee2058ee65dadaaea",
+                        "location": "%rdx"
                     },
                     {
                         "name": "d",
-                        "type": "1e5ede4f6075bc5cdc8192cfdc757df9"
+                        "type": "1e5ede4f6075bc5cdc8192cfdc757df9",
+                        "location": "%xmm0"
                     }
                 ],
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         }

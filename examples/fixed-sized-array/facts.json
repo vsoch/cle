@@ -17,7 +17,8 @@
                 "direction": "export",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
+                    "direction": "export",
+                    "location": "%rax"
                 }
             }
         },
@@ -28,7 +29,8 @@
                 "parameters": [
                     {
                         "name": "array",
-                        "type": "2a0e64d89aa0a822e3108b3df8bc98c3"
+                        "type": "2a0e64d89aa0a822e3108b3df8bc98c3",
+                        "location": "%rdi"
                     }
                 ]
             }
