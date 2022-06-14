@@ -230,7 +230,7 @@ class ElfCorpus(Corpus):
 
         # It looks like there are cases of formal parameter having type of
         # a formal parameter - see libgettext.so
-        param.update(self.parse_underlying_type(die, allocator=allocator))
+        param.update(self.parse_underlying_type(die))
 
         loc = None
         if param.get("class") == "Pointer":
@@ -360,6 +360,9 @@ class ElfCorpus(Corpus):
             else:
                 raise Exception("Found new tag with subprogram children:\n%s" % child)
             if param:
+                if "direction" not in param:
+                    param["direction"] = "import"
+
                 params.append(param)
                 param = None
         if params:
@@ -726,9 +729,7 @@ class ElfCorpus(Corpus):
 
         if type_die and type_die.tag == "DW_TAG_pointer_type":
             indirections += 1
-            return self.parse_pointer_type(
-                type_die, indirections=indirections, parent=die, allocator=allocator
-            )
+            return self.parse_pointer_type(type_die, indirections=indirections, parent=die)
 
         if type_die and type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die)
@@ -752,7 +753,7 @@ class ElfCorpus(Corpus):
             return self.parse_variable(type_die)
 
         if type_die and type_die.tag == "DW_TAG_formal_parameter":
-            return self.parse_formal_parameter(type_die, allocator)
+            return self.parse_formal_parameter(type_die)
 
         if type_die and type_die.tag == "DW_TAG_inlined_subroutine":
             return self.parse_inlined_subroutine(type_die)

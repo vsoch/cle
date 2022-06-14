@@ -18,7 +18,8 @@
                     {
                         "name": "f",
                         "type": "546c513ca34a3298a3f0540500c438cd",
-                        "location": "%xmm0"
+                        "location": "%xmm0",
+                        "direction": "import"
                     }
                 ]
             }

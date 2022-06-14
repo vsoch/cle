@@ -8,7 +8,8 @@
                     {
                         "name": "r",
                         "type": "d2198c7c311b1ad8b126ca67f7eb9344",
-                        "location": "%rdi"
+                        "location": "%rdi",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -25,7 +26,8 @@
                     {
                         "name": "c",
                         "type": "20b3f96b2ecd60ae40642458cb409375",
-                        "location": "%rdi"
+                        "location": "%rdi",
+                        "direction": "import"
                     }
                 ]
             }

@@ -7,11 +7,13 @@
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm0"
+                        "location": "%xmm0",
+                        "direction": "import"
                     },
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm1"
+                        "location": "%xmm1",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -27,11 +29,13 @@
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm0"
+                        "location": "%xmm0",
+                        "direction": "import"
                     },
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm1"
+                        "location": "%xmm1",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -47,11 +51,13 @@
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm0"
+                        "location": "%xmm0",
+                        "direction": "import"
                     },
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm1"
+                        "location": "%xmm1",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -67,11 +73,13 @@
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm0"
+                        "location": "%xmm0",
+                        "direction": "import"
                     },
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
-                        "location": "%xmm1"
+                        "location": "%xmm1",
+                        "direction": "import"
                     }
                 ],
                 "return": {

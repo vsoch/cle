@@ -9,12 +9,14 @@
                     {
                         "name": "argc",
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdi"
+                        "location": "%rdi",
+                        "direction": "import"
                     },
                     {
                         "name": "argv",
-                        "type": "0f667aa5c4eb92560a4b8a6f59f533ec",
-                        "location": "%rcx"
+                        "type": "8b65a8c0ffbf7cf3c7d719ca7c556b6f",
+                        "location": "%rsi",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -32,17 +34,20 @@
                     {
                         "name": "one",
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdi"
+                        "location": "%rdi",
+                        "direction": "import"
                     },
                     {
                         "name": "two",
-                        "type": "1a5c83ede76bcaba6d714dc8e48cdea2",
-                        "location": "%rdx"
+                        "type": "c4aadedbb455d42e8bf09a2da04384ba",
+                        "location": "%rsi",
+                        "direction": "import"
                     },
                     {
                         "name": "three",
-                        "type": "753087f036a9bc5e4cbcaf00b5e7d33a",
-                        "location": "%r8"
+                        "type": "8f350d61753f927cc5952a28ddf0ad95",
+                        "location": "%rdx",
+                        "direction": "import"
                     }
                 ],
                 "return": {
@@ -66,7 +71,7 @@
             "class": "Integral",
             "direction": "import"
         },
-        "95eb2b4f1489d4880461ffbcb26032f8": {
+        "d5dd634bc48185335c216e755142155b": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -74,20 +79,18 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
-            "location": "%rsi",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 2
         },
-        "0f667aa5c4eb92560a4b8a6f59f533ec": {
+        "8b65a8c0ffbf7cf3c7d719ca7c556b6f": {
             "name": "argv",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "95eb2b4f1489d4880461ffbcb26032f8"
+                "type": "d5dd634bc48185335c216e755142155b"
             },
             "direction": "both",
-            "location": "%rdx",
-            "type": "*95eb2b4f1489d4880461ffbcb26032f8",
+            "type": "*d5dd634bc48185335c216e755142155b",
             "indirections": 1
         },
         "5f66ab77d11088555799b0da0fbee9bf": {
@@ -150,7 +153,7 @@
                 }
             ]
         },
-        "1a5c83ede76bcaba6d714dc8e48cdea2": {
+        "c4aadedbb455d42e8bf09a2da04384ba": {
             "name": "two",
             "class": "Pointer",
             "size": 8,
@@ -158,7 +161,6 @@
                 "type": "f2832d26ee591e239a9b950fb8b93e4b"
             },
             "direction": "both",
-            "location": "%rsi",
             "type": "*f2832d26ee591e239a9b950fb8b93e4b",
             "indirections": 1
         },
@@ -196,7 +198,7 @@
                 }
             ]
         },
-        "753087f036a9bc5e4cbcaf00b5e7d33a": {
+        "8f350d61753f927cc5952a28ddf0ad95": {
             "name": "three",
             "class": "Pointer",
             "size": 8,
@@ -204,7 +206,6 @@
                 "type": "ced72d056336d0b941e6b9393418a0a2"
             },
             "direction": "both",
-            "location": "%rcx",
             "type": "*ced72d056336d0b941e6b9393418a0a2",
             "indirections": 1
         }

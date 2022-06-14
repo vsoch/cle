@@ -18,7 +18,8 @@
                     {
                         "name": "a",
                         "type": "9dea60e00439aa141cb1c0fd76a1a4c2",
-                        "location": "%rdi"
+                        "location": "%rdi",
+                        "direction": "import"
                     }
                 ]
             }
