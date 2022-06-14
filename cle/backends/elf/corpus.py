@@ -350,8 +350,12 @@ class ElfCorpus(Corpus):
             elif child.tag == "DW_TAG_array_type":
                 param = self.parse_array_type(child)
 
-            elif child.tag == "DW_AT_const_type":
+            elif child.tag == "DW_TAG_const_type":
                 param = self.parse_underlying_type(child, flags=["constant"])
+            elif child.tag == "DW_TAG_volatile_type":
+                param = self.parse_underlying_type(child, flags=["volatile"])
+            elif child.tag == "DW_TAG_restrictive_type":
+                param = self.parse_underlying_type(child, flags=["restrictive"])
 
             elif child.tag == "DW_TAG_structure_type":
                 param = self.parse_structure_type(child)
@@ -400,16 +404,24 @@ class ElfCorpus(Corpus):
     def parse_lexical_block(self, die, code=None):
         """
         Lexical blocks typically have variable children?
+
+        A lexical block is a bracketed sequence of source statements that may contain any number
+        of declarations. In some languages (including C and C++), blocks can be nested within3
+        other blocks to any depth.
         """
         for child in die.iter_children():
             if child.tag == "DW_TAG_variable":
                 self.parse_variable(child)
+            elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
+                self.parse_call_site(child, parent=die)
+            elif child.tag == "DW_TAG_subprogram":
+                self.parse_subprogram(child)
 
             # We found a loop
             elif child.tag == "DW_AT_lexical_block":
                 if code == die.abbrev_code:
                     return
-                return self.parse_lexical_block(die)
+                return self.parse_lexical_block(child, die.abbrev_code)
 
     def parse_structure_type(self, die, flags=None):
         """
@@ -757,8 +769,12 @@ class ElfCorpus(Corpus):
 
         # Each of functions below can call this recursively
         # there was a formal parameter with a type as a compile unit in libgettext
-        if not type_die or not type_die.tag or type_die.tag == "DW_TAG_compile_unit":
-            return {"type": "unknown"}
+        if (
+            not type_die
+            or not type_die.tag
+            or type_die.tag in ["DW_TAG_compile_unit", "DW_TAG_unspecified_parameters"]
+        ):
+            return self.add_flags({"type": "unknown"}, flags)
 
         if type_die and type_die.tag == "DW_TAG_pointer_type":
             return self.parse_pointer_type(type_die, parent=die, flags=flags)
@@ -766,8 +782,16 @@ class ElfCorpus(Corpus):
         if type_die and type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
 
+        # formal param had type call site in libcurses.so
         if type_die and type_die.tag in ["DW_TAG_call_site", "DW_TAG_GNU_call_site"]:
             return self.parse_call_site(type_die, parent=die)
+
+        # formal param had type call site param in libcrypto (libssl).so
+        if type_die and type_die.tag in [
+            "DW_TAG_call_site_parameter",
+            "DW_TAG_GNU_call_site_parameter",
+        ]:
+            return self.parse_call_site_parameter(type_die)
 
         if type_die and type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die, flags=flags)
@@ -796,12 +820,17 @@ class ElfCorpus(Corpus):
         if type_die and type_die.tag == "DW_TAG_inlined_subroutine":
             return self.parse_inlined_subroutine(type_die)
 
+        # See libcrypto.so for this case
+        if type_die and type_die.tag == "DW_TAG_lexical_block":
+            self.parse_lexical_block(type_die)
+            return self.add_flags({"type": "unknown"}, flags)
+
         if type_die and type_die.tag == "DW_TAG_typedef":
             return self.parse_typedef(type_die, flags=flags)
 
         # DW_TAG None, we can't know
         if type_die and not type_die.tag:
-            return {"type": "unknown"}
+            return self.add_flags({"type": "unknown"}, flags)
 
         # Note that if we see DW_TAG_member it means next_die for the DW_AT_type was empty
         if type_die and type_die.tag == "DW_TAG_class_type":

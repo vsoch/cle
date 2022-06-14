@@ -326,6 +326,23 @@ def classify_aggregate(
     return classes
 
 
+def unwrap_type(typ, types):
+    """
+    Unwrap a type to get to the base type
+    """
+    typename = typ.get("type")
+    newtype = None
+
+    # regular class id or pointer
+    while typename and len(typename) == 32:
+        newtype = types[typename]
+        if "type" in newtype:
+            typename = newtype["type"]
+        else:
+            break
+    return newtype
+
+
 def classify_union(typ, allocator, types):
     size = typ.get("size", 0)
     if size > 64:
@@ -336,10 +353,11 @@ def classify_union(typ, allocator, types):
 
     # We renamed members to fields
     for f in typ.get("fields", []):
-        field = types.get(f.get("type"))
+
+        # Unwrap entirely
+        field = unwrap_type(f, types)
         if not field or field.get("type") == "unknown":
             continue
-
         c = classify(
             field, allocator=allocator, return_classification=True, types=types
         )
@@ -362,7 +380,6 @@ def classify_array(typ, allocator, types):
     if size > 64:
         return Classification("Array", [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
 
-    # Unwrap entirely
     typename = typ.get("type")
     classname = None
 
