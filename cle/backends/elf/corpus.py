@@ -798,50 +798,8 @@ class ElfCorpus(Corpus):
         """
         if die.tag == "DW_TAG_base_type":
             return ClassType.get(self.get_name(die))
-        if die.tag == "DW_TAG_structure_type":
-            return "Struct"
-        if die.tag == "DW_TAG_union_type":
-            return "Union"
-
-        # Parent of an enumerator is an enum
-        if die.tag in ["DW_TAG_enumerator", "DW_TAG_enumeration_type"]:
-            return "Enum"
-        if die.tag == "DW_TAG_array_type":
-            return "Array"
-        if die.tag == "DW_TAG_class_type":
-            return "Class"
-        if die.tag == "DW_TAG_pointer_type":
-            return "Pointer"
-        if die.tag == "DW_TAG_unspecified_type":
-            return "Unspecified"
-
-        # Below here I'm not sure about
-        if die.tag == "DW_TAG_typedef":
-            return "TypeDef"
-
-        # Subroutines and callsites are technically kinds of functions
-        if die.tag in [
-            "DW_TAG_subroutine_type",
-            "DW_TAG_GNU_call_site",
-            "DW_TAG_call_site",
-            "DW_TAG_subprogram",
-        ]:
-            return "Function"
         if die.tag == "DW_TAG_const_type":
             return "Constant"
-
-        # We hit this case when the member passed as a type, and the DW_AT_type
-        # is not known. For call site params, we only know register for now
-        if die.tag in [
-            "DW_TAG_member",
-            "DW_TAG_GNU_call_site_parameter",
-            "DW_TAG_call_site_parameter",
-        ]:
-            return "Unknown"
-
-        # libtcl has an empty tag like this under array type
-        if die.tag == "DW_TAG_subrange_type":
-            return "Subrange"
 
         print("UNKNOWN DIE CLASS")
         import IPython

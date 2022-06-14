@@ -33,7 +33,9 @@ def classify_pointer(count):
     )
 
 
-def classify(typ, count=0, die=None, return_classification=False, allocator=None, types=None):
+def classify(
+    typ, count=0, die=None, return_classification=False, allocator=None, types=None
+):
     """
     Main entrypoint to classify something
     """
@@ -41,7 +43,7 @@ def classify(typ, count=0, die=None, return_classification=False, allocator=None
     types = types or {}
 
     # Don't handle this case right now
-    if not typ or "class" not in typ or typ['class'] == "Unknown":
+    if not typ or "class" not in typ or typ["class"] == "Unknown":
         return
 
     cls = None
@@ -267,7 +269,7 @@ def classify_aggregate(
     cur = Eightbyte()
     added = False
     for f in typ.get("fields", []):
-        field = types.get(f.get('type'))
+        field = types.get(f.get("type"))
         if not field:
             continue
         added = False
@@ -289,12 +291,27 @@ def classify_aggregate(
         #    tmp.append(classify(f))
 
         if len(eb.fields) > 1:
-            c1 = classify(eb.fields[0], allocator=allocator, return_classification=True, types=types)
-            c2 = classify(eb.fields[1], allocator=allocator, return_classification=True, types=types)
+            c1 = classify(
+                eb.fields[0],
+                allocator=allocator,
+                return_classification=True,
+                types=types,
+            )
+            c2 = classify(
+                eb.fields[1],
+                allocator=allocator,
+                return_classification=True,
+                types=types,
+            )
             classes.append(merge(c1, c2))
         else:
             classes.append(
-                classify(eb.fields[0], allocator=allocator, return_classification=True, types=types)
+                classify(
+                    eb.fields[0],
+                    allocator=allocator,
+                    return_classification=True,
+                    types=types,
+                )
             )
 
     has_registers = False
@@ -319,11 +336,13 @@ def classify_union(typ, allocator, types):
 
     # We renamed members to fields
     for f in typ.get("fields", []):
-        field = types.get(f.get('type'))
-        if not field or field.get('type') == "unknown":
+        field = types.get(f.get("type"))
+        if not field or field.get("type") == "unknown":
             continue
 
-        c = classify(field, allocator=allocator, return_classification=True, types=types)
+        c = classify(
+            field, allocator=allocator, return_classification=True, types=types
+        )
         hi = merge(hi, c.classes[1])
         lo = merge(lo, c.classes[0])
 
@@ -334,10 +353,10 @@ def classify_union(typ, allocator, types):
 
 def classify_array(typ, allocator, types):
     holder = typ
-    typ = types.get(typ.get('type'))
+    typ = types.get(typ.get("type"))
 
     # We can't classify this
-    if "type" not in typ or typ['type'] == "unknown":
+    if "type" not in typ or typ["type"] == "unknown":
         return
     size = typ.get("size", 0)
     if size > 64:
@@ -345,7 +364,9 @@ def classify_array(typ, allocator, types):
 
     # Just classify the base type
     base_type = {"class": ClassType.get(typ.get("type")), "size": size}
-    return classify(base_type, allocator=allocator, return_classification=True, types=types)
+    return classify(
+        base_type, allocator=allocator, return_classification=True, types=types
+    )
 
 
 def classify_enum(typ):
