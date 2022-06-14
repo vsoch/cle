@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z11print_color5Color",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "r",
@@ -22,6 +23,7 @@
         {
             "function": {
                 "name": "_Z3foo14ColorClassEnum",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "c",

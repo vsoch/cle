@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_ZN11MathLibrary10Arithmetic3AddEdd",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
@@ -26,6 +27,7 @@
         {
             "function": {
                 "name": "_ZN11MathLibrary10Arithmetic8SubtractEdd",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
@@ -48,6 +50,7 @@
         {
             "function": {
                 "name": "_ZN11MathLibrary10Arithmetic8MultiplyEdd",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",
@@ -70,6 +73,7 @@
         {
             "function": {
                 "name": "_ZN11MathLibrary10Arithmetic6DivideEdd",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "5f66ab77d11088555799b0da0fbee9bf",

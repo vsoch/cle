@@ -125,7 +125,7 @@ class ElfCorpus(Corpus):
         """
         Parse a call site
         """
-        entry = {}
+        entry = {"class": "Function"}
         # The abstract origin points to the function
         if "DW_AT_abstract_origin" in die.attributes:
             origin = self.type_die_lookup.get(
@@ -148,9 +148,10 @@ class ElfCorpus(Corpus):
             else:
                 raise Exception("Unknown call site parameter!:\n%s" % child)
 
-        if entry and params:
+        if params:
             entry["params"] = params
-            self.callsites.append(entry)
+        self.callsites.append(entry)
+        return entry
 
     def parse_inlined_subroutine(self, die):
         """
@@ -281,7 +282,7 @@ class ElfCorpus(Corpus):
 
         # TODO see page 92 of https://dwarfstd.org/doc/DWARF4.pdf
         # need to parse virtual functions and other attributes
-        entry = {"name": name}
+        entry = {"name": name, "class": "Function"}
         if name in self.symbols:
             entry["direction"] = self.symbols[name]
 
@@ -764,6 +765,9 @@ class ElfCorpus(Corpus):
 
         if type_die and type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
+
+        if type_die and type_die.tag in ["DW_TAG_call_site", "DW_TAG_GNU_call_site"]:
+            return self.parse_call_site(type_die, parent=die)
 
         if type_die and type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die, flags=flags)

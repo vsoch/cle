@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z5startd",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "d",
@@ -22,6 +23,7 @@
         {
             "function": {
                 "name": "_Z3fooi",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "x",

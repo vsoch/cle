@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "direction": "export",
                 "parameters": [
                     {
@@ -29,6 +30,7 @@
         {
             "function": {
                 "name": "_Z3fooiPP7Structy",
+                "class": "Function",
                 "direction": "export",
                 "parameters": [
                     {

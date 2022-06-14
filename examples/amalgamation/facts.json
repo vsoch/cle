@@ -20,6 +20,7 @@
         {
             "function": {
                 "name": "_Z9fooreturniP7Structy",
+                "class": "Function",
                 "direction": "export",
                 "parameters": [
                     {
@@ -45,6 +46,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "direction": "export",
                 "parameters": [
                     {
@@ -70,6 +72,7 @@
         {
             "function": {
                 "name": "_Z3foov",
+                "class": "Function",
                 "direction": "export"
             }
         }

@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z7bigcallllllln",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "832037bcbd004730c7738b05d956e54e",
@@ -41,6 +42,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "argc",

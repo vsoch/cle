@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z3fooPi",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "x",

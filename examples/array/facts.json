@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export",
@@ -14,6 +15,7 @@
         {
             "function": {
                 "name": "_Z3foo3Foo",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "f",

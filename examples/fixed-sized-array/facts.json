@@ -14,6 +14,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "direction": "export",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -25,6 +26,7 @@
         {
             "function": {
                 "name": "_Z30function_with_fixed_size_arrayPi",
+                "class": "Function",
                 "direction": "export",
                 "parameters": [
                     {

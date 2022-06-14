@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z4FuncP8MyStruct",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "m",

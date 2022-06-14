@@ -20,6 +20,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EPv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -37,6 +38,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptr9_M_addrefEv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -49,6 +51,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptr10_M_releaseEv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -61,6 +64,7 @@
         {
             "function": {
                 "name": "_ZNKSt15__exception_ptr13exception_ptr6_M_getEv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "2e15a7738ac95ba1ddd1d8de660a1a07",
@@ -78,6 +82,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4Ev",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -90,6 +95,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4ERKS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -106,6 +112,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EDn",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -122,6 +129,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EOS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -138,6 +146,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptraSERKS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -158,6 +167,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptraSEOS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -178,6 +188,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptrD4Ev",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -195,6 +206,7 @@
         {
             "function": {
                 "name": "_ZNSt15__exception_ptr13exception_ptr4swapERS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f35c8460d65ceaaadef5f007642685f2",
@@ -211,6 +223,7 @@
         {
             "function": {
                 "name": "_ZNKSt15__exception_ptr13exception_ptrcvbEv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "2e15a7738ac95ba1ddd1d8de660a1a07",
@@ -228,6 +241,7 @@
         {
             "function": {
                 "name": "_ZNKSt15__exception_ptr13exception_ptr20__cxa_exception_typeEv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "2e15a7738ac95ba1ddd1d8de660a1a07",
@@ -245,6 +259,7 @@
         {
             "function": {
                 "name": "_ZSt17rethrow_exceptionNSt15__exception_ptr13exception_ptrE",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "a6091fcd40006980cf58653a7dd2618b",
@@ -257,6 +272,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE6assignERcRKc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8f648233be43b232c3776dcb0f406e1c",
@@ -272,6 +288,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE2eqERKcS2_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1c898c7f5ac3672ee179de62fea6da7c",
@@ -292,6 +309,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE2ltERKcS2_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1c898c7f5ac3672ee179de62fea6da7c",
@@ -312,6 +330,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE7compareEPKcS2_m",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "9f7722d7064b8692510b635eafb8b6f4",
@@ -338,6 +357,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE6lengthEPKc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "9f7722d7064b8692510b635eafb8b6f4",
@@ -354,6 +374,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE4findEPKcmRS1_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "9f7722d7064b8692510b635eafb8b6f4",
@@ -379,6 +400,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE4moveEPcPKcm",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "3f6c76db78f890ab35851ffdfcbfca52",
@@ -405,6 +427,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE4copyEPcPKcm",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "3f6c76db78f890ab35851ffdfcbfca52",
@@ -431,6 +454,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE6assignEPcmc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "3f6c76db78f890ab35851ffdfcbfca52",
@@ -456,6 +480,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE12to_char_typeERKi",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "dcd09985c76a8f83e2c404735df09aac",
@@ -471,6 +496,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE11to_int_typeERKc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1c898c7f5ac3672ee179de62fea6da7c",
@@ -486,6 +512,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE11eq_int_typeERKiS2_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "dcd09985c76a8f83e2c404735df09aac",
@@ -506,6 +533,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE3eofEv",
+                "class": "Function",
                 "return": {
                     "type": "81679904b25f5e0b5877686f0d82370a",
                     "direction": "export"
@@ -515,6 +543,7 @@
         {
             "function": {
                 "name": "_ZNSt11char_traitsIcE7not_eofERKi",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "dcd09985c76a8f83e2c404735df09aac",
@@ -530,6 +559,7 @@
         {
             "function": {
                 "name": "_ZNSt8ios_base4InitC4Ev",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "96f2d1a2b33f9338e4e4c67366e08506",
@@ -542,6 +572,7 @@
         {
             "function": {
                 "name": "_ZNSt8ios_base4InitD4Ev",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "96f2d1a2b33f9338e4e4c67366e08506",
@@ -559,6 +590,7 @@
         {
             "function": {
                 "name": "_ZNSt8ios_base4InitC4ERKS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "96f2d1a2b33f9338e4e4c67366e08506",
@@ -575,6 +607,7 @@
         {
             "function": {
                 "name": "_ZNSt8ios_base4InitaSERKS0_",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "96f2d1a2b33f9338e4e4c67366e08506",
@@ -595,6 +628,7 @@
         {
             "function": {
                 "name": "_ZNSolsEi",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "e33e41324609fbaa73e1b2134c3a525f",
@@ -616,6 +650,7 @@
         {
             "function": {
                 "name": "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1d1ed0388d3a3077799ffa5ee5271375",
@@ -636,6 +671,7 @@
         {
             "function": {
                 "name": "_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1d1ed0388d3a3077799ffa5ee5271375",
@@ -656,6 +692,7 @@
         {
             "function": {
                 "name": "btowc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -672,6 +709,7 @@
         {
             "function": {
                 "name": "fgetwc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc474cdac6c351cade1a8d47b2de0df0",
@@ -688,6 +726,7 @@
         {
             "function": {
                 "name": "fgetws",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -715,6 +754,7 @@
         {
             "function": {
                 "name": "fputwc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
@@ -736,6 +776,7 @@
         {
             "function": {
                 "name": "fputws",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -758,6 +799,7 @@
         {
             "function": {
                 "name": "fwide",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc474cdac6c351cade1a8d47b2de0df0",
@@ -780,6 +822,7 @@
         {
             "function": {
                 "name": "fwprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc474cdac6c351cade1a8d47b2de0df0",
@@ -802,6 +845,7 @@
         {
             "function": {
                 "name": "getwc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc474cdac6c351cade1a8d47b2de0df0",
@@ -818,6 +862,7 @@
         {
             "function": {
                 "name": "getwchar",
+                "class": "Function",
                 "return": {
                     "type": "fc138e2285033694bfd9b69aeae9b625",
                     "direction": "export"
@@ -827,6 +872,7 @@
         {
             "function": {
                 "name": "mbrlen",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -852,6 +898,7 @@
         {
             "function": {
                 "name": "mbrtowc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -882,6 +929,7 @@
         {
             "function": {
                 "name": "mbsinit",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "a435f8870d178578f15c072d541bc1e0",
@@ -899,6 +947,7 @@
         {
             "function": {
                 "name": "mbsrtowcs",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -929,6 +978,7 @@
         {
             "function": {
                 "name": "putwc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
@@ -950,6 +1000,7 @@
         {
             "function": {
                 "name": "putwchar",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
@@ -966,6 +1017,7 @@
         {
             "function": {
                 "name": "swprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -992,6 +1044,7 @@
         {
             "function": {
                 "name": "ungetwc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc138e2285033694bfd9b69aeae9b625",
@@ -1012,6 +1065,7 @@
         {
             "function": {
                 "name": "vfwprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc474cdac6c351cade1a8d47b2de0df0",
@@ -1039,6 +1093,7 @@
         {
             "function": {
                 "name": "vswprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1070,6 +1125,7 @@
         {
             "function": {
                 "name": "vwprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1092,6 +1148,7 @@
         {
             "function": {
                 "name": "wcrtomb",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -1118,6 +1175,7 @@
         {
             "function": {
                 "name": "wcscat",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1140,6 +1198,7 @@
         {
             "function": {
                 "name": "wcscmp",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1162,6 +1221,7 @@
         {
             "function": {
                 "name": "wcscoll",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1184,6 +1244,7 @@
         {
             "function": {
                 "name": "wcscpy",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1206,6 +1267,7 @@
         {
             "function": {
                 "name": "wcscspn",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1227,6 +1289,7 @@
         {
             "function": {
                 "name": "wcsftime",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1257,6 +1320,7 @@
         {
             "function": {
                 "name": "wcslen",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1273,6 +1337,7 @@
         {
             "function": {
                 "name": "wcsncat",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1299,6 +1364,7 @@
         {
             "function": {
                 "name": "wcsncmp",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1325,6 +1391,7 @@
         {
             "function": {
                 "name": "wcsncpy",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1351,6 +1418,7 @@
         {
             "function": {
                 "name": "wcsrtombs",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -1381,6 +1449,7 @@
         {
             "function": {
                 "name": "wcsspn",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1402,6 +1471,7 @@
         {
             "function": {
                 "name": "wcstod",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1424,6 +1494,7 @@
         {
             "function": {
                 "name": "wcstof",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1446,6 +1517,7 @@
         {
             "function": {
                 "name": "wcstok",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1473,6 +1545,7 @@
         {
             "function": {
                 "name": "wcstol",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1500,6 +1573,7 @@
         {
             "function": {
                 "name": "wcstoul",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1527,6 +1601,7 @@
         {
             "function": {
                 "name": "wcsxfrm",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1552,6 +1627,7 @@
         {
             "function": {
                 "name": "wctob",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc138e2285033694bfd9b69aeae9b625",
@@ -1568,6 +1644,7 @@
         {
             "function": {
                 "name": "wmemcmp",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1594,6 +1671,7 @@
         {
             "function": {
                 "name": "wmemcpy",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1620,6 +1698,7 @@
         {
             "function": {
                 "name": "wmemmove",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1646,6 +1725,7 @@
         {
             "function": {
                 "name": "wmemset",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1672,6 +1752,7 @@
         {
             "function": {
                 "name": "wprintf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1689,6 +1770,7 @@
         {
             "function": {
                 "name": "wcschr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1711,6 +1793,7 @@
         {
             "function": {
                 "name": "wcschr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1733,6 +1816,7 @@
         {
             "function": {
                 "name": "wcspbrk",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1755,6 +1839,7 @@
         {
             "function": {
                 "name": "wcspbrk",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1777,6 +1862,7 @@
         {
             "function": {
                 "name": "wcsrchr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1799,6 +1885,7 @@
         {
             "function": {
                 "name": "wcsrchr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1821,6 +1908,7 @@
         {
             "function": {
                 "name": "wcsstr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1843,6 +1931,7 @@
         {
             "function": {
                 "name": "wcsstr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1865,6 +1954,7 @@
         {
             "function": {
                 "name": "wmemchr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1891,6 +1981,7 @@
         {
             "function": {
                 "name": "wmemchr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -1917,6 +2008,7 @@
         {
             "function": {
                 "name": "_ZN9__gnu_cxx3divExx",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
@@ -1938,6 +2030,7 @@
         {
             "function": {
                 "name": "wcstold",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1960,6 +2053,7 @@
         {
             "function": {
                 "name": "wcstoll",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -1987,6 +2081,7 @@
         {
             "function": {
                 "name": "wcstoull",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "0a3a207f96eb026acaecc005e7a0c092",
@@ -2014,6 +2109,7 @@
         {
             "function": {
                 "name": "setlocale",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -2036,6 +2132,7 @@
         {
             "function": {
                 "name": "localeconv",
+                "class": "Function",
                 "return": {
                     "type": "7455a3402bc9b3e7ba16c9cb93d06f59",
                     "direction": "export",
@@ -2046,6 +2143,7 @@
         {
             "function": {
                 "name": "atexit",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8ee7293812d612c467b2cbe6555d252d",
@@ -2063,6 +2161,7 @@
         {
             "function": {
                 "name": "at_quick_exit",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8ee7293812d612c467b2cbe6555d252d",
@@ -2080,6 +2179,7 @@
         {
             "function": {
                 "name": "atof",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2097,6 +2197,7 @@
         {
             "function": {
                 "name": "atoi",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2114,6 +2215,7 @@
         {
             "function": {
                 "name": "atol",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2131,6 +2233,7 @@
         {
             "function": {
                 "name": "bsearch",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8ee7293812d612c467b2cbe6555d252d",
@@ -2165,6 +2268,7 @@
         {
             "function": {
                 "name": "div",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -2186,6 +2290,7 @@
         {
             "function": {
                 "name": "getenv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2203,6 +2308,7 @@
         {
             "function": {
                 "name": "ldiv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "832037bcbd004730c7738b05d956e54e",
@@ -2224,6 +2330,7 @@
         {
             "function": {
                 "name": "mblen",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2245,6 +2352,7 @@
         {
             "function": {
                 "name": "mbstowcs",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -2270,6 +2378,7 @@
         {
             "function": {
                 "name": "mbtowc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "f2dd35c4afae84c05807e1b0a489c81d",
@@ -2296,6 +2405,7 @@
         {
             "function": {
                 "name": "qsort",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "eea1fba329979152a19cdd7da0d4c214",
@@ -2320,6 +2430,7 @@
         {
             "function": {
                 "name": "quick_exit",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -2332,6 +2443,7 @@
         {
             "function": {
                 "name": "rand",
+                "class": "Function",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export",
@@ -2342,6 +2454,7 @@
         {
             "function": {
                 "name": "srand",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "724f0b94c416f03c89c16150cf866e00",
@@ -2354,6 +2467,7 @@
         {
             "function": {
                 "name": "strtod",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2376,6 +2490,7 @@
         {
             "function": {
                 "name": "strtol",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2403,6 +2518,7 @@
         {
             "function": {
                 "name": "strtoul",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2430,6 +2546,7 @@
         {
             "function": {
                 "name": "system",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2447,6 +2564,7 @@
         {
             "function": {
                 "name": "wcstombs",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -2472,6 +2590,7 @@
         {
             "function": {
                 "name": "wctomb",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -2494,6 +2613,7 @@
         {
             "function": {
                 "name": "lldiv",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "a44bf8971dc4a612236c2e4dccc1cd7e",
@@ -2515,6 +2635,7 @@
         {
             "function": {
                 "name": "atoll",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2532,6 +2653,7 @@
         {
             "function": {
                 "name": "strtoll",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2559,6 +2681,7 @@
         {
             "function": {
                 "name": "strtoull",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2586,6 +2709,7 @@
         {
             "function": {
                 "name": "strtof",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2608,6 +2732,7 @@
         {
             "function": {
                 "name": "strtold",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2630,6 +2755,7 @@
         {
             "function": {
                 "name": "clearerr",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2642,6 +2768,7 @@
         {
             "function": {
                 "name": "fclose",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2659,6 +2786,7 @@
         {
             "function": {
                 "name": "feof",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2676,6 +2804,7 @@
         {
             "function": {
                 "name": "ferror",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2693,6 +2822,7 @@
         {
             "function": {
                 "name": "fflush",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2710,6 +2840,7 @@
         {
             "function": {
                 "name": "fgetc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2727,6 +2858,7 @@
         {
             "function": {
                 "name": "fgetpos",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2749,6 +2881,7 @@
         {
             "function": {
                 "name": "fgets",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -2776,6 +2909,7 @@
         {
             "function": {
                 "name": "fopen",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2798,6 +2932,7 @@
         {
             "function": {
                 "name": "fread",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "eea1fba329979152a19cdd7da0d4c214",
@@ -2827,6 +2962,7 @@
         {
             "function": {
                 "name": "freopen",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2854,6 +2990,7 @@
         {
             "function": {
                 "name": "fseek",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2881,6 +3018,7 @@
         {
             "function": {
                 "name": "fsetpos",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2903,6 +3041,7 @@
         {
             "function": {
                 "name": "ftell",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2920,6 +3059,7 @@
         {
             "function": {
                 "name": "getc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -2937,6 +3077,7 @@
         {
             "function": {
                 "name": "getchar",
+                "class": "Function",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export",
@@ -2947,6 +3088,7 @@
         {
             "function": {
                 "name": "perror",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2959,6 +3101,7 @@
         {
             "function": {
                 "name": "remove",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2976,6 +3119,7 @@
         {
             "function": {
                 "name": "rename",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -2998,6 +3142,7 @@
         {
             "function": {
                 "name": "rewind",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -3010,6 +3155,7 @@
         {
             "function": {
                 "name": "setbuf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -3027,6 +3173,7 @@
         {
             "function": {
                 "name": "setvbuf",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "ebc1477244743158b8836b0e2f24b1da",
@@ -3058,6 +3205,7 @@
         {
             "function": {
                 "name": "tmpfile",
+                "class": "Function",
                 "return": {
                     "type": "f42a22c00ffd69d54728c5ec326981a2",
                     "direction": "export",
@@ -3068,6 +3216,7 @@
         {
             "function": {
                 "name": "tmpnam",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "c85bcac8ca48727eb84d73d743bfb8cd",
@@ -3085,6 +3234,7 @@
         {
             "function": {
                 "name": "ungetc",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
@@ -3107,6 +3257,7 @@
         {
             "function": {
                 "name": "iswctype",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc138e2285033694bfd9b69aeae9b625",
@@ -3127,6 +3278,7 @@
         {
             "function": {
                 "name": "towctrans",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "fc138e2285033694bfd9b69aeae9b625",
@@ -3146,6 +3298,7 @@
         {
             "function": {
                 "name": "wctrans",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -3162,6 +3315,7 @@
         {
             "function": {
                 "name": "wctype",
+                "class": "Function",
                 "parameters": [
                     {
                         "type": "8a03aa0b82e1caa6dbcef614ed569ce3",
@@ -3178,6 +3332,7 @@
         {
             "function": {
                 "name": "main",
+                "class": "Function",
                 "return": {
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export",
@@ -3188,6 +3343,7 @@
         {
             "function": {
                 "name": "_Z6invokeiiPFiiiE",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "x",
@@ -3218,6 +3374,7 @@
         {
             "function": {
                 "name": "_Z8multiplyii",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "x",
@@ -3242,6 +3399,7 @@
         {
             "function": {
                 "name": "_Z3addii",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "x",

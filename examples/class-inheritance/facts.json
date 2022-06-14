@@ -4,6 +4,7 @@
         {
             "function": {
                 "name": "_Z4func1AP1B1C1D",
+                "class": "Function",
                 "parameters": [
                     {
                         "name": "a",
