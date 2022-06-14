@@ -17,6 +17,7 @@ class ClassType:
         "size_t": "Integer",
         "__int128": "Integer",
         "bool": "Boolean",
+        "_Bool": "Boolean",
         "char": "Integral",
         "float": "Float",
         "double": "Float",

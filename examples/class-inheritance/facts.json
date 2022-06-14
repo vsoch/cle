@@ -12,7 +12,7 @@
                     },
                     {
                         "name": "b",
-                        "type": "23d73fd3bf1db9d21069f0bcbcf6c1de",
+                        "type": "21dc76811c72a10eb7d83dfd68eff264",
                         "location": "%rsi"
                     },
                     {
@@ -53,23 +53,27 @@
                 }
             ]
         },
-        "23d73fd3bf1db9d21069f0bcbcf6c1de": {
+        "3b92f99410a6dae32be62e61c114908a": {
+            "name": "B",
+            "size": 4,
+            "class": "Struct",
+            "fields": [
+                {
+                    "name": "y",
+                    "type": "1fd8c01bdca094933f920b41375cfed0",
+                    "direction": "export"
+                }
+            ]
+        },
+        "21dc76811c72a10eb7d83dfd68eff264": {
             "name": "b",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "name": "B",
-                "size": 4,
-                "class": "Struct",
-                "fields": [
-                    {
-                        "name": "y",
-                        "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "direction": "export"
-                    }
-                ]
+                "type": "3b92f99410a6dae32be62e61c114908a"
             },
             "direction": "both",
+            "type": "*3b92f99410a6dae32be62e61c114908a",
             "indirections": 1
         },
         "0cc8ef179bac97bee2058ee65dadaaea": {
@@ -79,18 +83,6 @@
             "fields": [
                 {
                     "name": "z",
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export"
-                }
-            ]
-        },
-        "3b92f99410a6dae32be62e61c114908a": {
-            "name": "B",
-            "size": 4,
-            "class": "Struct",
-            "fields": [
-                {
-                    "name": "y",
                     "type": "1fd8c01bdca094933f920b41375cfed0",
                     "direction": "export"
                 }
