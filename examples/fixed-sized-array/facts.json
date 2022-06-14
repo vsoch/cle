@@ -29,8 +29,8 @@
                 "parameters": [
                     {
                         "name": "array",
-                        "type": "d19bf9b3cc4cface596f58a5afcb3df6",
-                        "location": "%rdi"
+                        "type": "66dbf590e38fa91b993d33d4a2e0d834",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -56,7 +56,7 @@
             "count": 0,
             "type": "1fd8c01bdca094933f920b41375cfed0"
         },
-        "d19bf9b3cc4cface596f58a5afcb3df6": {
+        "66dbf590e38fa91b993d33d4a2e0d834": {
             "name": "array",
             "class": "Pointer",
             "size": 8,
@@ -64,6 +64,7 @@
                 "type": "1fd8c01bdca094933f920b41375cfed0"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*1fd8c01bdca094933f920b41375cfed0",
             "indirections": 1
         }

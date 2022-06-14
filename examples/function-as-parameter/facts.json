@@ -22,12 +22,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EPv",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "ab6f625e2fd0429df9d0495a4c47ad24",
-                        "location": "%rsi"
+                        "type": "d02da75ec248f45e647f346201e86527",
+                        "location": "%rcx"
                     }
                 ]
             }
@@ -37,8 +37,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr9_M_addrefEv",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -48,8 +48,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr10_M_releaseEv",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -59,8 +59,8 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptr6_M_getEv",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -75,8 +75,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4Ev",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -86,8 +86,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4ERKS0_",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "19635df107d3ffd640c92e9cdbef5bf0"
@@ -100,8 +100,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EDn",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "0feae1ef9c774483925f15d607c3cfa9"
@@ -114,8 +114,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrC4EOS0_",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "396f9ec25bc1802d89217bdf9a7d4507"
@@ -128,8 +128,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptraSERKS0_",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "19635df107d3ffd640c92e9cdbef5bf0"
@@ -146,8 +146,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptraSEOS0_",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "396f9ec25bc1802d89217bdf9a7d4507"
@@ -164,12 +164,12 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptrD4Ev",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ]
             }
@@ -179,8 +179,8 @@
                 "name": "_ZNSt15__exception_ptr13exception_ptr4swapERS0_",
                 "parameters": [
                     {
-                        "type": "3b225aef2300ad3530789357a11a22d2",
-                        "location": "%rdi"
+                        "type": "9d70ae97e61d114c86298d4e1621a57d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "396f9ec25bc1802d89217bdf9a7d4507"
@@ -193,8 +193,8 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptrcvbEv",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -209,8 +209,8 @@
                 "name": "_ZNKSt15__exception_ptr13exception_ptr20__cxa_exception_typeEv",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -285,12 +285,12 @@
                 "name": "_ZNSt11char_traitsIcE7compareEPKcS2_m",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -308,8 +308,8 @@
                 "name": "_ZNSt11char_traitsIcE6lengthEPKc",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -323,8 +323,8 @@
                 "name": "_ZNSt11char_traitsIcE4findEPKcmRS1_",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -345,12 +345,12 @@
                 "name": "_ZNSt11char_traitsIcE4moveEPcPKcm",
                 "parameters": [
                     {
-                        "type": "3f908a61406313ad60eda70c922f1132",
-                        "location": "%rdi"
+                        "type": "9118ffa4dbd5453de681cea3130b2a39",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -368,12 +368,12 @@
                 "name": "_ZNSt11char_traitsIcE4copyEPcPKcm",
                 "parameters": [
                     {
-                        "type": "3f908a61406313ad60eda70c922f1132",
-                        "location": "%rdi"
+                        "type": "9118ffa4dbd5453de681cea3130b2a39",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -391,8 +391,8 @@
                 "name": "_ZNSt11char_traitsIcE6assignEPcmc",
                 "parameters": [
                     {
-                        "type": "3f908a61406313ad60eda70c922f1132",
-                        "location": "%rdi"
+                        "type": "9118ffa4dbd5453de681cea3130b2a39",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -482,8 +482,8 @@
                 "name": "_ZNSt8ios_base4InitC4Ev",
                 "parameters": [
                     {
-                        "type": "913611d52a3441fb038a61a582010352",
-                        "location": "%rdi"
+                        "type": "f0205990bedff9757a32d7c5156aaa82",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -493,12 +493,12 @@
                 "name": "_ZNSt8ios_base4InitD4Ev",
                 "parameters": [
                     {
-                        "type": "913611d52a3441fb038a61a582010352",
-                        "location": "%rdi"
+                        "type": "f0205990bedff9757a32d7c5156aaa82",
+                        "location": "%rsi"
                     },
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ]
             }
@@ -508,8 +508,8 @@
                 "name": "_ZNSt8ios_base4InitC4ERKS0_",
                 "parameters": [
                     {
-                        "type": "913611d52a3441fb038a61a582010352",
-                        "location": "%rdi"
+                        "type": "f0205990bedff9757a32d7c5156aaa82",
+                        "location": "%rsi"
                     },
                     {
                         "type": "19635df107d3ffd640c92e9cdbef5bf0"
@@ -522,8 +522,8 @@
                 "name": "_ZNSt8ios_base4InitaSERKS0_",
                 "parameters": [
                     {
-                        "type": "913611d52a3441fb038a61a582010352",
-                        "location": "%rdi"
+                        "type": "f0205990bedff9757a32d7c5156aaa82",
+                        "location": "%rsi"
                     },
                     {
                         "type": "19635df107d3ffd640c92e9cdbef5bf0"
@@ -540,12 +540,12 @@
                 "name": "_ZNSolsEi",
                 "parameters": [
                     {
-                        "type": "200cb69f5aa1be21b97917b6c3c8a555",
-                        "location": "%rdi"
+                        "type": "d8da44567d563c2aa47073d6d6e9631c",
+                        "location": "%rsi"
                     },
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -580,8 +580,8 @@
                         "type": "5619061ba132f589d624384e8c029bf2"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -610,8 +610,8 @@
                 "name": "fgetwc",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -625,16 +625,16 @@
                 "name": "fgetws",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
                         "location": "%rsi"
                     },
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
                         "location": "%rdx"
+                    },
+                    {
+                        "type": "f7eaada65da2358f6e40a00e47ce7601",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -653,8 +653,8 @@
                         "location": "%rdi"
                     },
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rsi"
+                        "type": "6782aa1996b1a1726355f348fd7a1bf4",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -668,12 +668,12 @@
                 "name": "fputws",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rsi"
+                        "type": "cfb2a4ca086b84d28392f05881b0d719",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -688,12 +688,12 @@
                 "name": "fwide",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     },
                     {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -708,12 +708,12 @@
                 "name": "fwprintf",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -728,12 +728,12 @@
                 "name": "__isoc99_fwscanf",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -748,8 +748,8 @@
                 "name": "getwc",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -772,15 +772,15 @@
                 "name": "mbrlen",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "1d2ba611287d3a71f53baf6512d1614a",
-                        "location": "%rsi"
+                        "type": "89da3e6d986b0a44507aaebd411a05ba",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -794,19 +794,19 @@
                 "name": "mbrtowc",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "1d2ba611287d3a71f53baf6512d1614a",
-                        "location": "%rdx"
+                        "type": "eba3ddf8e8ac4234e1a5a6f84318b282",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -820,8 +820,8 @@
                 "name": "mbsinit",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -836,19 +836,19 @@
                 "name": "mbsrtowcs",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "e0fc14c37d2d1839faf9717b49d6ffeb",
-                        "location": "%rsi"
+                        "type": "276b20f3792ea74e3de7739d913f8699",
+                        "location": "%r8"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "1d2ba611287d3a71f53baf6512d1614a",
-                        "location": "%rdx"
+                        "type": "8e0862d3453770e2aaa89504c4a7a370",
+                        "location": "framebase+8"
                     }
                 ],
                 "return": {
@@ -866,8 +866,8 @@
                         "location": "%rdi"
                     },
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rsi"
+                        "type": "6782aa1996b1a1726355f348fd7a1bf4",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -896,15 +896,15 @@
                 "name": "swprintf",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -919,12 +919,12 @@
                 "name": "__isoc99_swscanf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -942,8 +942,8 @@
                         "type": "fc138e2285033694bfd9b69aeae9b625"
                     },
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -957,16 +957,16 @@
                 "name": "vfwprintf",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
                         "location": "%rsi"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
+                    },
+                    {
+                        "type": "960ad156ac2b67363c7c60369c71a0b1",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -981,16 +981,16 @@
                 "name": "__isoc99_vfwscanf",
                 "parameters": [
                     {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
+                        "type": "35e55ba1623aadd38a75ad9a1f75083b",
                         "location": "%rsi"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
+                    },
+                    {
+                        "type": "960ad156ac2b67363c7c60369c71a0b1",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -1005,19 +1005,19 @@
                 "name": "vswprintf",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx"
+                        "type": "960ad156ac2b67363c7c60369c71a0b1",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -1032,16 +1032,16 @@
                 "name": "__isoc99_vswscanf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
+                    },
+                    {
+                        "type": "960ad156ac2b67363c7c60369c71a0b1",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -1056,12 +1056,12 @@
                 "name": "vwprintf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rsi"
+                        "type": "b398caea72b28883f4a026e8e2c61e93",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1076,12 +1076,12 @@
                 "name": "__isoc99_vwscanf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rsi"
+                        "type": "b398caea72b28883f4a026e8e2c61e93",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1096,16 +1096,16 @@
                 "name": "wcrtomb",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f73e244851d6839dcfa1ecd120238860",
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
                         "location": "%rsi"
                     },
                     {
-                        "type": "1d2ba611287d3a71f53baf6512d1614a",
+                        "type": "f73e244851d6839dcfa1ecd120238860",
                         "location": "%rdx"
+                    },
+                    {
+                        "type": "eb31f1adde810a3ff5bc391ad2e2efea",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1119,12 +1119,12 @@
                 "name": "wcscat",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1139,12 +1139,12 @@
                 "name": "wcscmp",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1159,12 +1159,12 @@
                 "name": "wcscoll",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1179,12 +1179,12 @@
                 "name": "wcscpy",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1199,12 +1199,12 @@
                 "name": "wcscspn",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1218,19 +1218,19 @@
                 "name": "wcsftime",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdx"
+                        "type": "c15a081ced537cdc201e702e7333b3be",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -1244,8 +1244,8 @@
                 "name": "wcslen",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -1259,12 +1259,12 @@
                 "name": "wcsncat",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1282,12 +1282,12 @@
                 "name": "wcsncmp",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1305,12 +1305,12 @@
                 "name": "wcsncpy",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1328,19 +1328,19 @@
                 "name": "wcsrtombs",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "e0fc14c37d2d1839faf9717b49d6ffeb",
-                        "location": "%rsi"
+                        "type": "276b20f3792ea74e3de7739d913f8699",
+                        "location": "%r8"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
                     },
                     {
-                        "type": "1d2ba611287d3a71f53baf6512d1614a",
-                        "location": "%rdx"
+                        "type": "8e0862d3453770e2aaa89504c4a7a370",
+                        "location": "framebase+8"
                     }
                 ],
                 "return": {
@@ -1354,12 +1354,12 @@
                 "name": "wcsspn",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1373,12 +1373,12 @@
                 "name": "wcstod",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "be05a078baffcaed97f353241c8451a5",
-                        "location": "%rsi"
+                        "type": "b4a68062e558d67b2857914ec18ea305",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1393,12 +1393,12 @@
                 "name": "wcstof",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "be05a078baffcaed97f353241c8451a5",
-                        "location": "%rsi"
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1413,16 +1413,16 @@
                 "name": "wcstok",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
                         "location": "%rsi"
                     },
                     {
-                        "type": "be05a078baffcaed97f353241c8451a5",
-                        "location": "%rdx"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
+                    },
+                    {
+                        "type": "18ea5a337f5a9b36fed5ebec15fb390a",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -1437,16 +1437,16 @@
                 "name": "wcstol",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "be05a078baffcaed97f353241c8451a5",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1461,16 +1461,16 @@
                 "name": "wcstoul",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "be05a078baffcaed97f353241c8451a5",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1485,12 +1485,12 @@
                 "name": "wcsxfrm",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1522,12 +1522,12 @@
                 "name": "wmemcmp",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1545,12 +1545,12 @@
                 "name": "wmemcpy",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1568,12 +1568,12 @@
                 "name": "wmemmove",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1591,12 +1591,12 @@
                 "name": "wmemset",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1614,8 +1614,8 @@
                 "name": "wprintf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -1630,8 +1630,8 @@
                 "name": "__isoc99_wscanf",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -1646,12 +1646,12 @@
                 "name": "wcschr",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -1666,12 +1666,12 @@
                 "name": "wcschr",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -1686,12 +1686,12 @@
                 "name": "wcspbrk",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1706,12 +1706,12 @@
                 "name": "wcspbrk",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1726,12 +1726,12 @@
                 "name": "wcsrchr",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -1746,12 +1746,12 @@
                 "name": "wcsrchr",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -1766,12 +1766,12 @@
                 "name": "wcsstr",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1786,12 +1786,12 @@
                 "name": "wcsstr",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1806,12 +1806,12 @@
                 "name": "wmemchr",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1829,12 +1829,12 @@
                 "name": "wmemchr",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -1871,12 +1871,12 @@
                 "name": "wcstold",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "be05a078baffcaed97f353241c8451a5",
-                        "location": "%rsi"
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -1891,16 +1891,16 @@
                 "name": "wcstoll",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "be05a078baffcaed97f353241c8451a5",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1915,16 +1915,16 @@
                 "name": "wcstoull",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "be05a078baffcaed97f353241c8451a5",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "c87847540ebaed1d495c9fe5ffe495d4",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -1943,8 +1943,8 @@
                         "location": "%rdi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "030d9b59a59e858825bfbb65b5d07ece",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -1969,8 +1969,8 @@
                 "name": "atexit",
                 "parameters": [
                     {
-                        "type": "9181d4968c7dc4cd9c80a86419fd4fc3",
-                        "location": "%rdi"
+                        "type": "f7e96e32040775717e62ffdf6d56ad9f",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -1985,8 +1985,8 @@
                 "name": "at_quick_exit",
                 "parameters": [
                     {
-                        "type": "9181d4968c7dc4cd9c80a86419fd4fc3",
-                        "location": "%rdi"
+                        "type": "f7e96e32040775717e62ffdf6d56ad9f",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2001,8 +2001,8 @@
                 "name": "atof",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2017,8 +2017,8 @@
                 "name": "atoi",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2033,8 +2033,8 @@
                 "name": "atol",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2049,12 +2049,12 @@
                 "name": "bsearch",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2097,8 +2097,8 @@
                 "name": "getenv",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2132,8 +2132,8 @@
                 "name": "mblen",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2151,12 +2151,12 @@
                 "name": "mbstowcs",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2173,12 +2173,12 @@
                 "name": "mbtowc",
                 "parameters": [
                     {
-                        "type": "2f6d136741aad2fcab9ac0fdd18298ca",
-                        "location": "%rdi"
+                        "type": "5e859f27c3b75584842d9ebaacc7934d",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2196,8 +2196,8 @@
                 "name": "qsort",
                 "parameters": [
                     {
-                        "type": "ab6f625e2fd0429df9d0495a4c47ad24",
-                        "location": "%rdi"
+                        "type": "38452d010b1d78ba3207938f53b89c7a",
+                        "location": "%rsi"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2248,12 +2248,12 @@
                 "name": "strtod",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
-                        "location": "%rsi"
+                        "type": "6d80651bdc254c7e9f1f64cc5e8f497c",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2268,16 +2268,16 @@
                 "name": "strtol",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2292,16 +2292,16 @@
                 "name": "strtoul",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2316,8 +2316,8 @@
                 "name": "system",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2332,12 +2332,12 @@
                 "name": "wcstombs",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2354,12 +2354,12 @@
                 "name": "wctomb",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
+                        "location": "%rsi"
                     },
                     {
                         "type": "f73e244851d6839dcfa1ecd120238860",
-                        "location": "%rsi"
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -2393,8 +2393,8 @@
                 "name": "atoll",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2409,16 +2409,16 @@
                 "name": "strtoll",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2433,16 +2433,16 @@
                 "name": "strtoull",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2457,12 +2457,12 @@
                 "name": "strtof",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
-                        "location": "%rsi"
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2477,12 +2477,12 @@
                 "name": "strtold",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "a0548b21ae651734ef3579acf3ddfae8",
-                        "location": "%rsi"
+                        "type": "839f87f74be5d55b5ae9ca4ba3f5386c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2497,8 +2497,8 @@
                 "name": "clearerr",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -2508,8 +2508,8 @@
                 "name": "fclose",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2524,8 +2524,8 @@
                 "name": "feof",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2540,8 +2540,8 @@
                 "name": "ferror",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2556,8 +2556,8 @@
                 "name": "fflush",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2572,8 +2572,8 @@
                 "name": "fgetc",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2588,12 +2588,12 @@
                 "name": "fgetpos",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "7eb2cb1b22703b483d6389a8e1b30751",
-                        "location": "%rsi"
+                        "type": "7267b28b071fdba180f4b26bd87f99f5",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2608,16 +2608,16 @@
                 "name": "fgets",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
                         "location": "%rsi"
                     },
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
                         "location": "%rdx"
+                    },
+                    {
+                        "type": "2737df1ab587791a7a2a8891e3dda13a",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -2632,12 +2632,12 @@
                 "name": "fopen",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2652,18 +2652,18 @@
                 "name": "fread",
                 "parameters": [
                     {
-                        "type": "ab6f625e2fd0429df9d0495a4c47ad24",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "2b7927ac6886d6f780cffd9e51ebbc49"
-                    },
-                    {
-                        "type": "2b7927ac6886d6f780cffd9e51ebbc49"
-                    },
-                    {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
+                        "type": "38452d010b1d78ba3207938f53b89c7a",
                         "location": "%rsi"
+                    },
+                    {
+                        "type": "2b7927ac6886d6f780cffd9e51ebbc49"
+                    },
+                    {
+                        "type": "2b7927ac6886d6f780cffd9e51ebbc49"
+                    },
+                    {
+                        "type": "d15470c96b633c1cdd5007ed1cfd6196",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2677,16 +2677,16 @@
                 "name": "freopen",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
                         "location": "%rsi"
                     },
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdx"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
+                    },
+                    {
+                        "type": "45f9d415cbc19ce92a43f399d4abcdcf",
+                        "location": "%r9"
                     }
                 ],
                 "return": {
@@ -2701,16 +2701,16 @@
                 "name": "fseek",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "832037bcbd004730c7738b05d956e54e",
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
                         "location": "%rsi"
                     },
                     {
-                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "type": "832037bcbd004730c7738b05d956e54e",
                         "location": "%rdx"
+                    },
+                    {
+                        "type": "1fd8c01bdca094933f920b41375cfed0",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2725,12 +2725,12 @@
                 "name": "fsetpos",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2745,8 +2745,8 @@
                 "name": "ftell",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2761,8 +2761,8 @@
                 "name": "getc",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2787,8 +2787,8 @@
                 "name": "perror",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -2798,8 +2798,8 @@
                 "name": "remove",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2814,12 +2814,12 @@
                 "name": "rename",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi"
+                        "type": "91332c86580a277d7d94444fb57ff59c",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -2834,8 +2834,8 @@
                 "name": "rewind",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     }
                 ]
             }
@@ -2845,12 +2845,12 @@
                 "name": "setbuf",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
+                        "location": "%rsi"
                     },
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rsi"
+                        "type": "f76c688711e923bfc8db89d70f82b54d",
+                        "location": "%rcx"
                     }
                 ]
             }
@@ -2860,16 +2860,16 @@
                 "name": "setvbuf",
                 "parameters": [
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rdi"
-                    },
-                    {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
+                        "type": "8d52f9bcd0572ff27f90cf8eba690b1a",
                         "location": "%rsi"
                     },
                     {
+                        "type": "f76c688711e923bfc8db89d70f82b54d",
+                        "location": "%rcx"
+                    },
+                    {
                         "type": "1fd8c01bdca094933f920b41375cfed0",
-                        "location": "%rdx"
+                        "location": "%r8"
                     },
                     {
                         "type": "2b7927ac6886d6f780cffd9e51ebbc49"
@@ -2897,8 +2897,8 @@
                 "name": "tmpnam",
                 "parameters": [
                     {
-                        "type": "f0408070290f50d84fdd56874abf6f68",
-                        "location": "%rdi"
+                        "type": "cdef1207c710f51ec3cfa7e2c595e416",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2917,8 +2917,8 @@
                         "location": "%rdi"
                     },
                     {
-                        "type": "71febbaf810a25d23d157bb703c78af8",
-                        "location": "%rsi"
+                        "type": "2fbafb8cd137bf0f399bdcb15e882f08",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -2968,8 +2968,8 @@
                 "name": "wctrans",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -2983,8 +2983,8 @@
                 "name": "wctype",
                 "parameters": [
                     {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi"
+                        "type": "09c26b973c6eae7d79ab0e8301252ed1",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -3019,8 +3019,8 @@
                     },
                     {
                         "name": "func",
-                        "type": "a6ba867bffafd98f1c29fda71ed8462e",
-                        "location": "%rdx"
+                        "type": "e3132dc0368421752587b203015e8527",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -3101,7 +3101,7 @@
                 }
             ]
         },
-        "3b225aef2300ad3530789357a11a22d2": {
+        "9d70ae97e61d114c86298d4e1621a57d": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3109,10 +3109,11 @@
                 "type": "b90b92a47c84eb5d898efc053281e988"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*b90b92a47c84eb5d898efc053281e988",
             "indirections": 1
         },
-        "ab6f625e2fd0429df9d0495a4c47ad24": {
+        "d02da75ec248f45e647f346201e86527": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3120,6 +3121,7 @@
                 "type": "3136b53c7788b73670691bd7c934571c"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*3136b53c7788b73670691bd7c934571c",
             "indirections": 1
         },
@@ -3140,7 +3142,7 @@
             "class": "Constant",
             "direction": "import"
         },
-        "f82dec616980ce95a30df043ae338eef": {
+        "09c26b973c6eae7d79ab0e8301252ed1": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3148,6 +3150,7 @@
                 "type": "b1d4b0625bfdb87216d1ae24a0818d92"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*b1d4b0625bfdb87216d1ae24a0818d92",
             "indirections": 1
         },
@@ -3200,6 +3203,18 @@
         "8f648233be43b232c3776dcb0f406e1c": {
             "type": "4a5cf80828fda18366ceb8b77b61632b"
         },
+        "91332c86580a277d7d94444fb57ff59c": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "b1d4b0625bfdb87216d1ae24a0818d92"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*b1d4b0625bfdb87216d1ae24a0818d92",
+            "indirections": 1
+        },
         "6d168f46b7d9e8b96a1ff9b171e0ad48": {
             "type": "long unsigned int",
             "size": 8,
@@ -3232,7 +3247,7 @@
             "type": "*4a5cf80828fda18366ceb8b77b61632b",
             "indirections": 1
         },
-        "3f908a61406313ad60eda70c922f1132": {
+        "9118ffa4dbd5453de681cea3130b2a39": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3240,6 +3255,7 @@
                 "type": "4a5cf80828fda18366ceb8b77b61632b"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*4a5cf80828fda18366ceb8b77b61632b",
             "indirections": 1
         },
@@ -3274,7 +3290,7 @@
             "size": 1,
             "class": "Class"
         },
-        "913611d52a3441fb038a61a582010352": {
+        "f0205990bedff9757a32d7c5156aaa82": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3282,6 +3298,7 @@
                 "type": "1f8bc128db0ef986c42460bbc56be1d0"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*1f8bc128db0ef986c42460bbc56be1d0",
             "indirections": 1
         },
@@ -3408,7 +3425,7 @@
         "5619061ba132f589d624384e8c029bf2": {
             "type": "4ac4ee1c1c081889effadd814c8e9f90"
         },
-        "200cb69f5aa1be21b97917b6c3c8a555": {
+        "d8da44567d563c2aa47073d6d6e9631c": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -3416,6 +3433,7 @@
                 "type": "4ac4ee1c1c081889effadd814c8e9f90"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*4ac4ee1c1c081889effadd814c8e9f90",
             "indirections": 1
         },
@@ -3998,7 +4016,7 @@
             "name": "__FILE",
             "type": "d969a77bfc2abdccba83c0f06478ca8a"
         },
-        "fba778651745476a1f31581be146bf98": {
+        "35e55ba1623aadd38a75ad9a1f75083b": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4006,6 +4024,7 @@
                 "type": "0d7ad91e15b70c6e7b58910d34f4ba67"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*0d7ad91e15b70c6e7b58910d34f4ba67",
             "indirections": 1
         },
@@ -4026,7 +4045,7 @@
             "type": "*f73e244851d6839dcfa1ecd120238860",
             "indirections": 1
         },
-        "2f6d136741aad2fcab9ac0fdd18298ca": {
+        "5e859f27c3b75584842d9ebaacc7934d": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4034,7 +4053,44 @@
                 "type": "f73e244851d6839dcfa1ecd120238860"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*f73e244851d6839dcfa1ecd120238860",
+            "indirections": 1
+        },
+        "f7eaada65da2358f6e40a00e47ce7601": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "0d7ad91e15b70c6e7b58910d34f4ba67"
+            },
+            "direction": "both",
+            "location": "%rcx",
+            "type": "*0d7ad91e15b70c6e7b58910d34f4ba67",
+            "indirections": 1
+        },
+        "6782aa1996b1a1726355f348fd7a1bf4": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "0d7ad91e15b70c6e7b58910d34f4ba67"
+            },
+            "direction": "both",
+            "location": "%rsi",
+            "type": "*0d7ad91e15b70c6e7b58910d34f4ba67",
+            "indirections": 1
+        },
+        "cfb2a4ca086b84d28392f05881b0d719": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "0d7ad91e15b70c6e7b58910d34f4ba67"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*0d7ad91e15b70c6e7b58910d34f4ba67",
             "indirections": 1
         },
         "532d4c2a918b7054e8ded6eb46885f81": {
@@ -4089,7 +4145,7 @@
             "name": "mbstate_t",
             "type": "3e09dc2776696a2d787308e4895b97d2"
         },
-        "1d2ba611287d3a71f53baf6512d1614a": {
+        "89da3e6d986b0a44507aaebd411a05ba": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4097,10 +4153,23 @@
                 "type": "f1e783712957bab392ef69470c54d5c0"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*f1e783712957bab392ef69470c54d5c0",
             "indirections": 1
         },
-        "431b2cd1f015774b647f7737575bdedc": {
+        "eba3ddf8e8ac4234e1a5a6f84318b282": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "f1e783712957bab392ef69470c54d5c0"
+            },
+            "direction": "both",
+            "location": "%r8",
+            "type": "*f1e783712957bab392ef69470c54d5c0",
+            "indirections": 1
+        },
+        "2ff48b485e4ec594a2cee130365572b5": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4108,18 +4177,32 @@
                 "type": "b1d4b0625bfdb87216d1ae24a0818d92"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*b1d4b0625bfdb87216d1ae24a0818d92",
             "indirections": 2
         },
-        "e0fc14c37d2d1839faf9717b49d6ffeb": {
+        "276b20f3792ea74e3de7739d913f8699": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "431b2cd1f015774b647f7737575bdedc"
+                "type": "2ff48b485e4ec594a2cee130365572b5"
             },
             "direction": "both",
-            "type": "*431b2cd1f015774b647f7737575bdedc",
+            "location": "%rcx",
+            "type": "*2ff48b485e4ec594a2cee130365572b5",
+            "indirections": 1
+        },
+        "8e0862d3453770e2aaa89504c4a7a370": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "f1e783712957bab392ef69470c54d5c0"
+            },
+            "direction": "both",
+            "location": "%r9",
+            "type": "*f1e783712957bab392ef69470c54d5c0",
             "indirections": 1
         },
         "91fe38af8e1e189bd7c644017c799731": {
@@ -4171,7 +4254,7 @@
                 }
             ]
         },
-        "381d9765e6d657d93096271bd2a16f0e": {
+        "960ad156ac2b67363c7c60369c71a0b1": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4179,10 +4262,23 @@
                 "type": "d533d9704bd2e02ee357cc4c80f77757"
             },
             "direction": "both",
+            "location": "%r8",
             "type": "*d533d9704bd2e02ee357cc4c80f77757",
             "indirections": 1
         },
-        "f0408070290f50d84fdd56874abf6f68": {
+        "b398caea72b28883f4a026e8e2c61e93": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "d533d9704bd2e02ee357cc4c80f77757"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*d533d9704bd2e02ee357cc4c80f77757",
+            "indirections": 1
+        },
+        "cdef1207c710f51ec3cfa7e2c595e416": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4190,7 +4286,20 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
+            "indirections": 1
+        },
+        "eb31f1adde810a3ff5bc391ad2e2efea": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "f1e783712957bab392ef69470c54d5c0"
+            },
+            "direction": "both",
+            "location": "%rcx",
+            "type": "*f1e783712957bab392ef69470c54d5c0",
             "indirections": 1
         },
         "5bb6cb8bd0b4241ccea4146541d8a720": {
@@ -4213,6 +4322,18 @@
             },
             "direction": "both",
             "type": "*f73e244851d6839dcfa1ecd120238860",
+            "indirections": 1
+        },
+        "c15a081ced537cdc201e702e7333b3be": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "b1d4b0625bfdb87216d1ae24a0818d92"
+            },
+            "direction": "both",
+            "location": "%r8",
+            "type": "*b1d4b0625bfdb87216d1ae24a0818d92",
             "indirections": 1
         },
         "ad26878e252c10ff97e4bc41fb07b745": {
@@ -4243,7 +4364,7 @@
             "class": "Float",
             "direction": "import"
         },
-        "04cc230baf87a60e14c5e97523a447ce": {
+        "984c623af5ccc23c970e0fe3a0c815d2": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4251,18 +4372,20 @@
                 "type": "f73e244851d6839dcfa1ecd120238860"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*f73e244851d6839dcfa1ecd120238860",
             "indirections": 2
         },
-        "be05a078baffcaed97f353241c8451a5": {
+        "b4a68062e558d67b2857914ec18ea305": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "04cc230baf87a60e14c5e97523a447ce"
+                "type": "984c623af5ccc23c970e0fe3a0c815d2"
             },
             "direction": "both",
-            "type": "*04cc230baf87a60e14c5e97523a447ce",
+            "location": "%rcx",
+            "type": "*984c623af5ccc23c970e0fe3a0c815d2",
             "indirections": 1
         },
         "65548ffbcaadd70764058ff4b5097cfb": {
@@ -4270,6 +4393,18 @@
             "size": 4,
             "class": "Float",
             "direction": "import"
+        },
+        "c87847540ebaed1d495c9fe5ffe495d4": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "984c623af5ccc23c970e0fe3a0c815d2"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*984c623af5ccc23c970e0fe3a0c815d2",
+            "indirections": 1
         },
         "a18a803fe5dc20b1f6b832a5fec133a2": {
             "name": "wcstok",
@@ -4280,6 +4415,18 @@
             },
             "direction": "both",
             "type": "*f73e244851d6839dcfa1ecd120238860",
+            "indirections": 1
+        },
+        "18ea5a337f5a9b36fed5ebec15fb390a": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "984c623af5ccc23c970e0fe3a0c815d2"
+            },
+            "direction": "both",
+            "location": "%r8",
+            "type": "*984c623af5ccc23c970e0fe3a0c815d2",
             "indirections": 1
         },
         "a650f4eb1d7e88fb645f17b1e5914ca7": {
@@ -4473,6 +4620,18 @@
             },
             "direction": "both",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
+            "indirections": 1
+        },
+        "030d9b59a59e858825bfbb65b5d07ece": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "b1d4b0625bfdb87216d1ae24a0818d92"
+            },
+            "direction": "both",
+            "location": "%rsi",
+            "type": "*b1d4b0625bfdb87216d1ae24a0818d92",
             "indirections": 1
         },
         "d60344ce2b7183a03ef91aafa8c37142": {
@@ -4723,7 +4882,7 @@
             "type": "*525490d7cbf8fc4d870cddc29d40c585",
             "indirections": 1
         },
-        "9181d4968c7dc4cd9c80a86419fd4fc3": {
+        "f7e96e32040775717e62ffdf6d56ad9f": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4731,6 +4890,7 @@
                 "type": "e11e1e8c586a7c4160a357b6ef8c2d84"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*e11e1e8c586a7c4160a357b6ef8c2d84",
             "indirections": 1
         },
@@ -4816,7 +4976,19 @@
             "name": "ldiv_t",
             "type": "2c38fadfab46d5a66ee6f952fa6b87b9"
         },
-        "d5dd634bc48185335c216e755142155b": {
+        "38452d010b1d78ba3207938f53b89c7a": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "3136b53c7788b73670691bd7c934571c"
+            },
+            "direction": "both",
+            "location": "%rdi",
+            "type": "*3136b53c7788b73670691bd7c934571c",
+            "indirections": 1
+        },
+        "343df2e9e7e445485a6d0b5b40548be0": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4824,25 +4996,39 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 2
         },
-        "a0548b21ae651734ef3579acf3ddfae8": {
+        "6d80651bdc254c7e9f1f64cc5e8f497c": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "d5dd634bc48185335c216e755142155b"
+                "type": "343df2e9e7e445485a6d0b5b40548be0"
             },
             "direction": "both",
-            "type": "*d5dd634bc48185335c216e755142155b",
+            "location": "%rcx",
+            "type": "*343df2e9e7e445485a6d0b5b40548be0",
+            "indirections": 1
+        },
+        "839f87f74be5d55b5ae9ca4ba3f5386c": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "343df2e9e7e445485a6d0b5b40548be0"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*343df2e9e7e445485a6d0b5b40548be0",
             "indirections": 1
         },
         "5761685192ab7466c6bddb78279b0aa1": {
             "name": "FILE",
             "type": "d969a77bfc2abdccba83c0f06478ca8a"
         },
-        "71febbaf810a25d23d157bb703c78af8": {
+        "8d52f9bcd0572ff27f90cf8eba690b1a": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4850,6 +5036,7 @@
                 "type": "5761685192ab7466c6bddb78279b0aa1"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*5761685192ab7466c6bddb78279b0aa1",
             "indirections": 1
         },
@@ -4878,7 +5065,7 @@
             "name": "fpos_t",
             "type": "752c58b2b4dce24e74af34b000783824"
         },
-        "7eb2cb1b22703b483d6389a8e1b30751": {
+        "7267b28b071fdba180f4b26bd87f99f5": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -4886,6 +5073,7 @@
                 "type": "86bd9eb829bc858df6385d2ca5c9b53f"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*86bd9eb829bc858df6385d2ca5c9b53f",
             "indirections": 1
         },
@@ -4900,6 +5088,18 @@
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 1
         },
+        "2737df1ab587791a7a2a8891e3dda13a": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "5761685192ab7466c6bddb78279b0aa1"
+            },
+            "direction": "both",
+            "location": "%rcx",
+            "type": "*5761685192ab7466c6bddb78279b0aa1",
+            "indirections": 1
+        },
         "38bf3be6a98ec0073cdd388525d1dcea": {
             "name": "fopen",
             "class": "Pointer",
@@ -4908,6 +5108,18 @@
                 "type": "5761685192ab7466c6bddb78279b0aa1"
             },
             "direction": "both",
+            "type": "*5761685192ab7466c6bddb78279b0aa1",
+            "indirections": 1
+        },
+        "d15470c96b633c1cdd5007ed1cfd6196": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "5761685192ab7466c6bddb78279b0aa1"
+            },
+            "direction": "both",
+            "location": "%rdx",
             "type": "*5761685192ab7466c6bddb78279b0aa1",
             "indirections": 1
         },
@@ -4920,6 +5132,30 @@
             },
             "direction": "both",
             "type": "*5761685192ab7466c6bddb78279b0aa1",
+            "indirections": 1
+        },
+        "45f9d415cbc19ce92a43f399d4abcdcf": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "5761685192ab7466c6bddb78279b0aa1"
+            },
+            "direction": "both",
+            "location": "%r8",
+            "type": "*5761685192ab7466c6bddb78279b0aa1",
+            "indirections": 1
+        },
+        "f76c688711e923bfc8db89d70f82b54d": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
+            },
+            "direction": "both",
+            "location": "%rdx",
+            "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 1
         },
         "cb59a52e008a2f1f9d0508323c6b76d5": {
@@ -4942,6 +5178,18 @@
             },
             "direction": "both",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
+            "indirections": 1
+        },
+        "2fbafb8cd137bf0f399bdcb15e882f08": {
+            "name": "unknown",
+            "class": "Pointer",
+            "size": 8,
+            "underlying_type": {
+                "type": "5761685192ab7466c6bddb78279b0aa1"
+            },
+            "direction": "both",
+            "location": "%rsi",
+            "type": "*5761685192ab7466c6bddb78279b0aa1",
             "indirections": 1
         },
         "df61a8f480c08872f94f6b0c04f164d2": {
@@ -4974,7 +5222,7 @@
             "type": "*3136b53c7788b73670691bd7c934571c",
             "indirections": 1
         },
-        "a6ba867bffafd98f1c29fda71ed8462e": {
+        "e3132dc0368421752587b203015e8527": {
             "name": "func",
             "class": "Pointer",
             "size": 8,
@@ -4982,6 +5230,7 @@
                 "type": "6f85a4f1851509c0dc41a929d34079c2"
             },
             "direction": "both",
+            "location": "%rdx",
             "type": "*6f85a4f1851509c0dc41a929d34079c2",
             "indirections": 1
         }

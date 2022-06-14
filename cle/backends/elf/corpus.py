@@ -193,7 +193,7 @@ class ElfCorpus(Corpus):
         """
         return self.parse_underlying_type(die)
 
-    def parse_pointer_type(self, die, parent, indirections=1):
+    def parse_pointer_type(self, die, parent, indirections=1, allocator=None):
         """
         This is hit parsing a pointer function param
 
@@ -204,10 +204,14 @@ class ElfCorpus(Corpus):
             "name": self.get_name(parent),
             "class": "Pointer",
             "size": self.get_size(die),
-            "underlying_type": self.parse_underlying_type(die, indirections),
+            "underlying_type": self.parse_underlying_type(die, indirections=indirections, allocator=allocator),
             "direction": "both",
         }
-
+        
+        # If we have an allocator passed from parsing a subprogram
+        if allocator:
+            entry['location'] = allocator.get_next_int_register()
+            
         # This is a pointer to a type reference
         entry["type"] = "*" + entry["underlying_type"]["type"]
         if indirections != 0:
@@ -329,7 +333,7 @@ class ElfCorpus(Corpus):
                 param = self.parse_structure_type(child)
 
             elif child.tag == "DW_TAG_pointer_type":
-                param = self.parse_pointer_type(child)
+                param = self.parse_pointer_type(child, allocator=allocator)
 
             # Call sites
             elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
@@ -463,7 +467,7 @@ class ElfCorpus(Corpus):
                     "Experimental parsing selected by ABI for %s is not supported yet."
                     % self.arch.name
                 )
-            underlying_type = underlying_type or self.parse_underlying_type(die)
+            underlying_type = underlying_type or self.parse_underlying_type(die, allocator=allocator)
             allocator = allocator or self.parser.get_return_allocator()
             if underlying_type:
                 # Get the actual type information
@@ -723,7 +727,7 @@ class ElfCorpus(Corpus):
         if type_die and type_die.tag == "DW_TAG_pointer_type":
             indirections += 1
             return self.parse_pointer_type(
-                type_die, indirections=indirections, parent=die
+                type_die, indirections=indirections, parent=die, allocator=allocator
             )
 
         if type_die and type_die.tag == "DW_TAG_class_type":

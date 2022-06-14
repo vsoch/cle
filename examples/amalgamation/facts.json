@@ -29,8 +29,8 @@
                     },
                     {
                         "name": "two",
-                        "type": "70d7175a62d9ef9a25a283fc855bfa68",
-                        "location": "%rsi"
+                        "type": "1d7b20e3a271112951d1c6de29fd57db",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -52,8 +52,8 @@
                     },
                     {
                         "name": "argv",
-                        "type": "8b65a8c0ffbf7cf3c7d719ca7c556b6f",
-                        "location": "%rsi"
+                        "type": "0f667aa5c4eb92560a4b8a6f59f533ec",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -134,7 +134,7 @@
                 }
             ]
         },
-        "70d7175a62d9ef9a25a283fc855bfa68": {
+        "1d7b20e3a271112951d1c6de29fd57db": {
             "name": "two",
             "class": "Pointer",
             "size": 8,
@@ -142,10 +142,11 @@
                 "type": "5146409fce387ec4e35246e9113bda57"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*5146409fce387ec4e35246e9113bda57",
             "indirections": 1
         },
-        "d5dd634bc48185335c216e755142155b": {
+        "95eb2b4f1489d4880461ffbcb26032f8": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -153,18 +154,20 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 2
         },
-        "8b65a8c0ffbf7cf3c7d719ca7c556b6f": {
+        "0f667aa5c4eb92560a4b8a6f59f533ec": {
             "name": "argv",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "d5dd634bc48185335c216e755142155b"
+                "type": "95eb2b4f1489d4880461ffbcb26032f8"
             },
             "direction": "both",
-            "type": "*d5dd634bc48185335c216e755142155b",
+            "location": "%rdx",
+            "type": "*95eb2b4f1489d4880461ffbcb26032f8",
             "indirections": 1
         }
     }

@@ -12,13 +12,13 @@
                     },
                     {
                         "name": "b",
-                        "type": "21dc76811c72a10eb7d83dfd68eff264",
-                        "location": "%rsi"
+                        "type": "c2d59a8798a1bae28f3258222cdea7f9",
+                        "location": "%rdx"
                     },
                     {
                         "name": "c",
                         "type": "0cc8ef179bac97bee2058ee65dadaaea",
-                        "location": "%rdx"
+                        "location": "%rcx"
                     },
                     {
                         "name": "d",
@@ -65,7 +65,7 @@
                 }
             ]
         },
-        "21dc76811c72a10eb7d83dfd68eff264": {
+        "c2d59a8798a1bae28f3258222cdea7f9": {
             "name": "b",
             "class": "Pointer",
             "size": 8,
@@ -73,6 +73,7 @@
                 "type": "3b92f99410a6dae32be62e61c114908a"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*3b92f99410a6dae32be62e61c114908a",
             "indirections": 1
         },

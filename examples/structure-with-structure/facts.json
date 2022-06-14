@@ -13,8 +13,8 @@
                     },
                     {
                         "name": "argv",
-                        "type": "8b65a8c0ffbf7cf3c7d719ca7c556b6f",
-                        "location": "%rsi"
+                        "type": "0f667aa5c4eb92560a4b8a6f59f533ec",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -36,13 +36,13 @@
                     },
                     {
                         "name": "two",
-                        "type": "c4aadedbb455d42e8bf09a2da04384ba",
-                        "location": "%rsi"
+                        "type": "1a5c83ede76bcaba6d714dc8e48cdea2",
+                        "location": "%rdx"
                     },
                     {
                         "name": "three",
-                        "type": "8f350d61753f927cc5952a28ddf0ad95",
-                        "location": "%rdx"
+                        "type": "753087f036a9bc5e4cbcaf00b5e7d33a",
+                        "location": "%r8"
                     }
                 ],
                 "return": {
@@ -66,7 +66,7 @@
             "class": "Integral",
             "direction": "import"
         },
-        "d5dd634bc48185335c216e755142155b": {
+        "95eb2b4f1489d4880461ffbcb26032f8": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -74,18 +74,20 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 2
         },
-        "8b65a8c0ffbf7cf3c7d719ca7c556b6f": {
+        "0f667aa5c4eb92560a4b8a6f59f533ec": {
             "name": "argv",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "d5dd634bc48185335c216e755142155b"
+                "type": "95eb2b4f1489d4880461ffbcb26032f8"
             },
             "direction": "both",
-            "type": "*d5dd634bc48185335c216e755142155b",
+            "location": "%rdx",
+            "type": "*95eb2b4f1489d4880461ffbcb26032f8",
             "indirections": 1
         },
         "5f66ab77d11088555799b0da0fbee9bf": {
@@ -148,7 +150,7 @@
                 }
             ]
         },
-        "c4aadedbb455d42e8bf09a2da04384ba": {
+        "1a5c83ede76bcaba6d714dc8e48cdea2": {
             "name": "two",
             "class": "Pointer",
             "size": 8,
@@ -156,6 +158,7 @@
                 "type": "f2832d26ee591e239a9b950fb8b93e4b"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*f2832d26ee591e239a9b950fb8b93e4b",
             "indirections": 1
         },
@@ -193,7 +196,7 @@
                 }
             ]
         },
-        "8f350d61753f927cc5952a28ddf0ad95": {
+        "753087f036a9bc5e4cbcaf00b5e7d33a": {
             "name": "three",
             "class": "Pointer",
             "size": 8,
@@ -201,6 +204,7 @@
                 "type": "ced72d056336d0b941e6b9393418a0a2"
             },
             "direction": "both",
+            "location": "%rcx",
             "type": "*ced72d056336d0b941e6b9393418a0a2",
             "indirections": 1
         }

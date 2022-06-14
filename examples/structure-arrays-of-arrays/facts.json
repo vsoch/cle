@@ -13,8 +13,8 @@
                     },
                     {
                         "name": "argv",
-                        "type": "8b65a8c0ffbf7cf3c7d719ca7c556b6f",
-                        "location": "%rsi"
+                        "type": "0f667aa5c4eb92560a4b8a6f59f533ec",
+                        "location": "%rcx"
                     }
                 ],
                 "return": {
@@ -36,8 +36,8 @@
                     },
                     {
                         "name": "array",
-                        "type": "0158962df727389f94103436632aa22c",
-                        "location": "%rsi"
+                        "type": "f40c5d31897058699ed717a79b98d956",
+                        "location": "%rdx"
                     }
                 ],
                 "return": {
@@ -61,7 +61,7 @@
             "class": "Integral",
             "direction": "import"
         },
-        "d5dd634bc48185335c216e755142155b": {
+        "95eb2b4f1489d4880461ffbcb26032f8": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -69,18 +69,20 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
             "indirections": 2
         },
-        "8b65a8c0ffbf7cf3c7d719ca7c556b6f": {
+        "0f667aa5c4eb92560a4b8a6f59f533ec": {
             "name": "argv",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "d5dd634bc48185335c216e755142155b"
+                "type": "95eb2b4f1489d4880461ffbcb26032f8"
             },
             "direction": "both",
-            "type": "*d5dd634bc48185335c216e755142155b",
+            "location": "%rdx",
+            "type": "*95eb2b4f1489d4880461ffbcb26032f8",
             "indirections": 1
         },
         "6d168f46b7d9e8b96a1ff9b171e0ad48": {
@@ -120,7 +122,7 @@
                 }
             ]
         },
-        "0158962df727389f94103436632aa22c": {
+        "f40c5d31897058699ed717a79b98d956": {
             "name": "array",
             "class": "Pointer",
             "size": 8,
@@ -128,6 +130,7 @@
                 "type": "9ffd15560f149b239367223323613a38"
             },
             "direction": "both",
+            "location": "%rsi",
             "type": "*9ffd15560f149b239367223323613a38",
             "indirections": 1
         }

@@ -7,8 +7,8 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "7440dfd2cd06ef317815e47e7a8ccb92",
-                        "location": "%rdi"
+                        "type": "34acb5bc901e3b88361b7ad1da44207c",
+                        "location": "%rsi"
                     }
                 ],
                 "return": {
@@ -26,7 +26,7 @@
             "class": "Integer",
             "direction": "import"
         },
-        "7440dfd2cd06ef317815e47e7a8ccb92": {
+        "34acb5bc901e3b88361b7ad1da44207c": {
             "name": "x",
             "class": "Pointer",
             "size": 8,
@@ -34,6 +34,7 @@
                 "type": "1fd8c01bdca094933f920b41375cfed0"
             },
             "direction": "both",
+            "location": "%rdi",
             "type": "*1fd8c01bdca094933f920b41375cfed0",
             "indirections": 1
         }
