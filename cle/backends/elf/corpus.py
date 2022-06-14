@@ -29,7 +29,9 @@ class ElfCorpus(Corpus):
         self.arch = kwargs.get("arch")
         self.parser = getattr(abi_parser, self.arch.name, None)
         self.symbols = kwargs.get("symbols")
-        super().__init__(*args, **kwargs)
+        # Default don't include double underscore (private) variables
+        self.include_private = kwargs.get('include_private', False)
+        super().__init__(*args, **kwargs)        
 
         # self.types is cache of type id -> json
         # Types cache of die.offset -> type id
@@ -252,7 +254,7 @@ class ElfCorpus(Corpus):
         the rest.
         """
         name = self.get_name(die)
-        if self.symbols and name not in self.symbols:
+        if self.symbols and name not in self.symbols or not self.include_private and name.startswith('__'):
             return
 
         # If has DW_TAG_external, we know it's external outside of this CU
@@ -724,7 +726,8 @@ class ElfCorpus(Corpus):
         type_die = self.type_die_lookup.get(die.attributes["DW_AT_type"].value)
 
         # Each of functions below can call this recursively
-        if not type_die or not type_die.tag:
+        # there was a formal parameter with a type as a compile unit in libgettext
+        if not type_die or not type_die.tag or type_die.tag == "DW_TAG_compile_unit":
             return {"type": "unknown"}
 
         if type_die and type_die.tag == "DW_TAG_pointer_type":
@@ -737,12 +740,15 @@ class ElfCorpus(Corpus):
         if type_die and type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die)
 
-        if type_die and type_die.tag == "DW_TAG_enumeration_type":
+        if type_die and type_die.tag in ["DW_TAG_enumeration_type", "DW_TAG_enumerator"]:
             return self.parse_enumeration_type(type_die)
 
         # Case 1: It's an array (and type is for elements)
         if type_die and type_die.tag == "DW_TAG_array_type":
             return self.parse_array_type(type_die, parent=die)
+
+        if type_die and type_die.tag == "DW_TAG_subprogram":
+            return self.parse_subprogram(type_die)
 
         # Struct
         if type_die and type_die.tag == "DW_TAG_structure_type":
@@ -751,9 +757,6 @@ class ElfCorpus(Corpus):
         # A variable being used as a formal parameter? see bzip main so
         if type_die and type_die.tag == "DW_TAG_variable":
             return self.parse_variable(type_die)
-
-        if type_die and type_die.tag == "DW_TAG_formal_parameter":
-            return self.parse_formal_parameter(type_die)
 
         if type_die and type_die.tag == "DW_TAG_inlined_subroutine":
             return self.parse_inlined_subroutine(type_die)
@@ -771,11 +774,15 @@ class ElfCorpus(Corpus):
 
         # These are essentially skipped over to get to underlying type
         if type_die and type_die.tag in [
-            "DW_TAG_template_type_param",
+            "DW_TAG_formal_parameter",
+            "DW_TAG_member",
             "DW_TAG_reference_type",
-            "DW_TAG_subroutine_type",
-            "DW_TAG_unspecified_type",
+            "DW_TAG_restrict_type",
             "DW_TAG_rvalue_reference_type",
+            "DW_TAG_subrange_type",
+            "DW_TAG_subroutine_type",
+            "DW_TAG_template_type_param",
+            "DW_TAG_unspecified_type",
         ]:
             return self.parse_underlying_type(type_die)
 
@@ -784,6 +791,7 @@ class ElfCorpus(Corpus):
             import IPython
 
             IPython.embed()
+            sys.exit()
 
         # Parse the underlying bits (this is usually base type)
         entry = {

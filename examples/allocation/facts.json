@@ -2,16 +2,6 @@
     "library": "/home/vanessa/Desktop/Code/cle/examples/allocation/example",
     "locations": [
         {
-            "variables": [
-                {
-                    "name": "__dso_handle",
-                    "location": "var",
-                    "type": "d7e2616fdc28e31e66fed0764270e9a5",
-                    "direction": "import"
-                }
-            ]
-        },
-        {
             "function": {
                 "name": "main",
                 "direction": "export",
@@ -2353,20 +2343,6 @@
         }
     ],
     "types": {
-        "3136b53c7788b73670691bd7c934571c": {
-            "type": "unknown"
-        },
-        "d7e2616fdc28e31e66fed0764270e9a5": {
-            "name": "__dso_handle",
-            "class": "Pointer",
-            "size": 8,
-            "underlying_type": {
-                "type": "3136b53c7788b73670691bd7c934571c"
-            },
-            "direction": "both",
-            "type": "*3136b53c7788b73670691bd7c934571c",
-            "indirections": 1
-        },
         "1fd8c01bdca094933f920b41375cfed0": {
             "type": "int",
             "size": 4,

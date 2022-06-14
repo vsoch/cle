@@ -362,8 +362,25 @@ def classify_array(typ, allocator, types):
     if size > 64:
         return Classification("Array", [RegisterClass.MEMORY, RegisterClass.NO_CLASS])
 
+    # Unwrap entirely
+    typename = typ.get("type")
+    classname = None
+    
+    # regular class id or pointer
+    while len(typename) == 32 or len(typename) == 33:
+        typename = typename.replace('*', '')
+        newtype = types[typename]
+        if "type" in newtype:
+            typename = newtype['type']
+        elif "class" in newtype:
+            classname = newtype['class']
+            break
+
+    if not classname:
+        classname = ClassType.get(typename) 
+                  
     # Just classify the base type
-    base_type = {"class": ClassType.get(typ.get("type")), "size": size}
+    base_type = {"class": classname, "size": size}
     return classify(
         base_type, allocator=allocator, return_classification=True, types=types
     )

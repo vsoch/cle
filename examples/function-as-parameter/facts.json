@@ -801,28 +801,6 @@
         },
         {
             "function": {
-                "name": "__isoc99_fwscanf",
-                "parameters": [
-                    {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
                 "name": "getwc",
                 "parameters": [
                     {
@@ -1013,28 +991,6 @@
         },
         {
             "function": {
-                "name": "__isoc99_swscanf",
-                "parameters": [
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
                 "name": "ungetwc",
                 "parameters": [
                     {
@@ -1056,33 +1012,6 @@
         {
             "function": {
                 "name": "vfwprintf",
-                "parameters": [
-                    {
-                        "type": "fba778651745476a1f31581be146bf98",
-                        "location": "%rdi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
-                "name": "__isoc99_vfwscanf",
                 "parameters": [
                     {
                         "type": "fba778651745476a1f31581be146bf98",
@@ -1140,56 +1069,7 @@
         },
         {
             "function": {
-                "name": "__isoc99_vswscanf",
-                "parameters": [
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rsi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rdx",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
                 "name": "vwprintf",
-                "parameters": [
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi",
-                        "direction": "import"
-                    },
-                    {
-                        "type": "381d9765e6d657d93096271bd2a16f0e",
-                        "location": "%rsi",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
-                "name": "__isoc99_vwscanf",
                 "parameters": [
                     {
                         "type": "f82dec616980ce95a30df043ae338eef",
@@ -1792,23 +1672,6 @@
         {
             "function": {
                 "name": "wprintf",
-                "parameters": [
-                    {
-                        "type": "f82dec616980ce95a30df043ae338eef",
-                        "location": "%rdi",
-                        "direction": "import"
-                    }
-                ],
-                "return": {
-                    "type": "1fd8c01bdca094933f920b41375cfed0",
-                    "direction": "export",
-                    "location": "%rax"
-                }
-            }
-        },
-        {
-            "function": {
-                "name": "__isoc99_wscanf",
                 "parameters": [
                     {
                         "type": "f82dec616980ce95a30df043ae338eef",

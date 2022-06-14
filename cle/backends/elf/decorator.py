@@ -41,6 +41,7 @@ class cache_type:
 
         # Hash id is based on hash of type content
         uid = self.hash(typ)
+#        if uid == ""
         
         # Top level types holds the uid -> type
         cls.types[uid] = typ
