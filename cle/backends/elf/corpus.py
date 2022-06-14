@@ -790,10 +790,11 @@ class ElfCorpus(Corpus):
             "DW_TAG_subroutine_type",
             "DW_TAG_template_type_param",
             "DW_TAG_unspecified_type",
+            "DW_TAG_const_type",
         ]:
             return self.parse_underlying_type(type_die)
 
-        elif type_die and type_die.tag not in ["DW_TAG_base_type", "DW_TAG_const_type"]:
+        elif type_die and type_die.tag not in ["DW_TAG_base_type"]:
             print("NOT SEEN TYPE DIE")
             import IPython
 
@@ -818,8 +819,6 @@ class ElfCorpus(Corpus):
         """
         if die.tag == "DW_TAG_base_type":
             return ClassType.get(self.get_name(die))
-        if die.tag == "DW_TAG_const_type":
-            return "Constant"
 
         print("UNKNOWN DIE CLASS")
         import IPython
