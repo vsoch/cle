@@ -25,11 +25,12 @@ class ClassType:
     }
 
     patterns = {
-      "int": "Integer",
-      "char": "Integral",
-      "float": "Float",
-      "double": "Float",
+        "int": "Integer",
+        "char": "Integral",
+        "float": "Float",
+        "double": "Float",
     }
+
     @classmethod
     def get(cls, typename):
         """

@@ -7,7 +7,7 @@
                 "parameters": [
                     {
                         "name": "f",
-                        "type": "e4039fffdc2c00c7e01670eab19b2fa0",
+                        "type": "0390a1c12bf2b8c78bec40e8dfe5d450",
                         "location": "%rdi",
                         "direction": "import"
                     }
@@ -50,7 +50,7 @@
                 }
             ]
         },
-        "e4039fffdc2c00c7e01670eab19b2fa0": {
+        "0390a1c12bf2b8c78bec40e8dfe5d450": {
             "name": "f",
             "class": "Pointer",
             "size": 8,
@@ -58,8 +58,7 @@
                 "type": "4e9bdac6bf9e86e1486c7bd4bee20477"
             },
             "direction": "both",
-            "type": "*4e9bdac6bf9e86e1486c7bd4bee20477",
-            "indirections": 1
+            "type": "*4e9bdac6bf9e86e1486c7bd4bee20477"
         }
     }
 }

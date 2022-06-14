@@ -365,20 +365,20 @@ def classify_array(typ, allocator, types):
     # Unwrap entirely
     typename = typ.get("type")
     classname = None
-    
+
     # regular class id or pointer
     while len(typename) == 32 or len(typename) == 33:
-        typename = typename.replace('*', '')
+        typename = typename.replace("*", "")
         newtype = types[typename]
         if "type" in newtype:
-            typename = newtype['type']
+            typename = newtype["type"]
         elif "class" in newtype:
-            classname = newtype['class']
+            classname = newtype["class"]
             break
 
     if not classname:
-        classname = ClassType.get(typename) 
-                  
+        classname = ClassType.get(typename)
+
     # Just classify the base type
     base_type = {"class": classname, "size": size}
     return classify(

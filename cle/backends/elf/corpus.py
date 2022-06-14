@@ -30,8 +30,8 @@ class ElfCorpus(Corpus):
         self.parser = getattr(abi_parser, self.arch.name, None)
         self.symbols = kwargs.get("symbols")
         # Default don't include double underscore (private) variables
-        self.include_private = kwargs.get('include_private', False)
-        super().__init__(*args, **kwargs)        
+        self.include_private = kwargs.get("include_private", False)
+        super().__init__(*args, **kwargs)
 
         # self.types is cache of type id -> json
         # Types cache of die.offset -> type id
@@ -195,7 +195,7 @@ class ElfCorpus(Corpus):
         """
         return self.parse_underlying_type(die)
 
-    def parse_pointer_type(self, die, parent, indirections=1, allocator=None):
+    def parse_pointer_type(self, die, parent, allocator=None):
         """
         This is hit parsing a pointer function param
 
@@ -206,18 +206,16 @@ class ElfCorpus(Corpus):
             "name": self.get_name(parent),
             "class": "Pointer",
             "size": self.get_size(die),
-            "underlying_type": self.parse_underlying_type(die, indirections=indirections, allocator=allocator),
+            "underlying_type": self.parse_underlying_type(die, allocator=allocator),
             "direction": "both",
         }
-        
+
         # If we have an allocator passed from parsing a subprogram
         if allocator:
-            entry['location'] = allocator.get_next_int_register()
-            
+            entry["location"] = allocator.get_next_int_register()
+
         # This is a pointer to a type reference
         entry["type"] = "*" + entry["underlying_type"]["type"]
-        if indirections != 0:
-            entry["indirections"] = indirections
         return entry
 
     def parse_formal_parameter(self, die, allocator):
@@ -254,7 +252,12 @@ class ElfCorpus(Corpus):
         the rest.
         """
         name = self.get_name(die)
-        if self.symbols and name not in self.symbols or not self.include_private and name.startswith('__'):
+        if (
+            self.symbols
+            and name not in self.symbols
+            or not self.include_private
+            and name.startswith("__")
+        ):
             return
 
         # If has DW_TAG_external, we know it's external outside of this CU
@@ -472,7 +475,9 @@ class ElfCorpus(Corpus):
                     "Experimental parsing selected by ABI for %s is not supported yet."
                     % self.arch.name
                 )
-            underlying_type = underlying_type or self.parse_underlying_type(die, allocator=allocator)
+            underlying_type = underlying_type or self.parse_underlying_type(
+                die, allocator=allocator
+            )
             allocator = allocator or self.parser.get_return_allocator()
             if underlying_type:
                 # Get the actual type information
@@ -715,9 +720,9 @@ class ElfCorpus(Corpus):
         return self.parse_underlying_type(sibling)
 
     @cache_type
-    def parse_underlying_type(self, die, indirections=0, allocator=None):
+    def parse_underlying_type(self, die, allocator=None):
         """
-        Given a type, parse down to the underlying type (and count pointer indirections)
+        Given a type, parse down to the underlying type
         """
         if "DW_AT_type" not in die.attributes:
             return {"type": "unknown"}
@@ -731,8 +736,7 @@ class ElfCorpus(Corpus):
             return {"type": "unknown"}
 
         if type_die and type_die.tag == "DW_TAG_pointer_type":
-            indirections += 1
-            return self.parse_pointer_type(type_die, indirections=indirections, parent=die)
+            return self.parse_pointer_type(type_die, parent=die)
 
         if type_die and type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die)
@@ -740,7 +744,10 @@ class ElfCorpus(Corpus):
         if type_die and type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die)
 
-        if type_die and type_die.tag in ["DW_TAG_enumeration_type", "DW_TAG_enumerator"]:
+        if type_die and type_die.tag in [
+            "DW_TAG_enumeration_type",
+            "DW_TAG_enumerator",
+        ]:
             return self.parse_enumeration_type(type_die)
 
         # Case 1: It's an array (and type is for elements)

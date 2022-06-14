@@ -14,7 +14,7 @@
                     },
                     {
                         "name": "argv",
-                        "type": "8b65a8c0ffbf7cf3c7d719ca7c556b6f",
+                        "type": "a4723d99b0d87bd23f9f99d655413952",
                         "location": "%rsi",
                         "direction": "import"
                     }
@@ -39,7 +39,7 @@
                     },
                     {
                         "name": "array",
-                        "type": "0158962df727389f94103436632aa22c",
+                        "type": "e7006b9a9e829605cb6f35dd6e369c7f",
                         "location": "%rsi",
                         "direction": "import"
                     }
@@ -65,7 +65,7 @@
             "class": "Integral",
             "direction": "import"
         },
-        "d5dd634bc48185335c216e755142155b": {
+        "a3db00244f4e603e484c79f34f1e4e16": {
             "name": "unknown",
             "class": "Pointer",
             "size": 8,
@@ -73,19 +73,17 @@
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
             "direction": "both",
-            "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8",
-            "indirections": 2
+            "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8"
         },
-        "8b65a8c0ffbf7cf3c7d719ca7c556b6f": {
+        "a4723d99b0d87bd23f9f99d655413952": {
             "name": "argv",
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "d5dd634bc48185335c216e755142155b"
+                "type": "a3db00244f4e603e484c79f34f1e4e16"
             },
             "direction": "both",
-            "type": "*d5dd634bc48185335c216e755142155b",
-            "indirections": 1
+            "type": "*a3db00244f4e603e484c79f34f1e4e16"
         },
         "6d168f46b7d9e8b96a1ff9b171e0ad48": {
             "type": "long unsigned int",
@@ -124,7 +122,7 @@
                 }
             ]
         },
-        "0158962df727389f94103436632aa22c": {
+        "e7006b9a9e829605cb6f35dd6e369c7f": {
             "name": "array",
             "class": "Pointer",
             "size": 8,
@@ -132,8 +130,7 @@
                 "type": "9ffd15560f149b239367223323613a38"
             },
             "direction": "both",
-            "type": "*9ffd15560f149b239367223323613a38",
-            "indirections": 1
+            "type": "*9ffd15560f149b239367223323613a38"
         }
     }
 }
