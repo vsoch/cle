@@ -367,8 +367,7 @@ def classify_array(typ, allocator, types):
     classname = None
 
     # regular class id or pointer
-    while len(typename) == 32 or len(typename) == 33:
-        typename = typename.replace("*", "")
+    while len(typename) == 32:
         newtype = types[typename]
         if "type" in newtype:
             typename = newtype["type"]

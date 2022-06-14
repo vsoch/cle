@@ -12,7 +12,7 @@
                 {
                     "name": "px",
                     "location": "var",
-                    "type": "543c8b45eb9a1d43047280728940552a",
+                    "type": "b3c0436d0f77ae72ad8bd46bae9f5536",
                     "direction": "export"
                 }
             ]
@@ -25,15 +25,14 @@
             "class": "Integer",
             "direction": "import"
         },
-        "543c8b45eb9a1d43047280728940552a": {
-            "name": "px",
+        "b3c0436d0f77ae72ad8bd46bae9f5536": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
                 "type": "1fd8c01bdca094933f920b41375cfed0"
             },
             "direction": "both",
-            "type": "*1fd8c01bdca094933f920b41375cfed0"
+            "name": "px"
         }
     }
 }

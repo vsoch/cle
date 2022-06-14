@@ -14,7 +14,7 @@
                     },
                     {
                         "name": "argv",
-                        "type": "a4723d99b0d87bd23f9f99d655413952",
+                        "type": "fc120637f1c544d02555884cff0da54b",
                         "location": "%rsi",
                         "direction": "import"
                     }
@@ -39,7 +39,7 @@
                     },
                     {
                         "name": "array",
-                        "type": "e7006b9a9e829605cb6f35dd6e369c7f",
+                        "type": "66aea84f8bf2f889f2df5d1e80a45e57",
                         "location": "%rsi",
                         "direction": "import"
                     }
@@ -65,25 +65,22 @@
             "class": "Integral",
             "direction": "import"
         },
-        "a3db00244f4e603e484c79f34f1e4e16": {
-            "name": "unknown",
+        "c85bcac8ca48727eb84d73d743bfb8cd": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
                 "type": "ee8eaa81ccacc2d49d87afa5ca1148a8"
             },
-            "direction": "both",
-            "type": "*ee8eaa81ccacc2d49d87afa5ca1148a8"
+            "direction": "both"
         },
-        "a4723d99b0d87bd23f9f99d655413952": {
-            "name": "argv",
+        "fc120637f1c544d02555884cff0da54b": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "a3db00244f4e603e484c79f34f1e4e16"
+                "type": "c85bcac8ca48727eb84d73d743bfb8cd"
             },
             "direction": "both",
-            "type": "*a3db00244f4e603e484c79f34f1e4e16"
+            "name": "argv"
         },
         "6d168f46b7d9e8b96a1ff9b171e0ad48": {
             "type": "long unsigned int",
@@ -122,15 +119,14 @@
                 }
             ]
         },
-        "e7006b9a9e829605cb6f35dd6e369c7f": {
-            "name": "array",
+        "66aea84f8bf2f889f2df5d1e80a45e57": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
                 "type": "9ffd15560f149b239367223323613a38"
             },
             "direction": "both",
-            "type": "*9ffd15560f149b239367223323613a38"
+            "name": "array"
         }
     }
 }

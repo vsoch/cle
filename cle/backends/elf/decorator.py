@@ -40,9 +40,8 @@ class cache_type:
         typ = self.func(cls, *args, **kwargs)
 
         # Hash id is based on hash of type content
-        uid = self.hash(typ)
-#        if uid == ""
-        
+        uid = self.hash(typ) 
+      
         # Top level types holds the uid -> type
         cls.types[uid] = typ
         

@@ -19,7 +19,7 @@
                 "parameters": [
                     {
                         "name": "x",
-                        "type": "8876b4b51cb4243a65d1a452c9336d24",
+                        "type": "967ad9d95fc9df609ed595aac306126a",
                         "location": "%rdi",
                         "direction": "import"
                     }
@@ -34,25 +34,22 @@
             "class": "Integer",
             "direction": "import"
         },
-        "515d1475aa101b1a81035df970bec494": {
-            "name": "unknown",
+        "bea2891fe3f129d605a82945c88b6461": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
                 "type": "1fd8c01bdca094933f920b41375cfed0"
             },
-            "direction": "both",
-            "type": "*1fd8c01bdca094933f920b41375cfed0"
+            "direction": "both"
         },
-        "8876b4b51cb4243a65d1a452c9336d24": {
-            "name": "x",
+        "967ad9d95fc9df609ed595aac306126a": {
             "class": "Pointer",
             "size": 8,
             "underlying_type": {
-                "type": "515d1475aa101b1a81035df970bec494"
+                "type": "bea2891fe3f129d605a82945c88b6461"
             },
             "direction": "both",
-            "type": "*515d1475aa101b1a81035df970bec494"
+            "name": "x"
         }
     }
 }
