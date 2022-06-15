@@ -75,6 +75,7 @@ jobs:
           pip install git+https://github.com/angr/archinfo
           pip install git+https://github.com/angr/pyvex
           pip install git+https://github.com/eliben/pyelftools
+          pip install packaging
           pip install .
 
       - name: Cache Spack Installs
