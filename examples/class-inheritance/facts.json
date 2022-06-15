@@ -98,11 +98,6 @@
             "fields": [
                 {
                     "name": "unknown",
-                    "type": "308e7c0c4ed84449b2850937c1b6329e",
-                    "direction": "export"
-                },
-                {
-                    "name": "unknown",
                     "type": "3b92f99410a6dae32be62e61c114908a",
                     "direction": "export"
                 },

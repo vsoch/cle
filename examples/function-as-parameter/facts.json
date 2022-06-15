@@ -3439,12 +3439,7 @@
             "name": "exception_ptr",
             "size": 8,
             "class": "Class",
-            "fields": [
-                {
-                    "name": "_M_exception_object",
-                    "type": "bd0f95a6606dcd8b66497841cf8daa03"
-                }
-            ]
+            "fields": []
         },
         "f35c8460d65ceaaadef5f007642685f2": {
             "class": "Pointer",

@@ -1,5 +1,5 @@
 {
-    "library": "/home/vanessa/Desktop/Code/cle/examples/matt-callsite/lib.so",
+    "library": "/home/vanessa/Desktop/Code/cle/examples/callsite-as-parameter/lib.so",
     "locations": [
         {
             "function": {
