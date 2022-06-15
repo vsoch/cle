@@ -42,6 +42,10 @@ class ClassType:
                 classname = cls.patterns[pattern]
                 break
 
+        # __unknown__
+        if "unknown" in typename:
+            return "Unknown"
+
         if not classname:
             if typename not in cls.types:
                 print("classtype")

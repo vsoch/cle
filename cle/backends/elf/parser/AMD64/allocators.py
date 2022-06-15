@@ -124,6 +124,13 @@ class ReturnValueAllocator:
         """
         TODO: The standard does not describe how to return aggregates and unions
         """
+        # THIS IS A PATCH for aggregates / unions
+        # We need to figure out how to do this, it's not in the standard document
+        if hasattr(lo, "classes"):
+            lo = lo.classes[0]
+        if hasattr(hi, "classes"):
+            hi = hi.classes[0]
+
         if lo == RegisterClass.MEMORY:
             # If the type has class MEMORY, then the caller provides space for the return
             # value and passes the address of this storage in %rdi as if it were the first
@@ -161,5 +168,4 @@ class ReturnValueAllocator:
             # %st0 and the imaginary part in %st1.
             return "%st0|%st1"
 
-        # This should never be reached
         raise RuntimeError("Unable to allocate return value")

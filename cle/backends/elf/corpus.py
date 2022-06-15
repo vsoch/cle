@@ -275,7 +275,7 @@ class ElfCorpus(Corpus):
             and name.startswith("__")
         ):
             return
-            
+
         # If has DW_TAG_external, we know it's external outside of this CU
         if "DW_AT_external" not in die.attributes:
             return
@@ -350,7 +350,7 @@ class ElfCorpus(Corpus):
             elif child.tag == "DW_TAG_array_type":
                 param = self.parse_array_type(child)
 
-            elif child.tag == "DW_TAG_const_type":
+            elif child.tag in ["DW_TAG_const_type", "DW_TAG_constant"]:
                 param = self.parse_underlying_type(child, flags=["constant"])
             elif child.tag == "DW_TAG_volatile_type":
                 param = self.parse_underlying_type(child, flags=["volatile"])
@@ -361,7 +361,15 @@ class ElfCorpus(Corpus):
                 param = self.parse_structure_type(child)
 
             elif child.tag == "DW_TAG_pointer_type":
-                param = self.parse_pointer_type(child, allocator=allocator)
+                param = self.parse_pointer_type(child, parent=die, allocator=allocator)
+
+            # TODO should we be passing the allocator here?
+            elif child.tag == "DW_TAG_imported_declaration":
+                param = self.parse_imported_declaration(child)
+
+            # TODO should we be passing the same allocator here?
+            elif child.tag == "DW_TAG_subprogram":
+                param = self.parse_subprogram(child)
 
             # Call sites
             elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
@@ -379,13 +387,18 @@ class ElfCorpus(Corpus):
                     "DW_TAG_label",
                     "DW_TAG_template_type_param",
                     "DW_TAG_subroutine_type",
+                    "DW_TAG_common_block",
                 ]
                 or not child.tag
             ):
                 continue
 
             else:
-                raise Exception("Found new tag with subprogram children:\n%s" % child)
+                print("Found new tag with subprogram children:\n%s" % child)
+                import IPython
+
+                IPython.embed()
+                sys.exit()
             if param:
                 if "direction" not in param:
                     param["direction"] = "import"
@@ -743,6 +756,38 @@ class ElfCorpus(Corpus):
         entry = self.add_flags(entry, flags)
         return entry
 
+    def parse_imported_declaration(self, die, flags=None):
+        """
+        Parse an imported declaration.
+        """
+        if "DW_AT_import" in die.attributes:
+
+            # This means we can't get the import
+            try:
+                imported = self.type_die_lookup[die.attributes["DW_AT_import"].value]
+            except:
+                return
+            # DIE None case
+            if not imported.tag:
+                return
+            if imported.tag == "DW_TAG_subprogram":
+                return self.parse_subprogram(imported)
+            elif imported.tag == "DW_TAG_member":
+                return self.parse_member(imported)
+            elif imported.tag == "DW_TAG_typedef":
+                return self.parse_typedef(imported)
+            elif imported.tag == "DW_TAG_formal_parameter":
+                return self.parse_formal_parameter(imported)
+            elif imported.tag == ["DW_TAG_structure_type"]:
+                return self.parse_structure_type(imported)
+            print(imported)
+
+        print("UNKNOWN DECLARATION CASE")
+        import IPython
+
+        IPython.embed()
+        sys.exit()
+
     def parse_typedef(self, die, flags=None):
         """
         Parse a type definition
@@ -776,84 +821,105 @@ class ElfCorpus(Corpus):
         ):
             return self.add_flags({"type": "unknown"}, flags)
 
-        if type_die and type_die.tag == "DW_TAG_pointer_type":
+        # Fortran common blocks are not types
+        if type_die.tag == "DW_TAG_common_block":
+            return self.add_flags({"type": "unknown"}, flags)
+
+        # subprogram -> type (return) is an import of a function
+        if type_die.tag == "DW_TAG_imported_declaration":
+            return self.parse_imported_declaration(type_die, flags=flags)
+
+        if type_die.tag == "DW_TAG_pointer_type":
             return self.parse_pointer_type(type_die, parent=die, flags=flags)
 
-        if type_die and type_die.tag == "DW_TAG_class_type":
+        if type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
 
         # formal param had type call site in libcurses.so
-        if type_die and type_die.tag in ["DW_TAG_call_site", "DW_TAG_GNU_call_site"]:
+        if type_die.tag in ["DW_TAG_call_site", "DW_TAG_GNU_call_site"]:
             return self.parse_call_site(type_die, parent=die)
 
         # formal param had type call site param in libcrypto (libssl).so
-        if type_die and type_die.tag in [
+        if type_die.tag in [
             "DW_TAG_call_site_parameter",
             "DW_TAG_GNU_call_site_parameter",
         ]:
             return self.parse_call_site_parameter(type_die)
 
-        if type_die and type_die.tag == "DW_TAG_union_type":
+        if type_die.tag == "DW_TAG_union_type":
             return self.parse_union_type(type_die, flags=flags)
 
-        if type_die and type_die.tag in [
+        if type_die.tag in [
             "DW_TAG_enumeration_type",
             "DW_TAG_enumerator",
         ]:
             return self.parse_enumeration_type(type_die, flags=flags)
 
-        # Case 1: It's an array (and type is for elements)
-        if type_die and type_die.tag == "DW_TAG_array_type":
+        # Array (and type is for elements)
+        if type_die.tag == "DW_TAG_array_type":
             return self.parse_array_type(type_die, parent=die, flags=flags)
 
-        if type_die and type_die.tag == "DW_TAG_subprogram":
+        if type_die.tag == "DW_TAG_subprogram":
             return self.parse_subprogram(type_die)
 
         # Struct
-        if type_die and type_die.tag == "DW_TAG_structure_type":
+        if type_die.tag == "DW_TAG_structure_type":
             return self.parse_structure_type(type_die, flags=flags)
 
         # A variable being used as a formal parameter? see bzip main so
-        if type_die and type_die.tag == "DW_TAG_variable":
+        if type_die.tag == "DW_TAG_variable":
             return self.parse_variable(type_die, flags=flags)
 
-        if type_die and type_die.tag == "DW_TAG_inlined_subroutine":
+        if type_die.tag == "DW_TAG_inlined_subroutine":
             return self.parse_inlined_subroutine(type_die)
 
         # See libcrypto.so for this case
-        if type_die and type_die.tag == "DW_TAG_lexical_block":
+        if type_die.tag == "DW_TAG_lexical_block":
             self.parse_lexical_block(type_die)
             return self.add_flags({"type": "unknown"}, flags)
 
-        if type_die and type_die.tag == "DW_TAG_typedef":
+        if type_die.tag == "DW_TAG_typedef":
             return self.parse_typedef(type_die, flags=flags)
 
         # DW_TAG None, we can't know
-        if type_die and not type_die.tag:
+        if not type_die.tag:
             return self.add_flags({"type": "unknown"}, flags)
 
         # Note that if we see DW_TAG_member it means next_die for the DW_AT_type was empty
-        if type_die and type_die.tag == "DW_TAG_class_type":
+        if type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
 
         # parse the underlying type, and add the appropriate flag
-        if type_die and type_die.tag == "DW_TAG_const_type":
+        if type_die.tag in ["DW_TAG_const_type", "DW_TAG_constant"]:
             flags.append("constant")
             return self.parse_underlying_type(type_die, flags=flags)
-        if type_die and type_die.tag == "DW_TAG_volatile_type":
+        if type_die.tag == "DW_TAG_atomic_type":
+            flags.append("atomic")
+            return self.parse_underlying_type(type_die, flags=flags)
+        if type_die.tag == "DW_TAG_immutable_type":
+            flags.append("immutable")
+            return self.parse_underlying_type(type_die, flags=flags)
+        if type_die.tag == "DW_TAG_volatile_type":
             flags.append("volatile")
             return self.parse_underlying_type(type_die, flags=flags)
-
-        if type_die and type_die.tag == "DW_TAG_restrict_type":
+        if type_die.tag == "DW_TAG_packed_type":
+            flags.append("packed")
+            return self.parse_underlying_type(type_die, flags=flags)
+        if type_die.tag == "DW_TAG_shared_type":
+            flags.append("shared")
+            return self.parse_underlying_type(type_die, flags=flags)
+        if type_die.tag == "DW_TAG_restrict_type":
             flags.append("restrict")
             return self.parse_underlying_type(type_die, flags=flags)
 
-        if type_die and type_die.tag == "DW_TAG_base_type":
+        if type_die.tag == "DW_TAG_base_type":
             return self.parse_base_type(type_die, flags=flags)
 
         # These are essentially skipped over to get to underlying type
-        if type_die and type_die.tag in [
+        if type_die.tag in [
             "DW_TAG_formal_parameter",
+            "DW_TAG_namespace",
+            "DW_TAG_inheritance",
             "DW_TAG_member",
             "DW_TAG_reference_type",
             "DW_TAG_rvalue_reference_type",
@@ -861,6 +927,7 @@ class ElfCorpus(Corpus):
             "DW_TAG_subroutine_type",
             "DW_TAG_template_type_param",
             "DW_TAG_unspecified_type",
+            "DW_TAG_label",
         ]:
             return self.parse_underlying_type(type_die, flags=flags)
 

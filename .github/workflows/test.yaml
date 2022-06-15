@@ -96,7 +96,7 @@ jobs:
            for filename in $(find /opt/spack/opt/spack -name *.so); do
                echo "Testing fact generation for $filename"
                echo "::group::${package} ${filename}"
-               python dev.py ${filename}
+               python dev.py ${filename} --quiet
                echo "::endgroup::"
            done
 
