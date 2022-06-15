@@ -95,6 +95,8 @@ jobs:
            spack install ${package}
            for filename in $(find /opt/spack/opt/spack -name *.so); do
                echo "Testing fact generation for $filename"
+               echo "::group::${package} ${filename}"
                python dev.py ${filename}
+               echo "::endgroup::"
            done
 

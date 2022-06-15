@@ -275,7 +275,7 @@ class ElfCorpus(Corpus):
             and name.startswith("__")
         ):
             return
-
+            
         # If has DW_TAG_external, we know it's external outside of this CU
         if "DW_AT_external" not in die.attributes:
             return
