@@ -454,7 +454,7 @@ class ElfCorpus(Corpus):
                 continue
 
             field = self.parse_member(child)
-
+            print(field)
             # Our default is import but Matt wants struct param fields to be exports
             if "direction" not in field or field["direction"] != "both":
                 field["direction"] = "export"

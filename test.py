@@ -11,6 +11,7 @@ import sys
 
 # TODO we will want to look at lib name if they auto load and not add to corpus
 # OR we will want to generate separate corpora
+# TODO debug why struct fields removed from array...
 import cle
 
 # TODOs slow to build: omega-h, strumpack (openblas) fortrilinos

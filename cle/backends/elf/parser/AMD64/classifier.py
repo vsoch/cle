@@ -1,6 +1,7 @@
 from .register_class import RegisterClass
 from .allocators import RegisterAllocator
 from ...types import ClassType
+import copy
 
 
 class Classification:
@@ -268,7 +269,7 @@ def classify_aggregate(
     ebs = []
     cur = Eightbyte()
     added = False
-    fields = typ.get("fields", [])
+    fields = copy.deepcopy(typ.get("fields", []))
     while fields:
         f = fields.pop(0)
         field = types.get(f.get("type"))
@@ -277,7 +278,7 @@ def classify_aggregate(
 
         # If we have another aggregate (I'm not sure this is correct)
         if field.get("class") in ["Union", "Struct", "Class"]:
-            fields = field.get("fields", []) + fields
+            fields = copy.deepcopy(field.get("fields", [])) + fields
             continue
 
         added = False
