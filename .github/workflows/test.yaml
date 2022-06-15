@@ -81,15 +81,15 @@ jobs:
         with:
           path: /opt/spack/opt/spack
           key: ${{ runner.os }}-build-${{ matrix.package }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ matrix.package }}
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          restore-keys: ${{ runner.os }}-build-${{ matrix.package }}
 
       - name: Install Package and Test
         env:
           package: ${{ matrix.package }}
         run: |
+           # ensure spack can find Python, and builds with debug
+           export SPACK_ADD_DEBUG_FLAG=true
+           ln -s /usr/bin/python3 /usr/bin/python
            spack install ${package}
            for filename in $(find /opt/spack/opt/spack -name *.so); do
                echo "Testing fact generation for $filename"
