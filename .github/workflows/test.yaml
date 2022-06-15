@@ -9,6 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         # Testing that all e4s packages with tests produce output
+        # Note that gasnet has no .so
         package:
           - swig
           - qthreads
@@ -88,10 +89,11 @@ jobs:
           package: ${{ matrix.package }}
         run: |
            # ensure spack can find Python, and builds with debug
-           export SPACK_ADD_DEBUG_FLAG=true
+           export SPACK_ADD_DEBUG_FLAGS=true
            ln -s /usr/bin/python3 /usr/bin/python
            spack install ${package}
            for filename in $(find /opt/spack/opt/spack -name *.so); do
                echo "Testing fact generation for $filename"
                python dev.py ${filename}
            done
+
