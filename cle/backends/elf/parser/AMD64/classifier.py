@@ -44,7 +44,7 @@ def classify(
     types = types or {}
 
     # Don't handle this case right now
-    if not typ or "class" not in typ or typ["class"] == "Unknown":
+    if not typ or "class" not in typ or typ["class"] in ["Unknown", "ComplexUnknown"]:
         return
 
     cls = None

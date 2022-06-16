@@ -454,13 +454,26 @@ class ElfCorpus(Corpus):
                 continue
 
             field = self.parse_member(child)
-            print(field)
             # Our default is import but Matt wants struct param fields to be exports
             if "direction" not in field or field["direction"] != "both":
                 field["direction"] = "export"
             fields.append(field)
         if fields:
             entry["fields"] = fields
+        entry = self.add_flags(entry, flags)
+        return entry
+
+    def parse_string_type(self, die, flags=None):
+        """
+        In Fortran the char size 1 is presented as a string
+        """
+        # The size here includes padding
+        entry = {
+            "type": "char",
+            "size": self.get_size(die),
+            "class": self.add_class(die),
+            "direction": "import",
+        }
         entry = self.add_flags(entry, flags)
         return entry
 
@@ -770,16 +783,24 @@ class ElfCorpus(Corpus):
             # DIE None case
             if not imported.tag:
                 return
+            if imported.tag == "DW_TAG_imported_declaration":
+                return self.parse_imported_declaration(imported)
             if imported.tag == "DW_TAG_subprogram":
                 return self.parse_subprogram(imported)
             elif imported.tag == "DW_TAG_member":
                 return self.parse_member(imported)
+            elif imported.tag in ["DW_TAG_enumerator", "DW_TAG_enum_type"]:
+                return self.parse_enumeration_type(imported)
             elif imported.tag == "DW_TAG_typedef":
                 return self.parse_typedef(imported)
             elif imported.tag == "DW_TAG_formal_parameter":
                 return self.parse_formal_parameter(imported)
             elif imported.tag == ["DW_TAG_structure_type"]:
                 return self.parse_structure_type(imported)
+            # TODO: question - should this parse no matter what (e.g., skip external checks)
+            # found in libsymtabAPI.so of dyninst
+            elif imported.tag == "DW_TAG_variable":
+                return self.parse_variable(imported)
             print(imported)
 
         print("UNKNOWN DECLARATION CASE")
@@ -798,8 +819,31 @@ class ElfCorpus(Corpus):
         entry = self.add_flags(entry, flags)
         return entry
 
+    def update_flags(self, type_die, flags):
+        """
+        Given a type die, parse for flags to update.
+        """
+        # parse the underlying type, and add the appropriate flag
+        if type_die.tag in ["DW_TAG_const_type", "DW_TAG_constant"]:
+            flags.append("constant")
+        if type_die.tag == "DW_TAG_atomic_type":
+            flags.append("atomic")
+        if type_die.tag == "DW_TAG_immutable_type":
+            flags.append("immutable")
+        if type_die.tag == "DW_TAG_volatile_type":
+            flags.append("volatile")
+        if type_die.tag == "DW_TAG_packed_type":
+            flags.append("packed")
+        if type_die.tag == "DW_TAG_shared_type":
+            flags.append("shared")
+        if type_die.tag == "DW_TAG_restrict_type":
+            flags.append("restrict")
+        return flags
+
     @cache_type
-    def parse_underlying_type(self, die, allocator=None, flags=None):
+    def parse_underlying_type(
+        self, die, allocator=None, flags=None, type_name="DW_AT_type"
+    ):
         """
         Given a type, parse down to the underlying type
         """
@@ -810,20 +854,36 @@ class ElfCorpus(Corpus):
         flags = flags or []
 
         # Can we get the underlying type?
-        type_die = self.type_die_lookup.get(die.attributes["DW_AT_type"].value)
+        type_die = self.type_die_lookup.get(die.attributes[type_name].value)
 
         # Each of functions below can call this recursively
         # there was a formal parameter with a type as a compile unit in libgettext
         if (
             not type_die
             or not type_die.tag
-            or type_die.tag in ["DW_TAG_compile_unit", "DW_TAG_unspecified_parameters"]
+            or type_die.tag
+            in [
+                "DW_TAG_compile_unit",
+                "DW_TAG_unspecified_parameters",
+                "DW_TAG_imported_module",
+            ]
         ):
             return self.add_flags({"type": "unknown"}, flags)
 
         # Fortran common blocks are not types
         if type_die.tag == "DW_TAG_common_block":
             return self.add_flags({"type": "unknown"}, flags)
+
+        # TODO: This packed type is likely incorrect - not sure how to parse
+        if type_die.tag == "DW_TAG_GNU_formal_parameter_pack" and type_die.has_children:
+            type_die = list(type_die.iter_children())[0]
+
+        # A debugging information entry representing the type of an object that is a pointer18
+        # to a structure or class member has the tag DW_TAG_ptr_to_member_type
+        if type_die.tag == "DW_TAG_ptr_to_member_type":
+            return self.parse_underlying_type(
+                type_die, type_name="DW_AT_containing_type"
+            )
 
         # subprogram -> type (return) is an import of a function
         if type_die.tag == "DW_TAG_imported_declaration":
@@ -889,34 +949,28 @@ class ElfCorpus(Corpus):
         if type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
 
-        # parse the underlying type, and add the appropriate flag
-        if type_die.tag in ["DW_TAG_const_type", "DW_TAG_constant"]:
-            flags.append("constant")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_atomic_type":
-            flags.append("atomic")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_immutable_type":
-            flags.append("immutable")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_volatile_type":
-            flags.append("volatile")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_packed_type":
-            flags.append("packed")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_shared_type":
-            flags.append("shared")
-            return self.parse_underlying_type(type_die, flags=flags)
-        if type_die.tag == "DW_TAG_restrict_type":
-            flags.append("restrict")
-            return self.parse_underlying_type(type_die, flags=flags)
+        # Additional flags based on the type die
+        flags = self.update_flags(type_die, flags)
 
         if type_die.tag == "DW_TAG_base_type":
             return self.parse_base_type(type_die, flags=flags)
 
+        # https://gcc.gnu.org/pipermail/fortran/2008-August/025359.html
+        # in fortran this is like a char size 1
+        if type_die.tag == "DW_TAG_string_type":
+            return self.parse_string_type(type_die, flags=flags)
+
         # These are essentially skipped over to get to underlying type
         if type_die.tag in [
+            "DW_TAG_atomic_type",
+            "DW_TAG_const_type",
+            "DW_TAG_constant",
+            "DW_TAG_restrict_type",
+            "DW_TAG_packed_type",
+            "DW_TAG_immutable_type",
+            "DW_TAG_volatile_type",
+            "DW_TAG_shared_type",
+            # end flag types
             "DW_TAG_formal_parameter",
             "DW_TAG_namespace",
             "DW_TAG_inheritance",
@@ -927,10 +981,14 @@ class ElfCorpus(Corpus):
             "DW_TAG_subroutine_type",
             "DW_TAG_template_type_param",
             "DW_TAG_unspecified_type",
+            "DW_TAG_template_value_parameter",
+            "DW_TAG_template_value_param",
+            "DW_TAG_GNU_template_parameter_pack",
             "DW_TAG_label",
         ]:
             return self.parse_underlying_type(type_die, flags=flags)
 
+        print(type_die)
         print("NOT SEEN TYPE DIE")
         import IPython
 
@@ -943,6 +1001,8 @@ class ElfCorpus(Corpus):
         """
         if die.tag == "DW_TAG_base_type":
             return ClassType.get(self.get_name(die))
+        if die.tag == "DW_TAG_string_type":
+            return "Integral"
 
         print("UNKNOWN DIE CLASS")
         import IPython

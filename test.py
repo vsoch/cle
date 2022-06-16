@@ -40,6 +40,7 @@ def get_basename(filename):
 
 skips = {
     "/tmp/spack/opt/spack/linux-debian11-skylake/gcc-12.1.0/libbsd-0.11.5-ayxy3zjyufi6neh4fl5pie6n6rdc3jyn/lib/libbsd.so",
+    "/tmp/spack/opt/spack/linux-debian11-skylake/gcc-12.1.0/warpx-22.06-yimecrpkms6r44o7qegvo33qaejos7vx/lib/libwarpx.3d.so" # memory killed
 }
 
 new_skips = set()
@@ -49,6 +50,11 @@ skips = skips.union(new_skips)
 
 for filename in recursive_find(root):
 
+    # Intel ones don't seem to work:
+    if "intel" in filename:
+        print(f'Skipping {filename}')
+        continue
+    
     # Also check the basename in case duplicate names
     basename = get_basename(filename)
 

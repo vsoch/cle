@@ -124,12 +124,16 @@ class ReturnValueAllocator:
         """
         TODO: The standard does not describe how to return aggregates and unions
         """
-        # THIS IS A PATCH for aggregates / unions
+        # THESE ARE PATCHES for aggregates / unions
         # We need to figure out how to do this, it's not in the standard document
         if hasattr(lo, "classes"):
             lo = lo.classes[0]
         if hasattr(hi, "classes"):
             hi = hi.classes[0]
+
+        if lo == RegisterClass.NO_CLASS and hi == RegisterClass.NO_CLASS:
+            return "unknown"
+        # END PATCHES
 
         if lo == RegisterClass.MEMORY:
             # If the type has class MEMORY, then the caller provides space for the return
@@ -141,13 +145,14 @@ class ReturnValueAllocator:
             # caller in %rdi.
             return "%rax"
 
-        if lo == RegisterClass.INTEGER:
+        if lo == RegisterClass.INTEGER or (not lo and hi == RegisterClass.INTEGER):
             # If the class is INTEGER, the next available register of the sequence %rax, %rdx is used.
             if param.get("size", 0) > 64:
                 return "%rax|%rdx"
             return "%rax"
 
-        if lo == RegisterClass.SSE:
+        # TODO: second part was added finding lo=None, and hi=SSE, see adios->libadios2_cxx11.so
+        if lo == RegisterClass.SSE or (not lo and hi == RegisterClass.SSE):
             #  If the class is SSE, the next available vector register of the sequence %xmm0, %xmm1 is used
             # TODO: larger vector types (ymm, zmm)
             if param.get("size", 0) > 64:
@@ -168,4 +173,8 @@ class ReturnValueAllocator:
             # %st0 and the imaginary part in %st1.
             return "%st0|%st1"
 
+        print("CANNOT ALLOCATE RETURN TYPE")
+        import IPython
+
+        IPython.embed()
         raise RuntimeError("Unable to allocate return value")

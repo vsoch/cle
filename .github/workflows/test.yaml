@@ -92,11 +92,20 @@ jobs:
            # ensure spack can find Python, and builds with debug
            export SPACK_ADD_DEBUG_FLAGS=true
            ln -s /usr/bin/python3 /usr/bin/python
+           echo "::group::${package} INSTALL"
            spack install ${package}
+           echo "::endgroup::"
+           mkdir -p results/
            for filename in $(find /opt/spack/opt/spack -name *.so); do
+               name=$(basename ${filename})
                echo "Testing fact generation for $filename"
                echo "::group::${package} ${filename}"
-               python dev.py ${filename} --quiet
+               python dev.py ${filename} > results/${name}.json
                echo "::endgroup::"
            done
 
+      - name: Archive JSON Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: abi-json
+          path: results
