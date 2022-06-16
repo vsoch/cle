@@ -174,7 +174,7 @@ class ReturnValueAllocator:
             return "%st0|%st1"
 
         print("CANNOT ALLOCATE RETURN TYPE")
-        import IPython
-
-        IPython.embed()
+        return "unknown"
+        #import IPython
+        #IPython.embed()
         raise RuntimeError("Unable to allocate return value")
