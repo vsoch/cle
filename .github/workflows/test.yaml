@@ -107,5 +107,5 @@ jobs:
       - name: Archive JSON Results
         uses: actions/upload-artifact@v3
         with:
-          name: abi-json
+          name: abi-json-${{ matrix.package }}
           path: results
