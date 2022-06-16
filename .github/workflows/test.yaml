@@ -100,7 +100,7 @@ jobs:
                name=$(basename ${filename})
                echo "Testing fact generation for $filename"
                echo "::group::${package} ${filename}"
-               python dev.py ${filename} > results/${name}.json
+               python dev.py ${filename} > results/${name}.json || echo "failure" > results/${name}.json
                echo "::endgroup::"
            done
 
