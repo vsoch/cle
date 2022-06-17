@@ -248,6 +248,7 @@ def post_merge(lo, hi, size):
         and lo != RegisterClass.SSEUP
     ):
         hi = RegisterClass.SSE
+    return lo, hi
 
 
 def classify_struct(typ, types, allocator=None, return_classification=False):
@@ -368,11 +369,16 @@ def classify_union(typ, allocator, types):
         c = classify(
             field, allocator=allocator, return_classification=True, types=types
         )
-        hi = merge(hi, c.classes[1])
-        lo = merge(lo, c.classes[0])
+        if isinstance(c, list) and len(c) == 1:
+            lo = merge(lo, c[0])
+        elif isinstance(c, list) and len(c) > 1:
+            hi = merge(hi, c[1])
+            lo = merge(lo, c[0])
+        else:
+            hi = merge(hi, c.classes[1])
+            lo = merge(lo, c.classes[0])
 
-    # Pass a reference so they are updated here, and we also need size
-    post_merge(lo, hi, size)
+    lo, hi = post_merge(lo, hi, size)
     return Classification("Union", [lo, hi])
 
 
