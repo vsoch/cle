@@ -4,6 +4,7 @@ from elftools.dwarf.die import DIE
 class ClassType:
     types = {
         "int": "Integer",
+        "short": "Integer",
         "long int": "Integer",
         "unsigned int": "Integer",
         "unsigned char": "Integral",
