@@ -181,6 +181,7 @@ class LSDAExceptionTable:
         if modifier == 0:
             pass
         else:
+            pass
             raise NotImplementedError("Unsupported modifier for CallSiteEntry: %#x." % modifier)
 
         return CallSiteEntry(cs_start, cs_len, cs_lp, cs_action)
