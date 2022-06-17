@@ -386,6 +386,7 @@ class ElfCorpus(Corpus):
                     "DW_TAG_typedef",
                     "DW_TAG_label",
                     "DW_TAG_template_type_param",
+                    "DW_TAG_imported_module",
                     "DW_TAG_subroutine_type",
                     "DW_TAG_common_block",
                 ]
