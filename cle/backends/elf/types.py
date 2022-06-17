@@ -35,6 +35,8 @@ class ClassType:
         "logical": "Unknown",
         "complex(kind=": "Unknown",
         "real(kind=": "Unknown",
+        # C99
+        "__ARRAY_SIZE_TYPE__": "Unknown",
     }
 
     @classmethod
