@@ -169,9 +169,9 @@ class ElfCorpus(Corpus):
 
         print("inlined subroutine")
         print(die)
-#        import IPython
+        import IPython
 
-#        IPython.embed()
+        IPython.embed()
         sys.exit(0)
 
     def parse_call_site_parameter(self, die):
@@ -395,9 +395,9 @@ class ElfCorpus(Corpus):
 
             else:
                 print("Found new tag with subprogram children:\n%s" % child)
-                #import IPython
+                import IPython
 
-                #IPython.embed()
+                IPython.embed()
                 sys.exit(0)
             if param:
                 if "direction" not in param:
@@ -804,10 +804,10 @@ class ElfCorpus(Corpus):
             print(imported)
 
         print("UNKNOWN DECLARATION CASE")
-        sys.exit(0)
-#        import IPython
+        import IPython
 
-#        IPython.embed()
+        IPython.embed()
+        sys.exit(0)
 
     def parse_typedef(self, die, flags=None):
         """
