@@ -23,10 +23,9 @@ class ClassType:
         "float": "Float",
         "double": "Float",
         "long double": "Float",
-
     }
 
-    patterns = {      
+    patterns = {
         "int": "Integer",
         "char": "Integral",
         "float": "Float",
@@ -39,6 +38,8 @@ class ClassType:
         "real(kind=": "Unknown",
         # C99
         "__ARRAY_SIZE_TYPE__": "Unknown",
+        # Boost
+        "param_type": "Unknown",
     }
 
     @classmethod

@@ -794,7 +794,10 @@ class ElfCorpus(Corpus):
                 return self.parse_enumeration_type(imported)
             elif imported.tag == "DW_TAG_typedef":
                 return self.parse_typedef(imported)
-            elif imported.tag in ["DW_TAG_formal_parameter", "DW_TAG_template_type_param"]:
+            elif imported.tag in [
+                "DW_TAG_formal_parameter",
+                "DW_TAG_template_type_param",
+            ]:
                 return self.parse_formal_parameter(imported, allocator=None)
             elif imported.tag == "DW_TAG_class_type":
                 return self.parse_class_type(imported)
