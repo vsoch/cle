@@ -162,6 +162,10 @@ class LSDAExceptionTable:
         base_encoding = encoding & 0x0f
         modifier = encoding & 0xf0
 
+        # nvvm/lib64/libnvvm.so
+        if base_encoding not in self._formats:
+            return
+
         # header
         s = struct_parse(
             Struct('CallSiteEntry',
