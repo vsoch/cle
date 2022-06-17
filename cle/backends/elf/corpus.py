@@ -149,7 +149,7 @@ class ElfCorpus(Corpus):
                 raise Exception("Unknown call site parameter!:\n%s" % child)
 
         if params:
-            entry["params"] = params
+            entry["parameters"] = params
         self.callsites.append(entry)
         return entry
 
@@ -790,7 +790,7 @@ class ElfCorpus(Corpus):
                 return self.parse_subprogram(imported)
             elif imported.tag == "DW_TAG_member":
                 return self.parse_member(imported)
-            elif imported.tag in ["DW_TAG_enumerator", "DW_TAG_enum_type"]:
+            elif imported.tag in ["DW_TAG_enumerator", "DW_TAG_enum_type", "DW_TAG_enumeration_type"]:
                 return self.parse_enumeration_type(imported)
             elif imported.tag == "DW_TAG_typedef":
                 return self.parse_typedef(imported)
@@ -916,6 +916,7 @@ class ElfCorpus(Corpus):
             return self.parse_union_type(type_die, flags=flags)
 
         if type_die.tag in [
+            "DW_TAG_enum_type",
             "DW_TAG_enumeration_type",
             "DW_TAG_enumerator",
         ]:
