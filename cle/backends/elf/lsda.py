@@ -112,9 +112,6 @@ class LSDAExceptionTable:
         if lpstart_encoding != DW_EH_encoding_flags['DW_EH_PE_omit']:
             base_encoding = lpstart_encoding & 0x0f
             modifier = lpstart_encoding & 0xf0
-
-            import IPython
-            IPython.embed()
             lpstart = struct_parse(
                 Struct('dummy',
                        self._formats[base_encoding]('LPStart')),
