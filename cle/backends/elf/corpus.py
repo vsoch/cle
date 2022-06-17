@@ -793,8 +793,8 @@ class ElfCorpus(Corpus):
                 return self.parse_enumeration_type(imported)
             elif imported.tag == "DW_TAG_typedef":
                 return self.parse_typedef(imported)
-            elif imported.tag == "DW_TAG_formal_parameter":
-                return self.parse_formal_parameter(imported)
+            elif imported.tag in ["DW_TAG_formal_parameter", "DW_TAG_template_type_param"]:
+                return self.parse_formal_parameter(imported, allocator=None)
             elif imported.tag == ["DW_TAG_structure_type"]:
                 return self.parse_structure_type(imported)
             # TODO: question - should this parse no matter what (e.g., skip external checks)
