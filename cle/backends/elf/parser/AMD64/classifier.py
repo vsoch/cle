@@ -295,6 +295,8 @@ def classify_aggregate(
 
     classes = []
     for eb in ebs:
+        if not eb.fields:
+            continue
         if len(eb.fields) > 1:
             c1 = classify(
                 eb.fields[0],
