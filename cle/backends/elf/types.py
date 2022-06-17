@@ -40,6 +40,8 @@ class ClassType:
         "__ARRAY_SIZE_TYPE__": "Unknown",
         # Boost
         "param_type": "Unknown",
+        # No idea
+        "sizetype": "Unknown",
     }
 
     @classmethod
