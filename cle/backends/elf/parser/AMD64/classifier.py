@@ -369,6 +369,9 @@ def classify_union(typ, allocator, types):
         c = classify(
             field, allocator=allocator, return_classification=True, types=types
         )
+        # We can't make a decision
+        if isinstance(c, list) and len(c) == 0:
+            continue
         if isinstance(c, list) and len(c) == 1:
             lo = merge(lo, c[0])
         elif isinstance(c, list) and len(c) > 1:
