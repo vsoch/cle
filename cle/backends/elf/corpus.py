@@ -811,6 +811,9 @@ class ElfCorpus(Corpus):
             # found in libsymtabAPI.so of dyninst
             elif imported.tag == "DW_TAG_variable":
                 return self.parse_variable(imported)
+            elif self.is_flag_type(imported):
+                return self.parse_underlying_type(imported, flags=flags)
+
             print(imported)
 
         print("UNKNOWN DECLARATION CASE")
@@ -828,6 +831,18 @@ class ElfCorpus(Corpus):
         entry.update(underlying_type)
         entry = self.add_flags(entry, flags)
         return entry
+
+    def is_flag_type(self, die):
+        return die.tag in [
+            "DW_TAG_const_type",
+            "DW_TAG_constant",
+            "DW_TAG_atomic_type",
+            "DW_TAG_immutable_type",
+            "DW_TAG_volatile_type",
+            "DW_TAG_packed_type",
+            "DW_TAG_shared_type",
+            "DW_TAG_restrict_type",
+        ]
 
     def update_flags(self, type_die, flags):
         """
@@ -972,16 +987,7 @@ class ElfCorpus(Corpus):
             return self.parse_string_type(type_die, flags=flags)
 
         # These are essentially skipped over to get to underlying type
-        if type_die.tag in [
-            "DW_TAG_atomic_type",
-            "DW_TAG_const_type",
-            "DW_TAG_constant",
-            "DW_TAG_restrict_type",
-            "DW_TAG_packed_type",
-            "DW_TAG_immutable_type",
-            "DW_TAG_volatile_type",
-            "DW_TAG_shared_type",
-            # end flag types
+        if self.is_flag_type(type_die) or type_die.tag in [
             "DW_TAG_formal_parameter",
             "DW_TAG_namespace",
             "DW_TAG_inheritance",
