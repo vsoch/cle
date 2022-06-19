@@ -89,11 +89,8 @@ def classify(
         return "nullptr"
 
     if cls is None:
-        print("UNWRAP UNDERLYING TYPE IN CLASSIFY")
-        import IPython
-
-        return
-        IPython.embed()
+        # This should be IPython for further inspection
+        return None
 
     # } else if (auto *t = underlying_type->getEnumType()) {
     #  return classify(t);

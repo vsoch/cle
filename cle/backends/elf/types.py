@@ -61,11 +61,8 @@ class ClassType:
 
         if not classname:
             if typename not in cls.types:
-                print("classtype")
-                print(typename)
-                import IPython
-
-                IPython.embed()
+                # This should be an interactive IPython
+                return "Unknown"
             classname = cls.types[typename]
 
         # Prefix with complex

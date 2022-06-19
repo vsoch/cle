@@ -167,12 +167,8 @@ class ElfCorpus(Corpus):
             else:
                 return {"type": "unknown"}
 
-        print("inlined subroutine")
-        print(die)
-        import IPython
-
-        IPython.embed()
-        sys.exit(0)
+        # This is a type we don't know - for development should be Ipython
+        return {"type": "unknown"}
 
     def parse_call_site_parameter(self, die):
         """
@@ -395,11 +391,8 @@ class ElfCorpus(Corpus):
                 continue
 
             else:
-                print("Found new tag with subprogram children:\n%s" % child)
-                import IPython
-
-                IPython.embed()
-                sys.exit(0)
+                # for development should be Ipython
+                continue
             if param:
                 if "direction" not in param:
                     param["direction"] = "import"
@@ -728,7 +721,7 @@ class ElfCorpus(Corpus):
             "DW_AT_upper_bound" in die.attributes
             and "DW_AT_lower_bound" in die.attributes
         ):
-         
+
             # TODO this looks like it can sometimes be a dwarf expression with a constant
             # see libpetsc.so
             try:
@@ -820,13 +813,8 @@ class ElfCorpus(Corpus):
             elif self.is_flag_type(imported):
                 return self.parse_underlying_type(imported, flags=flags)
 
-            print(imported)
-
-        print("UNKNOWN DECLARATION CASE")
-        import IPython
-
-        IPython.embed()
-        sys.exit(0)
+        # for development should be Ipython
+        return self.parse_underlying_type(imported, flags=flags)
 
     def parse_typedef(self, die, flags=None):
         """
@@ -1009,7 +997,7 @@ class ElfCorpus(Corpus):
             "DW_TAG_GNU_template_parameter_pack",
             "DW_TAG_GNU_formal_parameter_pack",
             "DW_TAG_label",
-            "DW_TAG_module"
+            "DW_TAG_module",
         ]:
             return self.parse_underlying_type(type_die, flags=flags)
 
