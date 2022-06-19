@@ -310,7 +310,7 @@ class ElfCorpus(Corpus):
                 continue
 
             # can either be inlined subroutine or format parameter
-            if child.tag == "DW_TAG_formal_parameter":
+            if child.tag in ["DW_TAG_formal_parameter", "DW_TAG_template_value_param"]:
                 param = self.parse_formal_parameter(child, allocator=allocator)
 
             elif child.tag == "DW_TAG_inlined_subroutine":
@@ -728,10 +728,16 @@ class ElfCorpus(Corpus):
             "DW_AT_upper_bound" in die.attributes
             and "DW_AT_lower_bound" in die.attributes
         ):
-            entry["count"] = (
-                die.attributes["DW_AT_upper_bound"].value
-                - die.attributes["DW_AT_lower_bound"].value
-            )
+         
+            # TODO this looks like it can sometimes be a dwarf expression with a constant
+            # see libpetsc.so
+            try:
+                entry["count"] = (
+                    die.attributes["DW_AT_upper_bound"].value
+                    - die.attributes["DW_AT_lower_bound"].value
+                )
+            except:
+                pass
 
         # If the lower bound value is missing, the value is assumed to be a language-dependent default constant.
         elif "DW_AT_upper_bound" in die.attributes:
