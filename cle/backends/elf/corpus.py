@@ -1007,6 +1007,7 @@ class ElfCorpus(Corpus):
             "DW_TAG_template_value_parameter",
             "DW_TAG_template_value_param",
             "DW_TAG_GNU_template_parameter_pack",
+            "DW_TAG_GNU_formal_parameter_pack",
             "DW_TAG_label",
             "DW_TAG_module"
         ]:
