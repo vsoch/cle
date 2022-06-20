@@ -631,6 +631,7 @@ class ELF(MetaELF):
 
             try:
                 lineprog = dwarf.line_program_for_CU(cu)
+                entries = lineprog.get_entries()
             except ELFParseError:
                 continue
             if lineprog is None:
