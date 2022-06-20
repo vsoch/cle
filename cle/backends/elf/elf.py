@@ -616,9 +616,11 @@ class ELF(MetaELF):
         """
         for cu in dwarf.iter_CUs():
             comp_dir = '.'
-<<<<<<< HEAD
-            die = cu.get_top_DIE()
-            
+            try:
+                die = cu.get_top_DIE()
+            except KeyError:
+                # pyelftools is not very resilient
+                continue
             if 'DW_AT_comp_dir' in die.attributes:
                 comp_dir = die.attributes['DW_AT_comp_dir'].value.decode()
 
@@ -627,27 +629,11 @@ class ELF(MetaELF):
             if "DW_AT_stmt_list" in die.attributes:
                 del die.attributes["DW_AT_stmt_list"]
 
-            # Added because this fails sometimes, along with lineprog.get_entries()
-            try:
-                lineprog = dwarf.line_program_for_CU(cu)
-                if lineprog is None:
-                    continue
-                entries = lineprog.get_entries()
-            except Exception as e:
-=======
-            try:
-                die = cu.get_top_DIE()
-            except KeyError:
-                # pyelftools is not very resilient
-                continue
-            if 'DW_AT_comp_dir' in die.attributes:
-                comp_dir = die.attributes['DW_AT_comp_dir'].value.decode()
             try:
                 lineprog = dwarf.line_program_for_CU(cu)
             except ELFParseError:
                 continue
             if lineprog is None:
->>>>>>> 825ba968f69aac8c4904cae34c026fa60d2bf655
                 continue
             file_cache = {}
             for line in entries:
