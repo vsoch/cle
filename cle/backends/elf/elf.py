@@ -631,13 +631,12 @@ class ELF(MetaELF):
 
             try:
                 lineprog = dwarf.line_program_for_CU(cu)
-                entries = lineprog.get_entries()
             except ELFParseError:
                 continue
             if lineprog is None:
                 continue
             file_cache = {}
-            for line in entries:
+            for line in lineprog.get_entries():
                 if line.state is None:
                     continue
                 if line.state.file in file_cache:
