@@ -722,14 +722,6 @@ class ELF(MetaELF):
         for cu in dwarf.iter_CUs():
             expr_parser = DWARFExprParser(cu.structs)
 
-            # scan the whole die tree for DW_TAG_base_type and DW_TAG_typedef
-            for die in cu.iter_DIEs():                
-                if die.tag == "DW_TAG_base_type":
-                    var_type = VariableType.read_from_die(die)
-                    if var_type is not None:
-                        type_list[die.offset] = var_type
-                parse_die_types(die)
-
             # scan the whole die tree for DW_TAG_base_type
             try:
                 for die in cu.iter_DIEs():
@@ -737,6 +729,7 @@ class ELF(MetaELF):
                         var_type = VariableType.read_from_die(die)
                         if var_type is not None:
                             type_list[die.offset] = var_type
+                    parse_die_types(die)
             except KeyError:
                 # pyelftools is not very resilient - we need to catch KeyErrors here
                 continue
