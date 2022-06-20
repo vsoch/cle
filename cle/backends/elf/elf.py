@@ -8,7 +8,7 @@ from sortedcontainers import SortedDict
 import elftools
 from elftools.elf import elffile, sections, dynamic, enums
 from elftools.dwarf import callframe
-from elftools.common.exceptions import ELFError, DWARFError
+from elftools.common.exceptions import ELFError, DWARFError, ELFParseError
 from elftools.dwarf.dwarf_expr import DWARFExprParser
 from elftools.dwarf.descriptions import describe_form_class, describe_attr_value, set_global_machine_arch
 from elftools.dwarf.dwarfinfo import DWARFInfo
@@ -616,6 +616,7 @@ class ELF(MetaELF):
         """
         for cu in dwarf.iter_CUs():
             comp_dir = '.'
+<<<<<<< HEAD
             die = cu.get_top_DIE()
             
             if 'DW_AT_comp_dir' in die.attributes:
@@ -633,6 +634,20 @@ class ELF(MetaELF):
                     continue
                 entries = lineprog.get_entries()
             except Exception as e:
+=======
+            try:
+                die = cu.get_top_DIE()
+            except KeyError:
+                # pyelftools is not very resilient
+                continue
+            if 'DW_AT_comp_dir' in die.attributes:
+                comp_dir = die.attributes['DW_AT_comp_dir'].value.decode()
+            try:
+                lineprog = dwarf.line_program_for_CU(cu)
+            except ELFParseError:
+                continue
+            if lineprog is None:
+>>>>>>> 825ba968f69aac8c4904cae34c026fa60d2bf655
                 continue
             file_cache = {}
             for line in entries:
@@ -728,6 +743,17 @@ class ELF(MetaELF):
                     if var_type is not None:
                         type_list[die.offset] = var_type
                 parse_die_types(die)
+
+            # scan the whole die tree for DW_TAG_base_type
+            try:
+                for die in cu.iter_DIEs():
+                    if die.tag == "DW_TAG_base_type":
+                        var_type = VariableType.read_from_die(die)
+                        if var_type is not None:
+                            type_list[die.offset] = var_type
+            except KeyError:
+                # pyelftools is not very resilient - we need to catch KeyErrors here
+                continue
 
             # Provide type information to the corpus
             self.corpus.type_die_lookup = type_die_lookup
