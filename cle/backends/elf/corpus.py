@@ -20,6 +20,34 @@ import copy
 l = logging.getLogger(name=__name__)
 
 
+def create_location_lookup(res):
+    """
+    Create a helper location lookup to match registers based on param types
+    """
+    # Create a "best effort" lookup of type ids
+    lookup = {}
+    for eb in res.regclass:
+        for field in eb.fields:
+            if "location" not in field or "type_uid" not in field:
+                continue
+            if field["type_uid"] in lookup:
+                lookup[field["type_uid"]].append(field["location"])
+            else:
+                lookup[field["type_uid"]] = [field["location"]]
+    return lookup
+
+
+def update_underlying_type(param, lookup):
+    """
+    Given some kind of underlying type, match fields to locations.
+    """
+    underlying_type = copy.deepcopy(types[param["type"]])
+    for field in underlying_type.get("fields"):
+        if field.get("type") in lookup:
+            field["location"] = lookup[field["type"]].pop(0)
+    return underlying_type
+
+
 class ElfCorpus(Corpus):
     """
     Represents a Json corpus for an ELF file, derived from DWARF.
@@ -50,8 +78,14 @@ class ElfCorpus(Corpus):
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
                 loc = self.parse_location(func["return"], return_allocator)
-                if loc:
+                if isinstance(loc, str):
                     func["return"]["location"] = loc
+                elif loc and "type" in func["return"]:
+                    lookup = create_location_lookup(loc)
+                    if func["return"]["type"] in lookup:
+                        func["return"]["type"] = update_underlying_type(
+                            func["return"], lookup
+                        )
 
             # Set the allocator on the level of the function
             allocator = self.parser.get_allocator()
@@ -65,24 +99,11 @@ class ElfCorpus(Corpus):
                     param["location"] = res
                     continue
 
-                # Create a "best effort" lookup of type ids
-                lookup = {}
-                for eb in res.regclass:
-                    for field in eb.fields:
-                        if "location" not in field or "type_uid" not in field:
-                            continue
-                        if field["type_uid"] in lookup:
-                            lookup[field["type_uid"]].append(field["location"])
-                        else:
-                            lookup[field["type_uid"]] = [field["location"]]
+                lookup = create_location_lookup(res)
 
                 # Res is a classification with eighbytes we unwrap
                 # Try just unwrapping the top level for now
-                underlying_type = copy.deepcopy(types[param["type"]])
-                for field in underlying_type.get("fields"):
-                    if field.get("type") in lookup:
-                        field["location"] = lookup[field["type"]].pop(0)
-                param["type"] = underlying_type
+                param["type"] = update_underlying_type(param, lookup)
 
     def parse_location(self, entry, allocator):
         """

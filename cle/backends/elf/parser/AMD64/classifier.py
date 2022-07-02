@@ -6,10 +6,12 @@ import json
 import hashlib
 import copy
 
+
 class Classification:
     def __init__(self, name, regclass):
         self.regclass = regclass
         self.name = name
+
 
 class Eightbyte:
     def __init__(self):
@@ -17,17 +19,17 @@ class Eightbyte:
         self.size = 0
         self.regclass = RegisterClass.NO_CLASS
 
-    def has_space_for(self, f):        
+    def has_space_for(self, f):
         return self.size + f.get("size", 0) <= 8
 
     def add(self, f, type_uid):
         self.size += f.get("size", 0)
-        
+
         # Don't add original reference so it mucks up types
         f = copy.deepcopy(f)
-        f['type_uid'] = type_uid
+        f["type_uid"] = type_uid
         self.fields.append(f)
-       
+
     def do_print(self):
         for f in self.fields:
             print("{%s,%s}" % (f.get("name"), f.get("size", 0)))
@@ -109,13 +111,13 @@ def classify(typ, return_classification=False, allocator=None):
         return cls
 
     if isinstance(cls.regclass, RegisterClass):
-        return allocator.get_register_string(reg=cls.regclass, size=typ.get('size', 0))
+        return allocator.get_register_string(reg=cls.regclass, size=typ.get("size", 0))
 
     # We are returning an aggregate
     for eb in cls.regclass:
         loc = allocator.get_register_string(reg=eb.regclass, size=8)
         for field in eb.fields:
-            field['location'] = loc
+            field["location"] = loc
     return cls
 
 
@@ -252,7 +254,9 @@ def classify_class(typ, allocator=None, return_classification=False):
     return classify_aggregate(typ, allocator, return_classification, "Class")
 
 
-def classify_aggregate(typ, allocator=None, return_classification=False, aggregate="Struct"):
+def classify_aggregate(
+    typ, allocator=None, return_classification=False, aggregate="Struct"
+):
     size = typ.get("size", 0)
     global types
 
@@ -274,13 +278,13 @@ def classify_aggregate(typ, allocator=None, return_classification=False, aggrega
         if field.get("class") in ["Union", "Struct", "Class"]:
             fields = copy.deepcopy(field.get("fields", [])) + fields
             continue
-        
+
         if not cur.has_space_for(field):
             ebs.append(cur)
             cur = Eightbyte()
-            
+
         # Store the type uid with the field
-        cur.add(field, f.get('type'))
+        cur.add(field, f.get("type"))
 
     # If we didn't add the current eightbyte
     if cur.size > 0:
@@ -297,17 +301,17 @@ def classify_aggregate(typ, allocator=None, return_classification=False, aggrega
     for eb in ebs:
 
         # Empty structures
-        if not eb.fields:            
+        if not eb.fields:
             continue
 
-        fields = copy.deepcopy(eb.fields) 
+        fields = copy.deepcopy(eb.fields)
         merged = None
         while fields:
 
             # We can combine / merge two fields
-            if len(fields) >= 2:      
+            if len(fields) >= 2:
                 field1 = fields.pop(0)
-                field2 = fields.pop(1)
+                field2 = fields.pop(0)
                 c1 = classify(
                     field1,
                     allocator=allocator,
@@ -341,6 +345,7 @@ def classify_union(typ, allocator):
     Matt's model does not account for unions
     """
     return Classification("Union", RegisterClass.MEMORY)
+
 
 def classify_array(typ, allocator):
     size = typ.get("size", 0)
