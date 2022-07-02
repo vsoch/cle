@@ -3,6 +3,7 @@ __copyright__ = "Copyright The ORAS Authors."
 __license__ = "Apache-2.0"
 
 from functools import partial, update_wrapper
+from .types import types
 
 import json
 import hashlib
@@ -51,7 +52,7 @@ class cache_type:
         uid = self.hash(typ) 
       
         # Top level types holds the uid -> type
-        cls.types[uid] = typ
+        types[uid] = typ
         
         # _types holds lookup of die offset to uid
         cls._types[die.offset] = uid

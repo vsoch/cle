@@ -1,5 +1,7 @@
 from elftools.dwarf.die import DIE
 
+# Global cache of types
+types = {}
 
 class ClassType:
     types = {

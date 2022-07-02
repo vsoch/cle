@@ -222,6 +222,14 @@ class ELF(MetaELF):
         for offset, patch in patch_undo:
             self.memory.store(AT.from_lva(self.min_addr + offset, self).to_rva(), patch)
 
+        # If we loaded a corpus, update types from global types
+        # This makes the parsing slightly better to only keep one types lookup        
+        if self.corpus:
+            # Post process to add locations
+            self.corpus.add_locations()
+            from .types import types
+            self.corpus.types = types
+        
     #
     # Properties and Public Methods
     #

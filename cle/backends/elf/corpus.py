@@ -5,7 +5,7 @@ from elftools.dwarf.dwarf_expr import DWARFExprParser, DW_OP_name2opcode
 
 import cle.backends.elf.parser as abi_parser
 from .location import get_register_from_expr, get_dwarf_from_expr
-from .types import ClassType
+from .types import ClassType, types
 from .variable_type import VariableType
 from ..corpus import Corpus
 from .decorator import cache_type
@@ -15,6 +15,7 @@ import re
 import json
 import logging
 import sys
+import copy
 
 l = logging.getLogger(name=__name__)
 
@@ -40,6 +41,69 @@ class ElfCorpus(Corpus):
 
         # Keep track of ids we have parsed before (underlying types)
         self.lookup = set()
+
+    def add_locations(self):
+        """
+        Add locations is a post processing step to add locations for each function
+        """
+        for func in self.functions:
+            if "return" in func:
+                return_allocator = self.parser.get_return_allocator()
+                loc = self.parse_location(func["return"], return_allocator)
+                if loc:
+                    func["return"]["location"] = loc
+
+            # Set the allocator on the level of the function
+            allocator = self.parser.get_allocator()
+            for param in func.get("parameters", []):
+                res = self.parse_location(param, allocator)
+                if not res:
+                    continue
+
+                # A non-aggregate
+                if isinstance(res, str):
+                    param["location"] = res
+                    continue
+
+                # Create a "best effort" lookup of type ids
+                lookup = {}
+                for eb in res.regclass:
+                    for field in eb.fields:
+                        if "location" not in field or "type_uid" not in field:
+                            continue
+                        if field["type_uid"] in lookup:
+                            lookup[field["type_uid"]].append(field["location"])
+                        else:
+                            lookup[field["type_uid"]] = [field["location"]]
+
+                # Res is a classification with eighbytes we unwrap
+                # Try just unwrapping the top level for now
+                underlying_type = copy.deepcopy(types[param["type"]])
+                for field in underlying_type.get("fields"):
+                    if field.get("type") in lookup:
+                        field["location"] = lookup[field["type"]].pop(0)
+                param["type"] = underlying_type
+
+    def parse_location(self, entry, allocator):
+        """
+        Look to see if the DIE has DW_AT_location, and if so, parse to get
+        registers. The loc_parser is called by elf.py (once) and addde
+        to the corpus here when it is parsing DIEs.
+        """
+        # Pointer gets next integer register
+        if entry.get("class") == "Pointer":
+            return allocator.get_next_int_register()
+
+        if not self.parser:
+            sys.exit(
+                "Experimental parsing selected by ABI for %s is not supported yet."
+                % self.arch.name
+            )
+
+        underlying_type = types.get(entry.get("type"))
+        if not underlying_type:
+            return
+        return self.parser.classify(underlying_type, allocator=allocator)
 
     def parse_variable(self, die, flags=None):
         """
@@ -175,13 +239,15 @@ class ElfCorpus(Corpus):
         Given a callsite parameter, parse the dwarf expression
         """
         param = {}
-        loc = self.parse_location(die)
-
-        # Most callsite params just have a location and value
-        if not loc:
-            loc = self.parse_dwarf_location(die)
+        loc = self.parse_dwarf_location(die)
         if loc:
             param["location"] = loc
+        return param
+
+        # param = self.parse_location(param, die)
+
+        # Most callsite params just have a location and value
+        # if "location" not in param or not param['location']:
 
         # Each DW_TAG_call_site_parameter entry may have a DW_AT_call_value
         # attribute which is a DWARF expression which when evaluated yields the value
@@ -201,7 +267,7 @@ class ElfCorpus(Corpus):
         """
         return self.parse_underlying_type(die)
 
-    def parse_pointer_type(self, die, parent, allocator=None, flags=None):
+    def parse_pointer_type(self, die, parent, flags=None):
         """
         This is hit parsing a pointer function param
 
@@ -217,19 +283,14 @@ class ElfCorpus(Corpus):
         entry = {
             "class": "Pointer",
             "size": self.get_size(die),
-            "underlying_type": self.parse_underlying_type(die, allocator=allocator),
+            "underlying_type": self.parse_underlying_type(die),
             "direction": "both",
         }
         if name != "unknown":
             entry["name"] = name
-        entry = self.add_flags(entry, flags)
+        return self.add_flags(entry, flags)
 
-        # If we have an allocator passed from parsing a subprogram
-        if allocator:
-            entry["location"] = allocator.get_next_int_register()
-        return entry
-
-    def parse_formal_parameter(self, die, allocator, flags=None):
+    def parse_formal_parameter(self, die, flags=None):
         """
         Parse a formal parameter
         """
@@ -242,18 +303,7 @@ class ElfCorpus(Corpus):
         # It looks like there are cases of formal parameter having type of
         # a formal parameter - see libgettext.so
         entry.update(self.parse_underlying_type(die))
-
-        loc = None
-        if entry.get("class") == "Pointer":
-            loc = allocator.get_next_int_register()
-        else:
-            loc = self.parse_location(die, allocator=allocator)
-
-        # Only add location if we know it!
-        if loc:
-            entry["location"] = loc
-        entry = self.add_flags(entry, flags)
-        return entry
+        return self.add_flags(entry, flags)
 
     def parse_subprogram(self, die):
         """
@@ -282,19 +332,11 @@ class ElfCorpus(Corpus):
         if name in self.symbols:
             entry["direction"] = self.symbols[name]
 
-        # Set the allocator on the level of the function
-        allocator = None
-        if self.parser:
-            allocator = self.parser.get_allocator()
-
         # Parse the return value
         return_value = None
         if "DW_AT_type" in die.attributes:
             return_value = self.parse_underlying_type(die)
             return_value["direction"] = "export"
-            loc = self.parse_location(die, underlying_type=return_value, is_return=True)
-            if loc:
-                return_value["location"] = loc
         else:
             return_value = {
                 "location": "none",
@@ -314,7 +356,7 @@ class ElfCorpus(Corpus):
 
             # can either be inlined subroutine or format parameter
             if child.tag in ["DW_TAG_formal_parameter", "DW_TAG_template_value_param"]:
-                param = self.parse_formal_parameter(child, allocator=allocator)
+                param = self.parse_formal_parameter(child)
 
             elif child.tag == "DW_TAG_inlined_subroutine":
                 # If we have an abstract origin we know type for
@@ -362,15 +404,10 @@ class ElfCorpus(Corpus):
 
             elif child.tag == "DW_TAG_structure_type":
                 param = self.parse_structure_type(child)
-
             elif child.tag == "DW_TAG_pointer_type":
-                param = self.parse_pointer_type(child, parent=die, allocator=allocator)
-
-            # TODO should we be passing the allocator here?
+                param = self.parse_pointer_type(child, parent=die)
             elif child.tag == "DW_TAG_imported_declaration":
                 param = self.parse_imported_declaration(child)
-
-            # TODO should we be passing the same allocator here?
             elif child.tag == "DW_TAG_subprogram":
                 param = self.parse_subprogram(child)
 
@@ -459,6 +496,7 @@ class ElfCorpus(Corpus):
             if "direction" not in field or field["direction"] != "both":
                 field["direction"] = "export"
             fields.append(field)
+
         if fields:
             entry["fields"] = fields
         entry = self.add_flags(entry, flags)
@@ -517,41 +555,6 @@ class ElfCorpus(Corpus):
             entry["fields"] = fields
         entry = self.add_flags(entry, flags)
         return entry
-
-    def parse_location(
-        self, die, underlying_type=None, allocator=None, is_return=False
-    ):
-        """
-        Look to see if the DIE has DW_AT_location, and if so, parse to get
-        registers. The loc_parser is called by elf.py (once) and addde
-        to the corpus here when it is parsing DIEs.
-        """
-        # Envar to control (force) not using dwarf locations
-        experimental_parsing = True
-        # = os.environ.get("CLE_ELF_EXPERIMENTAL_PARSING") is not None
-
-        # Can we parse based on an underlying type and arch?
-        if experimental_parsing:
-            loc = None
-            if not self.parser:
-                sys.exit(
-                    "Experimental parsing selected by ABI for %s is not supported yet."
-                    % self.arch.name
-                )
-            underlying_type = underlying_type or self.parse_underlying_type(
-                die, allocator=allocator
-            )
-            allocator = allocator or self.parser.get_return_allocator()
-            if underlying_type:
-                # Get the actual type information
-                typ = self.types[underlying_type["type"]]
-                loc = self.parser.classify(
-                    typ, die=die, allocator=allocator, types=self.types
-                )
-            return loc
-
-        # Without experimental uses dwarf location lists
-        return self.parse_dwarf_location(die)
 
     def parse_dwarf_location(self, die):
         """
@@ -684,6 +687,7 @@ class ElfCorpus(Corpus):
                 "class": "Array",
             }
         )
+
         entry = self.add_flags(entry, flags)
         if "type" in array_type:
             entry["type"] = array_type["type"]
@@ -813,7 +817,7 @@ class ElfCorpus(Corpus):
                 "DW_TAG_formal_parameter",
                 "DW_TAG_template_type_param",
             ]:
-                return self.parse_formal_parameter(imported, allocator=None)
+                return self.parse_formal_parameter(imported)
             elif imported.tag == "DW_TAG_class_type":
                 return self.parse_class_type(imported)
             elif imported.tag == "DW_TAG_structure_type":
@@ -872,9 +876,7 @@ class ElfCorpus(Corpus):
         return flags
 
     @cache_type
-    def parse_underlying_type(
-        self, die, allocator=None, flags=None, type_name="DW_AT_type"
-    ):
+    def parse_underlying_type(self, die, flags=None, type_name="DW_AT_type"):
         """
         Given a type, parse down to the underlying type
         """

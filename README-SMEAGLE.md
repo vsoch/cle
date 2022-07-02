@@ -119,14 +119,16 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
   
 ## TODO:
 
- - Vanessasaurus:
+ - Vanessasaurus: Redo parse_location to update entire entry
  - Tim:
    - Write out high level approach
    - need to complement this with C++ interface to get callsites into Python. Only need for callsites for now, unless speed is an issue in the future.
  - DW_TAG_subrange_type in libpetsc.so has a dwarf expression and not number, right now we pass
  - How to handle `DW_TAG_GNU_formal_parameter_pack`? Right now we return the first child (but this is wrong) see dyninst libpcontrol.so
+ - we haven't handled parsing any kind of vectors (greater than size 128, etc) needs an eightbyte approach
  - we need to add / parse [fortran types](https://docs.oracle.com/cd/E19957-01/805-4939/6j4m0vn6m/index.html) right now just Unknown
  - return type allocator does not correctly handle struct/union
+ - empty structures
  - void pointers don't seem to show up in dwarf with global variables, without they do.
  - `__ARRAY_SIZE_TYPE__` and `sizetype` in types.py
  - look at hpctoolkit libs to find example that suggests loading with blob - some kind of wrapped dwarf?
