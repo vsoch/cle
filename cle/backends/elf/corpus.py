@@ -484,8 +484,9 @@ class ElfCorpus(Corpus):
             else:
                 # for development should be Ipython
                 continue
+            if param:
                 params.append(param)
-                param = None
+            param = None
         if params:
             entry["parameters"] = params
         if return_value:

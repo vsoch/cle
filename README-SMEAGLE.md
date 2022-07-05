@@ -117,8 +117,10 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
  - /tmp/spack/opt/spack/linux-debian11-skylake/gcc-12.1.0/libbsd-0.11.5-ayxy3zjyufi6neh4fl5pie6n6rdc3jyn/lib/libbsd.so says it isn't elf, and someone suggested there is some kind of wrapper around it? I'm adding it to skip for now.
  - /tmp/spack/opt/spack/linux-debian11-skylake/gcc-12.1.0/hdf5-1.12.2-pakhqhweeyy5nkuprbtjnfq4oyv7yzjs/lib/libhdf5.so has a formal parameter with type label. It has a DW_AT_abstract_origin that links to another label with name "done."
   
+
 ## TODO:
 
+ - Add Void as a type (void pointers)
  - Vanessasaurus: Redo parse_location to update entire entry
  - Tim:
    - Write out high level approach
