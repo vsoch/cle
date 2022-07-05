@@ -119,9 +119,12 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
   
 
 ## TODO:
-
- - Add Void as a type (void pointers)
- - Vanessasaurus: Redo parse_location to update entire entry
+ - Add to tests:
+   - what happens if you pass an unnamed reference or pointer - does dwarf say it gets space or?
+ - Need:
+   - representation for functions that take no parameter and return nothing (Void)
+   - empty structures: just don't represent them.
+   - 
  - Tim:
    - Write out high level approach
    - need to complement this with C++ interface to get callsites into Python. Only need for callsites for now, unless speed is an issue in the future.
@@ -130,7 +133,6 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
  - we haven't handled parsing any kind of vectors (greater than size 128, etc) needs an eightbyte approach
  - we need to add / parse [fortran types](https://docs.oracle.com/cd/E19957-01/805-4939/6j4m0vn6m/index.html) right now just Unknown
  - return type allocator does not correctly handle struct/union
- - empty structures
  - void pointers don't seem to show up in dwarf with global variables, without they do.
  - `__ARRAY_SIZE_TYPE__` and `sizetype` in types.py
  - look at hpctoolkit libs to find example that suggests loading with blob - some kind of wrapped dwarf?

@@ -550,7 +550,6 @@ class ElfCorpus(Corpus):
             "type": "char",
             "size": self.get_size(die),
             "class": self.add_class(die),
-            "direction": "import",
         }
         entry = self.add_flags(entry, flags)
         return entry
@@ -564,7 +563,6 @@ class ElfCorpus(Corpus):
             "type": self.get_name(die),
             "size": self.get_size(die),
             "class": self.add_class(die),
-            "direction": "import",
         }
         entry = self.add_flags(entry, flags)
         return entry
