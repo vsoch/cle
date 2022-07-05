@@ -37,16 +37,6 @@ def create_location_lookup(res):
     return lookup
 
 
-def add_return_direction(param, is_struct=False):
-    # Always export unless pointer type
-    if param.get("class") == "Pointer":
-        param["direction"] = "both"
-    else:
-        param["direction"] = "export"
-
-    return param
-
-
 def add_direction(param, is_struct=False):
     """
     Add direction to a normal parameter
