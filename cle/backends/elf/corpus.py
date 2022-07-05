@@ -37,14 +37,44 @@ def create_location_lookup(res):
     return lookup
 
 
+def add_return_direction(param, is_struct=False):
+    # Always export unless pointer type
+    if param.get("class") == "Pointer":
+        param["direction"] = "both"
+    else:
+        param["direction"] = "export"
+
+    return param
+
+
+def add_direction(param, is_struct=False):
+    """
+    Add direction to a normal parameter
+    """
+    if param.get("class") == "Pointer":
+        param["direction"] = "both"
+    else:
+        param["direction"] = "import"
+    return param
+
+
 def update_underlying_type(param, lookup):
     """
     Given some kind of underlying type, match fields to locations.
     """
     underlying_type = copy.deepcopy(types[param["type"]])
+
+    # Our default is import but Matt wants struct param fields to be exports
+    direction = "import"
+    if underlying_type.get("class") == "Struct":
+        direction = "export"
     for field in underlying_type.get("fields"):
         if field.get("type") in lookup:
             field["location"] = lookup[field["type"]].pop(0)
+            if field.get("class") == "Pointer":
+                field["direction"] = "both"
+            else:
+                field["direction"] = direction
     return underlying_type
 
 
@@ -75,9 +105,16 @@ class ElfCorpus(Corpus):
         Add locations is a post processing step to add locations for each function
         """
         for func in self.functions:
+
+            # Add function direction?
+            if func.get("name") in self.symbols:
+                func["direction"] = self.symbols[func.get("name")]
+
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
                 loc = self.parse_location(func["return"], return_allocator)
+                # Return is always an export
+                func["return"]["direction"] = "export"
                 if isinstance(loc, str):
                     func["return"]["location"] = loc
                 elif loc and "type" in func["return"]:
@@ -105,6 +142,9 @@ class ElfCorpus(Corpus):
                 # Try just unwrapping the top level for now
                 param["type"] = update_underlying_type(param, lookup)
 
+                # Pointers go in both directions
+                param["type"] = add_direction(param["type"])
+
     def parse_location(self, entry, allocator):
         """
         Look to see if the DIE has DW_AT_location, and if so, parse to get
@@ -129,6 +169,9 @@ class ElfCorpus(Corpus):
     def parse_variable(self, die, flags=None):
         """
         Add a global variable parsed from the dwarf.
+
+        Since we need to parse the DIE for the direction, we parse directions
+        here with variables.
         """
         # static globals - internal linkage but file scope, only seen by CU where declared
         # This variable cannot be part of an ABI discussion, like a local variable
@@ -147,8 +190,6 @@ class ElfCorpus(Corpus):
         # Stop parsing if we've seen it before
         if entry["name"] in self.variables:
             return
-
-        entry.update(self.parse_underlying_type(die))
 
         # DW_AT_declaration if present is an export, otherwise is an import
         direction = "export"
@@ -305,7 +346,6 @@ class ElfCorpus(Corpus):
             "class": "Pointer",
             "size": self.get_size(die),
             "underlying_type": self.parse_underlying_type(die),
-            "direction": "both",
         }
         if name != "unknown":
             entry["name"] = name
@@ -350,18 +390,14 @@ class ElfCorpus(Corpus):
         # TODO see page 92 of https://dwarfstd.org/doc/DWARF4.pdf
         # need to parse virtual functions and other attributes
         entry = {"name": name, "class": "Function"}
-        if name in self.symbols:
-            entry["direction"] = self.symbols[name]
 
         # Parse the return value
         return_value = None
         if "DW_AT_type" in die.attributes:
             return_value = self.parse_underlying_type(die)
-            return_value["direction"] = "export"
         else:
             return_value = {
                 "location": "none",
-                "direction": "export",
                 "type": "void",
                 "class": "Void",
             }
@@ -458,10 +494,6 @@ class ElfCorpus(Corpus):
             else:
                 # for development should be Ipython
                 continue
-            if param:
-                if "direction" not in param:
-                    param["direction"] = "import"
-
                 params.append(param)
                 param = None
         if params:
@@ -511,12 +543,7 @@ class ElfCorpus(Corpus):
             # DIE None
             if not child.tag:
                 continue
-
-            field = self.parse_member(child)
-            # Our default is import but Matt wants struct param fields to be exports
-            if "direction" not in field or field["direction"] != "both":
-                field["direction"] = "export"
-            fields.append(field)
+            fields.append(self.parse_member(child))
 
         if fields:
             entry["fields"] = fields
