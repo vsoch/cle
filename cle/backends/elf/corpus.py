@@ -124,27 +124,63 @@ class ElfCorpus(Corpus):
                         func["return"]["type"] = update_underlying_type(
                             func["return"], lookup
                         )
+                # TODO what about function return type
 
             # Set the allocator on the level of the function
-            allocator = self.parser.get_allocator()
-            for param in func.get("parameters", []):
-                res = self.parse_location(param, allocator)
-                if not res:
-                    continue
+            self.add_locations_func(func)
 
-                # A non-aggregate
-                if isinstance(res, str):
-                    param["location"] = res
-                    continue
+    def get_function_pointer(self, param, func, order):
+        """
+        Parse a parameter (json) to determine if a function pointer.
+        """
+        if "type" not in param or len(param["type"]) != 32:
+            return
 
-                lookup = create_location_lookup(res)
+        # This might not be true, we check with underlying type
+        pointer_type = types[param["type"]]
+        if "underlying_type" not in pointer_type:
+            return
+        underlying_type = pointer_type["underlying_type"].get("type")
+        if not underlying_type or underlying_type not in types:
+            return
+        underlying_type = types[underlying_type]
+        if underlying_type.get("class") == "Function":
+            name = func.get("name", "unknown") + "_func_pointer_" + str(order)
+            if underlying_type.get("name") != "unknown":
+                name += "_" + underlying_type.get("name")
+            underlying_type["name"] = name
+            return copy.deepcopy(underlying_type)
 
-                # Res is a classification with eighbytes we unwrap
-                # Try just unwrapping the top level for now
-                param["type"] = update_underlying_type(param, lookup)
+    def add_locations_func(self, func):
+        """
+        Add locations to a function (recursively)
+        """
+        allocator = self.parser.get_allocator()
+        for order, param in enumerate(func.get("parameters", [])):
+            res = self.parse_location(param, allocator)
 
-                # Pointers go in both directions
-                param["type"] = add_direction(param["type"])
+            # Check if param type is pointer -> function
+            func_pointer = self.get_function_pointer(param, func, order)
+            if func_pointer:
+                self.functions.append(func_pointer)
+                self.add_locations_func(func_pointer)
+
+            if not res:
+                continue
+
+            # A non-aggregate
+            if isinstance(res, str):
+                param["location"] = res
+                continue
+
+            lookup = create_location_lookup(res)
+
+            # Res is a classification with eighbytes we unwrap
+            # Try just unwrapping the top level for now
+            param["type"] = update_underlying_type(param, lookup)
+
+            # Pointers go in both directions
+            param["type"] = add_direction(param["type"])
 
     def parse_location(self, entry, allocator):
         """
@@ -376,7 +412,7 @@ class ElfCorpus(Corpus):
         entry.update(self.parse_underlying_type(die))
         return self.add_flags(entry, flags)
 
-    def parse_subprogram(self, die):
+    def parse_subprogram(self, die, flags=None):
         """
         Add a function (subprogram) parsed from DWARF
 
@@ -394,7 +430,8 @@ class ElfCorpus(Corpus):
             return
 
         # If has DW_TAG_external, we know it's external outside of this CU
-        if "DW_AT_external" not in die.attributes:
+        # But this doesn't seem to be relevant if we pass a DW_TAG_subroutine here
+        if die.tag == "DW_TAG_subprogram" and "DW_AT_external" not in die.attributes:
             return
 
         # TODO see page 92 of https://dwarfstd.org/doc/DWARF4.pdf
@@ -470,19 +507,21 @@ class ElfCorpus(Corpus):
                 param = self.parse_underlying_type(child, flags=["restrictive"])
 
             elif child.tag == "DW_TAG_structure_type":
-                param = self.parse_structure_type(child)
+                param = self.parse_structure_type(child, flags=flags)
             elif child.tag == "DW_TAG_pointer_type":
-                param = self.parse_pointer_type(child, parent=die)
+                param = self.parse_pointer_type(child, parent=die, flags=flags)
             elif child.tag == "DW_TAG_imported_declaration":
-                param = self.parse_imported_declaration(child)
+                param = self.parse_imported_declaration(child, flags=flags)
             elif child.tag == "DW_TAG_subprogram":
-                param = self.parse_subprogram(child)
+                param = self.parse_subprogram(child, flags=flags)
             elif child.tag == "DW_TAG_reference_type":
-                param = self.parse_reference_type(child)
+                param = self.parse_reference_type(child, flags=flags)
+            elif child.tag == "DW_TAG_subroutine_type":
+                param = self.parse_subprogram(child, flags=flags)
 
             # Call sites
             elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
-                param = self.parse_call_site(child, die)
+                param = self.parse_call_site(child, die, flags=flags)
 
             # TODO is this only external stuff?
             elif child.tag == "DW_TAG_lexical_block":
@@ -496,7 +535,6 @@ class ElfCorpus(Corpus):
                     "DW_TAG_label",
                     "DW_TAG_template_type_param",
                     "DW_TAG_imported_module",
-                    "DW_TAG_subroutine_type",
                     "DW_TAG_common_block",
                 ]
                 or not child.tag
@@ -515,7 +553,7 @@ class ElfCorpus(Corpus):
             entry["return"] = return_value
 
         self.functions.append(entry)
-        return entry
+        return copy.deepcopy(self.add_flags(entry, flags))
 
     # TAGs to parse
     def parse_lexical_block(self, die, code=None):
@@ -1023,7 +1061,7 @@ class ElfCorpus(Corpus):
             return self.parse_array_type(type_die, parent=die, flags=flags)
 
         if type_die.tag == "DW_TAG_subprogram":
-            return self.parse_subprogram(type_die)
+            return self.parse_subprogram(type_die, flags=flags)
 
         # Struct
         if type_die.tag == "DW_TAG_structure_type":
@@ -1063,6 +1101,10 @@ class ElfCorpus(Corpus):
         if type_die.tag == "DW_TAG_string_type":
             return self.parse_string_type(type_die, flags=flags)
 
+        # A subroutine type is...
+        if type_die.tag == "DW_TAG_subroutine_type":
+            return self.parse_subprogram(type_die, flags=flags)
+
         # These are essentially skipped over to get to underlying type
         if self.is_flag_type(type_die) or type_die.tag in [
             "DW_TAG_formal_parameter",
@@ -1072,7 +1114,6 @@ class ElfCorpus(Corpus):
             "DW_TAG_reference_type",
             "DW_TAG_rvalue_reference_type",
             "DW_TAG_subrange_type",
-            "DW_TAG_subroutine_type",
             "DW_TAG_template_type_param",
             "DW_TAG_unspecified_type",
             "DW_TAG_template_value_parameter",

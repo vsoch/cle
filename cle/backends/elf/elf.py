@@ -191,6 +191,12 @@ class ELF(MetaELF):
                 dynamic_symbols = self._load_dynamic_symbols()
                 # Prepare a corpus to populate
                 self.corpus = ElfCorpus(self.binary, arch=self.arch, symbols=dynamic_symbols)
+
+                # Load GOT for corpus?
+                #import IPython
+                #IPython.embed()
+                #got_sec = self._reader.get_section_by_name('.got')
+
                 # Load DIEs
                 self._load_dies(dwarf)
                 # Load function hints and exception handling artifacts
