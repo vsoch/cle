@@ -52,6 +52,10 @@ def classify_pointer():
     return Classification("Pointer", RegisterClass.INTEGER)
 
 
+def classify_reference():
+    return Classification("Reference", RegisterClass.INTEGER)
+
+
 def classify(typ, return_classification=False, allocator=None):
     """
     Main entrypoint to classify something - we return a location string (for non
@@ -63,10 +67,18 @@ def classify(typ, return_classification=False, allocator=None):
         return
 
     cls = None
-    if typ.get("class") == "Pointer":
-        cls = classify_pointer()
+    classname = typ.get("class")
 
-    elif typ["class"] in [
+    # TypeDefs without class get underlying type
+    if typ.get("class") == "TypeDef":
+        classname = typ["underlying_type"]["class"]
+
+    if classname == "Pointer":
+        cls = classify_pointer()
+    elif classname == "Reference":
+        cls = classify_reference()
+
+    elif classname in [
         "Scalar",
         "Integer",
         "Integral",
@@ -74,23 +86,23 @@ def classify(typ, return_classification=False, allocator=None):
         "ComplexFloat",
         "Boolean",
     ]:
-        cls = classify_scalar(typ)
-    elif typ["class"] == "Enum":
+        cls = classify_scalar(typ, classname=classname)
+    elif classname == "Enum":
         cls = classify_enum(typ)
-    elif typ["class"] == "Struct":
+    elif classname == "Struct":
         cls = classify_struct(typ, allocator=allocator)
-    elif typ["class"] == "Union":
+    elif classname == "Union":
         cls = classify_union(typ, allocator=allocator)
-    elif typ["class"] == "Array":
+    elif classname == "Array":
         cls = classify_array(typ, allocator=allocator)
 
         # If we don't know the underlying type
         if not cls:
             return
 
-    elif typ["class"] == "Class":
+    elif classname == "Class":
         cls = classify_class(typ, allocator=allocator)
-    elif typ["class"] == "Function":
+    elif classname == "Function":
 
         # Functions that aren't pointers
         cls = classify_function(typ)
@@ -99,7 +111,7 @@ def classify(typ, return_classification=False, allocator=None):
 
     # https://refspecs.linuxbase.org/elf/x86_64-abi-0.21.pdf
     # A null pointer (for all types) has the value zero p 12 ABI document
-    elif typ["class"] == "Unspecified" and typ.get("size") == 0:
+    elif classname == "Unspecified" and typ.get("size") == 0:
         return "nullptr"
 
     if cls is None:
@@ -121,15 +133,17 @@ def classify(typ, return_classification=False, allocator=None):
     return cls
 
 
-def classify_scalar(typ, size=None):
+def classify_scalar(typ, size=None, classname=None):
     """
     Classify a scalar type
     """
+    classname = classname or typ.get("class")
+
     # size in BITS
     size = size or typ.get("size", 0) * 8
 
     # Integral types
-    if typ["class"] in ["Integer", "Boolean"]:  # TODO props.is_UTF?
+    if classname in ["Integer", "Boolean"]:  # TODO props.is_UTF?
         if size > 128:
 
             # TODO this should be some kind of eightbytes thing?
@@ -145,8 +159,8 @@ def classify_scalar(typ, size=None):
         # TODO How can we differentiate them here?
         return Classification("Integer", RegisterClass.INTEGER)
 
-    if typ["class"] in ["Float", "ComplexFloat"]:
-        if typ["class"] == "ComplexFloat":
+    if classname in ["Float", "ComplexFloat"]:
+        if classname == "ComplexFloat":
 
             # x87 `complex long double`
             # These are wrong
@@ -278,6 +292,8 @@ def classify_aggregate(
         if field.get("class") in ["Union", "Struct", "Class"]:
             fields = copy.deepcopy(field.get("fields", [])) + fields
             continue
+        if field.get("class") == "TypeDef":
+            field = field["underlying_type"]
 
         if not cur.has_space_for(field):
             ebs.append(cur)
@@ -305,6 +321,7 @@ def classify_aggregate(
             continue
 
         fields = copy.deepcopy(eb.fields)
+
         merged = None
         while fields:
 

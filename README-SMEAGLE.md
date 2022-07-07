@@ -121,10 +121,12 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
 ## TODO:
  - Add to tests:
    - what happens if you pass an unnamed reference or pointer - does dwarf say it gets space or?
+   - Test cases for different kinds of unions
+   - Test cases for variables with struct (the import/export thing)
  - Need:
    - representation for functions that take no parameter and return nothing (Void)
    - empty structures: just don't represent them.
-   - 
+   - treat enums as integers for now
  - Tim:
    - Write out high level approach
    - need to complement this with C++ interface to get callsites into Python. Only need for callsites for now, unless speed is an issue in the future.
@@ -137,8 +139,8 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
  - `__ARRAY_SIZE_TYPE__` and `sizetype` in types.py
  - look at hpctoolkit libs to find example that suggests loading with blob - some kind of wrapped dwarf?
  - function as parameter doesn't have name, variable info, nothing, empty subroutine. We think there is missing dwarf information.
- - need to look again at 8 byte analysis (not entirely right)
  - eventually will want wrapper that uses cle to do Matt's special location parsing - "offsets"
  - bit fields - not a priority because uncommon
  - exceptions also need to wait
+ - vtables (should also work for function pointers?)
  - Take a look at exceptions example - in lsda.py I commnted out else case that is triggered

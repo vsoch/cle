@@ -25,7 +25,7 @@ sys.path.insert(0, here)
 # Load all examples
 tests = []
 
-skips = ['Makefile', 'build.sh']
+skips = ['Makefile', 'build.sh', "dwarfdump.sh"]
 
 # Add remainder
 for name in os.listdir(examples_dir):

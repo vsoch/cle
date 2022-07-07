@@ -18,6 +18,7 @@ import sys
 import copy
 
 l = logging.getLogger(name=__name__)
+unknown_type = {"type": "unknown", "class": "Unknown"}
 
 
 def create_location_lookup(res):
@@ -79,7 +80,7 @@ class ElfCorpus(Corpus):
         self.parser = getattr(abi_parser, self.arch.name, None)
         self.symbols = kwargs.get("symbols")
         # Default don't include double underscore (private) variables
-        self.include_private = kwargs.get("include_private", False)
+        self.include_private = kwargs.get("include_private", True)
         super().__init__(*args, **kwargs)
 
         # self.types is cache of type id -> json
@@ -94,6 +95,15 @@ class ElfCorpus(Corpus):
         """
         Add locations is a post processing step to add locations for each function
         """
+        for _, var in self.variables.items():
+            if "type" not in var:
+                continue
+            underlying_type = copy.deepcopy(types[var["type"]])
+            if underlying_type.get("class") == "Struct":
+                for field in underlying_type.get("fields", []):
+                    field["direction"] = var.get("direction", "export")
+                var["type"] = underlying_type
+
         for func in self.functions:
 
             # Add function direction?
@@ -103,6 +113,7 @@ class ElfCorpus(Corpus):
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
                 loc = self.parse_location(func["return"], return_allocator)
+
                 # Return is always an export
                 func["return"]["direction"] = "export"
                 if isinstance(loc, str):
@@ -177,6 +188,10 @@ class ElfCorpus(Corpus):
             "name": self.get_name(die),
             "location": "var",
         }
+
+        # Add underlying type
+        entry.update(self.parse_underlying_type(die))
+
         # Stop parsing if we've seen it before
         if entry["name"] in self.variables:
             return
@@ -281,10 +296,10 @@ class ElfCorpus(Corpus):
                 return self.parse_subprogram(origin)
             # We cannot trace the abstract origin
             else:
-                return {"type": "unknown"}
+                return unknown_type
 
         # This is a type we don't know - for development should be Ipython
-        return {"type": "unknown"}
+        return unknown_type
 
     def parse_call_site_parameter(self, die):
         """
@@ -313,11 +328,16 @@ class ElfCorpus(Corpus):
         #    print(get_dwarf_from_expr(expr, die.dwarfinfo.structs, cu_offset=die.cu.cu_offset))
         return param
 
-    def parse_reference_type(self, die):
+    def parse_reference_type(self, die, flags=None):
         """
         Parse a reference type
         """
-        return self.parse_underlying_type(die)
+        size = self.get_size(die)
+        entry = {"class": "Reference"}
+        if size:
+            entry["size"] = size
+        entry["underlying_type"] = self.parse_underlying_type(die)
+        return self.add_flags(entry, flags)
 
     def parse_pointer_type(self, die, parent, flags=None):
         """
@@ -457,6 +477,8 @@ class ElfCorpus(Corpus):
                 param = self.parse_imported_declaration(child)
             elif child.tag == "DW_TAG_subprogram":
                 param = self.parse_subprogram(child)
+            elif child.tag == "DW_TAG_reference_type":
+                param = self.parse_reference_type(child)
 
             # Call sites
             elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
@@ -873,9 +895,16 @@ class ElfCorpus(Corpus):
         """
         Parse a type definition
         """
-        entry = {"name": self.get_name(die)}
-        underlying_type = self.parse_underlying_type(die)
-        entry.update(underlying_type)
+        entry = {"name": self.get_name(die), "class": "TypeDef"}
+        ut = self.parse_underlying_type(die)
+
+        # Add the size to the typedef (shouldn't change)
+        while "size" not in ut and "type" in ut and len(ut["type"]) == 32:
+            ut = types[ut["type"]]
+
+        entry["underlying_type"] = ut
+        entry["size"] = ut.get("size")
+
         entry = self.add_flags(entry, flags)
         return entry
 
@@ -918,7 +947,7 @@ class ElfCorpus(Corpus):
         Given a type, parse down to the underlying type
         """
         if "DW_AT_type" not in die.attributes:
-            return {"type": "unknown"}
+            return unknown_type
 
         # constant or volatile
         flags = flags or []
@@ -938,11 +967,11 @@ class ElfCorpus(Corpus):
                 "DW_TAG_imported_module",
             ]
         ):
-            return self.add_flags({"type": "unknown"}, flags)
+            return self.add_flags(unknown_type, flags)
 
         # Fortran common blocks are not types
         if type_die.tag == "DW_TAG_common_block":
-            return self.add_flags({"type": "unknown"}, flags)
+            return self.add_flags(unknown_type, flags)
 
         # TODO: This packed type is likely incorrect - not sure how to parse
         if type_die.tag == "DW_TAG_GNU_formal_parameter_pack" and type_die.has_children:
@@ -964,6 +993,9 @@ class ElfCorpus(Corpus):
 
         if type_die.tag == "DW_TAG_class_type":
             return self.parse_class_type(type_die, flags=flags)
+
+        if type_die.tag == "DW_TAG_reference_type":
+            return self.parse_reference_type(type_die, flags=flags)
 
         # formal param had type call site in libcurses.so
         if type_die.tag in ["DW_TAG_call_site", "DW_TAG_GNU_call_site"]:
@@ -1007,14 +1039,14 @@ class ElfCorpus(Corpus):
         # See libcrypto.so for this case
         if type_die.tag == "DW_TAG_lexical_block":
             self.parse_lexical_block(type_die)
-            return self.add_flags({"type": "unknown"}, flags)
+            return self.add_flags(unknown_type, flags)
 
         if type_die.tag == "DW_TAG_typedef":
             return self.parse_typedef(type_die, flags=flags)
 
         # DW_TAG None, we can't know
         if not type_die.tag:
-            return self.add_flags({"type": "unknown"}, flags)
+            return self.add_flags(unknown_type, flags)
 
         # Note that if we see DW_TAG_member it means next_die for the DW_AT_type was empty
         if type_die.tag == "DW_TAG_class_type":
