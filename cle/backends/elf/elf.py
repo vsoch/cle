@@ -233,8 +233,6 @@ class ELF(MetaELF):
         if self.corpus:
             # Post process to add locations
             self.corpus.add_locations()
-            from .types import types
-            self.corpus.types = types
         
     #
     # Properties and Public Methods

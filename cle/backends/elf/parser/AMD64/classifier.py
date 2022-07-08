@@ -1,6 +1,6 @@
 from .register_class import RegisterClass
 from .allocators import RegisterAllocator
-from ...types import ClassType, types
+from ...types import ClassType
 
 import json
 import hashlib
@@ -35,19 +35,6 @@ class Eightbyte:
             print("{%s,%s}" % (f.get("name"), f.get("size", 0)))
 
 
-def update_types(typ):
-    """
-    As we add register classes, we generate new types. Ideally
-    we can separate the types from the registers, but this is a quick
-    fix for now.
-    """
-    global types
-    dumped = json.dumps(typ, sort_keys=True)
-    uid = hashlib.md5(dumped.encode("utf-8")).hexdigest()
-    types[uid] = typ
-    return types
-
-
 def classify_pointer():
     return Classification("Pointer", RegisterClass.INTEGER)
 
@@ -56,11 +43,12 @@ def classify_reference():
     return Classification("Reference", RegisterClass.INTEGER)
 
 
-def classify(typ, return_classification=False, allocator=None):
+def classify(typ, return_classification=False, allocator=None, types=None):
     """
     Main entrypoint to classify something - we return a location string (for non
     aggregate types) OR an updated types that includes new locations for aggregates.
     """
+    types = types or {}
 
     # Don't handle this case right now
     if not typ or "class" not in typ or typ["class"] in ["Unknown", "ComplexUnknown"]:
@@ -71,7 +59,11 @@ def classify(typ, return_classification=False, allocator=None):
 
     # TypeDefs without class get underlying type
     if typ.get("class") == "TypeDef":
-        classname = typ["underlying_type"]["class"]
+        classtyp = typ
+        while "underlying_type" in classtyp:
+            classtyp = classtyp["underlying_type"]
+            if "class" in classtyp:
+                classname = classtyp["class"]
 
     if classname == "Pointer":
         cls = classify_pointer()
@@ -90,18 +82,18 @@ def classify(typ, return_classification=False, allocator=None):
     elif classname == "Enum":
         cls = classify_enum(typ)
     elif classname == "Struct":
-        cls = classify_struct(typ, allocator=allocator)
+        cls = classify_struct(typ, allocator=allocator, types=types)
     elif classname == "Union":
         cls = classify_union(typ, allocator=allocator)
     elif classname == "Array":
-        cls = classify_array(typ, allocator=allocator)
+        cls = classify_array(typ, allocator=allocator, types=types)
 
         # If we don't know the underlying type
         if not cls:
             return
 
     elif classname == "Class":
-        cls = classify_class(typ, allocator=allocator)
+        cls = classify_class(typ, allocator=allocator, types=types)
     elif classname == "Function":
 
         # Functions that aren't pointers
@@ -260,19 +252,27 @@ def post_merge(lo, hi, size):
     return lo, hi
 
 
-def classify_struct(typ, allocator=None, return_classification=False):
-    return classify_aggregate(typ, allocator, return_classification, "Struct")
+def classify_struct(typ, allocator=None, return_classification=False, types=None):
+    return classify_aggregate(
+        typ, allocator, return_classification, "Struct", types=types
+    )
 
 
-def classify_class(typ, allocator=None, return_classification=False):
-    return classify_aggregate(typ, allocator, return_classification, "Class")
+def classify_class(typ, allocator=None, return_classification=False, types=None):
+    return classify_aggregate(
+        typ, allocator, return_classification, "Class", types=types
+    )
 
 
 def classify_aggregate(
-    typ, allocator=None, return_classification=False, aggregate="Struct"
+    typ,
+    allocator=None,
+    return_classification=False,
+    aggregate="Struct",
+    types=None,
 ):
     size = typ.get("size", 0)
-    global types
+    types = types or {}
 
     # If an object is larger than eight eightbyes (i.e., 64) class MEMORY.
     # Note there is a double check here because we don't have faith in the size field
@@ -364,15 +364,16 @@ def classify_union(typ, allocator):
     return Classification("Union", RegisterClass.MEMORY)
 
 
-def classify_array(typ, allocator):
+def classify_array(typ, allocator, types=None):
     size = typ.get("size", 0)
-    global types
+    types = types or {}
 
     # If size > 64 or unaligned fields, class memory
     if size > 64:
         return Classification("Array", RegisterClass.MEMORY)
 
-    typename = typ.get("type")
+    # Array has underlying type
+    typename = typ.get("underlying_type", {}).get("type")
     classname = None
 
     # regular class id or pointer

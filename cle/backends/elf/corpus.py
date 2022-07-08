@@ -5,7 +5,7 @@ from elftools.dwarf.dwarf_expr import DWARFExprParser, DW_OP_name2opcode
 
 import cle.backends.elf.parser as abi_parser
 from .location import get_register_from_expr, get_dwarf_from_expr
-from .types import ClassType, types
+from .types import ClassType
 from .variable_type import VariableType
 from ..corpus import Corpus
 from .decorator import cache_type
@@ -38,18 +38,31 @@ def create_location_lookup(res):
     return lookup
 
 
-def add_direction(param, is_struct=False):
+def add_direction(param, types, is_struct=False):
     """
     Add direction to a normal parameter
     """
-    if param.get("class") == "Pointer":
+    is_pointer = param.get("class") == "Pointer"
+
+    # Look for pointers as far as we can go
+    if not is_pointer:
+        holder = param
+        while "type" in holder and len(holder["type"]) == 32:
+            holder = types[holder["type"]]
+            if holder.get("class") == "Pointer":
+                is_pointer = True
+                break
+            while "underlying_type" in holder:
+                holder = holder["underlying_type"]
+
+    if is_pointer:
         param["direction"] = "both"
     else:
         param["direction"] = "import"
     return param
 
 
-def update_underlying_type(param, lookup):
+def update_underlying_type(param, lookup, types):
     """
     Given some kind of underlying type, match fields to locations.
     """
@@ -75,6 +88,7 @@ class ElfCorpus(Corpus):
     """
 
     def __init__(self, *args, **kwargs):
+
         self.loc_parser = None
         self.arch = kwargs.get("arch")
         self.parser = getattr(abi_parser, self.arch.name, None)
@@ -98,7 +112,7 @@ class ElfCorpus(Corpus):
         for _, var in self.variables.items():
             if "type" not in var:
                 continue
-            underlying_type = copy.deepcopy(types[var["type"]])
+            underlying_type = copy.deepcopy(self.types[var["type"]])
             if underlying_type.get("class") == "Struct":
                 for field in underlying_type.get("fields", []):
                     field["direction"] = var.get("direction", "export")
@@ -122,7 +136,7 @@ class ElfCorpus(Corpus):
                     lookup = create_location_lookup(loc)
                     if func["return"]["type"] in lookup:
                         func["return"]["type"] = update_underlying_type(
-                            func["return"], lookup
+                            func["return"], lookup, types=self.types
                         )
                 # TODO what about function return type
 
@@ -137,13 +151,13 @@ class ElfCorpus(Corpus):
             return
 
         # This might not be true, we check with underlying type
-        pointer_type = types[param["type"]]
+        pointer_type = self.types[param["type"]]
         if "underlying_type" not in pointer_type:
             return
         underlying_type = pointer_type["underlying_type"].get("type")
-        if not underlying_type or underlying_type not in types:
+        if not underlying_type or underlying_type not in self.types:
             return
-        underlying_type = types[underlying_type]
+        underlying_type = self.types[underlying_type]
         if underlying_type.get("class") == "Function":
             name = func.get("name", "unknown") + "_func_pointer_" + str(order)
             if underlying_type.get("name") != "unknown":
@@ -157,6 +171,7 @@ class ElfCorpus(Corpus):
         """
         allocator = self.parser.get_allocator()
         for order, param in enumerate(func.get("parameters", [])):
+
             res = self.parse_location(param, allocator)
 
             # Check if param type is pointer -> function
@@ -168,6 +183,9 @@ class ElfCorpus(Corpus):
             if not res:
                 continue
 
+            # Pointers go in both directions
+            param = add_direction(param, types=self.types)
+
             # A non-aggregate
             if isinstance(res, str):
                 param["location"] = res
@@ -177,10 +195,7 @@ class ElfCorpus(Corpus):
 
             # Res is a classification with eighbytes we unwrap
             # Try just unwrapping the top level for now
-            param["type"] = update_underlying_type(param, lookup)
-
-            # Pointers go in both directions
-            param["type"] = add_direction(param["type"])
+            param["type"] = update_underlying_type(param, lookup, types=self.types)
 
     def parse_location(self, entry, allocator):
         """
@@ -198,10 +213,12 @@ class ElfCorpus(Corpus):
                 % self.arch.name
             )
 
-        underlying_type = types.get(entry.get("type"))
+        underlying_type = self.types.get(entry.get("type"))
         if not underlying_type:
             return
-        return self.parser.classify(underlying_type, allocator=allocator)
+        return self.parser.classify(
+            underlying_type, allocator=allocator, types=self.types
+        )
 
     def parse_variable(self, die, flags=None):
         """
@@ -786,8 +803,7 @@ class ElfCorpus(Corpus):
         )
 
         entry = self.add_flags(entry, flags)
-        if "type" in array_type:
-            entry["type"] = array_type["type"]
+        entry["underlying_type"] = array_type
         return entry
 
     def parse_enumeration_type(self, die, flags=None):
@@ -938,7 +954,7 @@ class ElfCorpus(Corpus):
 
         # Add the size to the typedef (shouldn't change)
         while "size" not in ut and "type" in ut and len(ut["type"]) == 32:
-            ut = types[ut["type"]]
+            ut = self.types[ut["type"]]
 
         entry["underlying_type"] = ut
         entry["size"] = ut.get("size")

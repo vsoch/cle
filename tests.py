@@ -17,8 +17,6 @@ if len(args) > 2:
     examples_dir = os.path.abspath(args[-1])
 else:
     examples_dir = os.path.join(here, "examples")
-sys.path.insert(0, here)
-
 
 sys.path.insert(0, here)
 
