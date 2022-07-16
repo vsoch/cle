@@ -9,6 +9,7 @@ import shutil
 import sys
 import os
 import io
+from collections import OrderedDict
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -91,9 +92,9 @@ def test_examples(tmp_path, name, lib):
     if not os.path.exists(truth):
         truth = facts
 
+    # Always write facts (not truth)
+    write_json(OrderedDict(corpus.to_dict()), facts)
+
     # Check facts (nodes and relations)
     if os.path.exists(truth):
         check_facts(truth, corpus.to_dict())
-    else:
-        # Always write facts (not truth)
-        write_json(corpus.to_dict(), facts)

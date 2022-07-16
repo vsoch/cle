@@ -1,4 +1,7 @@
+import copy
 from .register_class import RegisterClass
+
+int_registers = ["%r9", "%r8", "%rcx", "%rdx", "%rsi", "%rdi"]
 
 
 def get_allocator():
@@ -7,6 +10,15 @@ def get_allocator():
 
 def get_return_allocator():
     return ReturnValueAllocator()
+
+
+def get_sse_registers():
+    # Populate the sse register stack
+    # [7, 6, 5, 4, 3, 2, 1, 0]
+    regs = []
+    for i in range(7, -1, -1):
+        regs.append("%xmm" + str(i))
+    return regs
 
 
 class FramebaseAllocator:
@@ -43,16 +55,42 @@ class RegisterAllocator:
     """
 
     def __init__(self):
-        self.sse_registers = []
-        # Populate the sse register stack
-        # [7, 6, 5, 4, 3, 2, 1, 0]
-        for i in range(7, -1, -1):
-            self.sse_registers.append("%xmm" + str(i))
+        self.sse_registers = get_sse_registers()
 
         # Add a framebase allocator
         self.fallocator = FramebaseAllocator()
-        self.int_registers = ["%r9", "%r8", "%rcx", "%rdx", "%rsi", "%rdi"]
+        self.int_registers = copy.deepcopy(int_registers)
         self.framebase = 8
+        self.transaction_start = None
+
+    def start_transaction(self):
+        """
+        Keep the state of the start of the transaction (an aggregate)
+        """
+        # Only record state if we aren't currently in a transaction (e.g. nested aggregates)
+        if not self.transaction_start:
+            self.transaction_start = (
+                copy.deepcopy(self.int_registers),
+                copy.deepcopy(self.sse_registers),
+                self.fallocator.framebase,
+            )
+
+    def end_transaction(self):
+        """
+        End a successful transaction.
+        """
+        self.transaction_start = None
+
+    def rollback(self):
+        """
+        Given we run out of registers, roll back to before we started aggregate allocation.
+        """
+        if not self.transaction_start:
+            raise ValueError("Rollback called while not in a transaction!")
+        self.fallocator.framebase = self.transaction_start[2]
+        self.int_registers = self.transaction_start[0]
+        self.sse_registers = self.transaction_start[1]
+        self.transaction_start = None
 
     def get_register_string(self, reg, size) -> str:
         """
@@ -155,8 +193,4 @@ class ReturnValueAllocator:
             # %st0 and the imaginary part in %st1.
             return "%st0|%st1"
 
-        print("CANNOT ALLOCATE RETURN TYPE")
-        import IPython
-
-        IPython.embed()
         raise RuntimeError("Unable to allocate return value")

@@ -13,6 +13,11 @@ class Classification:
         self.name = name
 
 
+def hashify(typ):
+    dumped = json.dumps(typ, sort_keys=True)
+    return hashlib.md5(dumped.encode("utf-8")).hexdigest()
+
+
 class Eightbyte:
     def __init__(self):
         self.fields = []
@@ -43,7 +48,7 @@ def classify_reference():
     return Classification("Reference", RegisterClass.INTEGER)
 
 
-def classify(typ, return_classification=False, allocator=None, types=None):
+def classify(typ, types=None):
     """
     Main entrypoint to classify something - we return a location string (for non
     aggregate types) OR an updated types that includes new locations for aggregates.
@@ -78,22 +83,22 @@ def classify(typ, return_classification=False, allocator=None, types=None):
         "ComplexFloat",
         "Boolean",
     ]:
-        cls = classify_scalar(typ, classname=classname)
+        cls = classify_scalar(typ, classname=classname, types=types)
     elif classname == "Enum":
         cls = classify_enum(typ)
     elif classname == "Struct":
-        cls = classify_struct(typ, allocator=allocator, types=types)
+        cls = classify_struct(typ, types=types)
     elif classname == "Union":
-        cls = classify_union(typ, allocator=allocator)
+        cls = classify_union(typ)
     elif classname == "Array":
-        cls = classify_array(typ, allocator=allocator, types=types)
+        cls = classify_array(typ, types=types)
 
         # If we don't know the underlying type
         if not cls:
             return
 
     elif classname == "Class":
-        cls = classify_class(typ, allocator=allocator, types=types)
+        cls = classify_class(typ, types=types)
     elif classname == "Function":
 
         # Functions that aren't pointers
@@ -105,30 +110,14 @@ def classify(typ, return_classification=False, allocator=None, types=None):
     # A null pointer (for all types) has the value zero p 12 ABI document
     elif classname == "Unspecified" and typ.get("size") == 0:
         return "nullptr"
-
-    if cls is None:
-        # This should be IPython for further inspection
-        return
-
-    # Intermediate call if we need to return classification
-    if isinstance(cls, Classification) and return_classification:
-        return cls
-
-    if isinstance(cls.regclass, RegisterClass):
-        return allocator.get_register_string(reg=cls.regclass, size=typ.get("size", 0))
-
-    # We are returning an aggregate
-    for eb in cls.regclass:
-        loc = allocator.get_register_string(reg=eb.regclass, size=8)
-        for field in eb.fields:
-            field["location"] = loc
     return cls
 
 
-def classify_scalar(typ, size=None, classname=None):
+def classify_scalar(typ, size=None, classname=None, types=None):
     """
     Classify a scalar type
     """
+    types = types or {}
     classname = classname or typ.get("class")
 
     # size in BITS
@@ -141,11 +130,11 @@ def classify_scalar(typ, size=None, classname=None):
             # TODO this should be some kind of eightbytes thing?
             raise ValueError("We don't know how to classify IntegerVec size > 128")
 
+        # We know that we need two eightbytes
         if size == 128:
-            # __int128 is treated as struct{long,long};
-            # This is NOT correct, but we don't handle aggregates yet.
-            # How do we differentiate between __int128 and __m128i?
-            raise ValueError("We don't know how to classify IntegerVec size 128")
+            # Since we check __128 in base type parsing and reformat at struct,
+            # we should never hit this case
+            raise ValueError("We should not be parsing a size == 128.")
 
         # _Decimal32, _Decimal64, and __m64 are supposed to be SSE.
         # TODO How can we differentiate them here?
@@ -252,25 +241,16 @@ def post_merge(lo, hi, size):
     return lo, hi
 
 
-def classify_struct(typ, allocator=None, return_classification=False, types=None):
-    return classify_aggregate(
-        typ, allocator, return_classification, "Struct", types=types
-    )
+def classify_struct(typ, types=None):
+    return classify_aggregate(typ, "Struct", types=types)
 
 
-def classify_class(typ, allocator=None, return_classification=False, types=None):
-    return classify_aggregate(
-        typ, allocator, return_classification, "Class", types=types
-    )
+def classify_class(typ, types=None):
+    return classify_aggregate(typ, "Class", types=types)
 
 
-def classify_aggregate(
-    typ,
-    allocator=None,
-    return_classification=False,
-    aggregate="Struct",
-    types=None,
-):
+def classify_aggregate(typ, aggregate="Struct", types=None):
+
     size = typ.get("size", 0)
     types = types or {}
 
@@ -311,8 +291,6 @@ def classify_aggregate(
     if len(ebs) >= 8:
         return Classification(aggregate, RegisterClass.MEMORY)
 
-    # TODO if it has un-aligned fields, also memory
-
     # There should be one classification per eightbyte
     for eb in ebs:
 
@@ -329,42 +307,28 @@ def classify_aggregate(
             if len(fields) >= 2:
                 field1 = fields.pop(0)
                 field2 = fields.pop(0)
-                c1 = classify(
-                    field1,
-                    allocator=allocator,
-                    return_classification=True,
-                )
-                c2 = classify(
-                    field2,
-                    allocator=allocator,
-                    return_classification=True,
-                )
+                c1 = classify(field1, types=types)
+                c2 = classify(field2, types=types)
                 merged = merge(c1.regclass, c2.regclass)
             else:
                 field1 = fields.pop(0)
-                c1 = classify(
-                    field1,
-                    allocator=allocator,
-                    return_classification=True,
-                ).regclass
+                c1 = classify(field1, types=types).regclass
                 if merged:
                     merged = merge(merged, c1)
                 else:
                     merged = c1
         eb.regclass = merged
-        # Here we need to update each field
-
     return Classification(aggregate, ebs)
 
 
-def classify_union(typ, allocator):
+def classify_union(typ):
     """
     Matt's model does not account for unions
     """
     return Classification("Union", RegisterClass.MEMORY)
 
 
-def classify_array(typ, allocator, types=None):
+def classify_array(typ, types=None):
     size = typ.get("size", 0)
     types = types or {}
 
@@ -390,7 +354,7 @@ def classify_array(typ, allocator, types=None):
 
     # Just classify the base type
     base_type = {"class": classname, "size": size}
-    return classify(base_type, allocator=allocator, return_classification=True)
+    return classify(base_type, types=types)
 
 
 def classify_enum(typ):

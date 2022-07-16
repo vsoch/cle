@@ -12,6 +12,7 @@ from .decorator import cache_type
 
 import os
 import re
+import hashlib
 import json
 import logging
 import sys
@@ -62,23 +63,35 @@ def add_direction(param, types, is_struct=False):
     return param
 
 
-def update_underlying_type(param, lookup, types):
+def update_underlying_type(param, types, lookup=None, underlying_type=None):
     """
     Given some kind of underlying type, match fields to locations.
     """
-    underlying_type = copy.deepcopy(types[param["type"]])
+    underlying_type = underlying_type or copy.deepcopy(types[param["type"]])
 
     # Our default is import but Matt wants struct param fields to be exports
     direction = "import"
     if underlying_type.get("class") == "Struct":
         direction = "export"
-    for field in underlying_type.get("fields"):
-        if field.get("type") in lookup:
-            field["location"] = lookup[field["type"]].pop(0)
+
+    for field in underlying_type.get("fields", []):
+        field_type = field.get("type")
+        if lookup and field_type in lookup:
+            field["location"] = lookup[field_type].pop(0)
             if field.get("class") == "Pointer":
                 field["direction"] = "both"
             else:
                 field["direction"] = direction
+
+        # We have to unwrap the type again
+        elif lookup and field_type and field_type in types:
+            ut = copy.deepcopy(types[field_type])
+            field["type"] = update_underlying_type(
+                ut,
+                types=types,
+                underlying_type=ut,
+                lookup=lookup,
+            )
     return underlying_type
 
 
@@ -124,24 +137,32 @@ class ElfCorpus(Corpus):
             if func.get("name") in self.symbols:
                 func["direction"] = self.symbols[func.get("name")]
 
+            # Set the allocator on the level of the function
+            self.add_locations_func(func)
+
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
-                loc = self.parse_location(func["return"], return_allocator)
+                loc = self.parse_location(func["return"])
 
                 # Return is always an export
                 func["return"]["direction"] = "export"
-                if isinstance(loc, str):
-                    func["return"]["location"] = loc
-                elif loc and "type" in func["return"]:
-                    lookup = create_location_lookup(loc)
-                    if func["return"]["type"] in lookup:
-                        func["return"]["type"] = update_underlying_type(
-                            func["return"], lookup, types=self.types
-                        )
-                # TODO what about function return type
+                if not loc:
+                    continue
 
-            # Set the allocator on the level of the function
-            self.add_locations_func(func)
+                # If we get an aggregate, it's really a pointer to it
+                if not isinstance(
+                    loc.regclass, self.parser.register_class.RegisterClass
+                ):
+                    func["return"]["location"] = return_allocator.get_register_string(
+                        reg=self.parser.register_class.RegisterClass.INTEGER, size=8
+                    )
+                    continue
+
+                # Otherwise we got a register class
+                if loc:
+                    func["return"]["location"] = return_allocator.get_register_string(
+                        reg=loc.regclass, size=func["return"].get("size", 0)
+                    )
 
     def get_function_pointer(self, param, func, order):
         """
@@ -168,11 +189,56 @@ class ElfCorpus(Corpus):
     def add_locations_func(self, func):
         """
         Add locations to a function (recursively)
+        This is where we create the allocator to respond to the classifications.
         """
         allocator = self.parser.get_allocator()
         for order, param in enumerate(func.get("parameters", [])):
 
-            res = self.parse_location(param, allocator)
+            res = self.parse_location(param)
+            if not res:
+                continue
+
+            # We are given a class directly by the classifier
+            is_aggregate = False
+            if isinstance(res.regclass, self.parser.register_class.RegisterClass):
+
+                size = param.get("size", 0)
+                if param.get("type") in self.types:
+                    size = self.types[param.get("type")].get("size") or 0
+                param["location"] = allocator.get_register_string(
+                    reg=res.regclass, size=size
+                )
+
+            # We had an aggregate!
+            else:
+                allocator.start_transaction()
+                is_aggregate = True
+
+                do_rollback = False
+                has_register = False
+                for eb in res.regclass:
+                    loc = allocator.get_register_string(reg=eb.regclass, size=8)
+
+                    # We've seen registers but now we see a stack location, ohno rollback
+                    if has_register and "framebase" in loc:
+                        do_rollback = True
+                        break
+
+                    # We've seen (allocated) a register
+                    if "framebase" not in loc:
+                        has_register = True
+                    for field in eb.fields:
+                        field["location"] = loc
+
+                if do_rollback:
+                    allocator.rollback()
+                    for eb in res.regclass:
+                        loc = allocator.fallocator.next_framebase_from_type(size=8)
+                        for field in eb.fields:
+                            field["location"] = loc
+
+                # Clear any saved state for rolling back aggregates
+                allocator.end_transaction()
 
             # Check if param type is pointer -> function
             func_pointer = self.get_function_pointer(param, func, order)
@@ -180,24 +246,29 @@ class ElfCorpus(Corpus):
                 self.functions.append(func_pointer)
                 self.add_locations_func(func_pointer)
 
-            if not res:
-                continue
-
             # Pointers go in both directions
             param = add_direction(param, types=self.types)
 
             # A non-aggregate
-            if isinstance(res, str):
-                param["location"] = res
+            if not is_aggregate:
                 continue
 
             lookup = create_location_lookup(res)
 
             # Res is a classification with eighbytes we unwrap
             # Try just unwrapping the top level for now
-            param["type"] = update_underlying_type(param, lookup, types=self.types)
+            param["type"] = update_underlying_type(
+                param, lookup=lookup, types=self.types
+            )
 
-    def parse_location(self, entry, allocator):
+    def hash(self, typ):
+        """
+        Generate a unique hash depending on the type
+        """
+        dumped = json.dumps(typ, sort_keys=True)
+        return hashlib.md5(dumped.encode("utf-8")).hexdigest()
+
+    def parse_location(self, entry):
         """
         Look to see if the DIE has DW_AT_location, and if so, parse to get
         registers. The loc_parser is called by elf.py (once) and addde
@@ -216,9 +287,7 @@ class ElfCorpus(Corpus):
         underlying_type = self.types.get(entry.get("type"))
         if not underlying_type:
             return
-        return self.parser.classify(
-            underlying_type, allocator=allocator, types=self.types
-        )
+        return self.parser.classify(underlying_type, types=self.types)
 
     def parse_variable(self, die, flags=None):
         """
@@ -350,8 +419,6 @@ class ElfCorpus(Corpus):
             # We cannot trace the abstract origin
             else:
                 return unknown_type
-
-        # This is a type we don't know - for development should be Ipython
         return unknown_type
 
     def parse_call_site_parameter(self, die):
@@ -405,10 +472,22 @@ class ElfCorpus(Corpus):
         if name == "unknown":
             name = self.get_name(die)
 
+        # Get the underlying type - if unknown we consider void
+        # This is a void pointer / pointer to void
+        ut = self.parse_underlying_type(die)["type"]
+        underlying_type = self.parse_underlying_type(die)
+        if ut in self.types:
+            ut = self.types[ut]
+            if ut.get("type") == "unknown":
+                ut = {"type": "void", "class": "Void"}
+                uid = self.hash(ut)
+                self.types[uid] = ut
+                underlying_type = {"type": uid}
+
         entry = {
             "class": "Pointer",
             "size": self.get_size(die),
-            "underlying_type": self.parse_underlying_type(die),
+            "underlying_type": underlying_type,
         }
         if name != "unknown":
             entry["name"] = name
@@ -559,7 +638,6 @@ class ElfCorpus(Corpus):
                 continue
 
             else:
-                # for development should be Ipython
                 continue
             if param:
                 params.append(param)
@@ -641,6 +719,26 @@ class ElfCorpus(Corpus):
             "size": self.get_size(die),
             "class": self.add_class(die),
         }
+        # __int128 is treated as struct{long,long};
+        if entry["type"] == "__int128":
+
+            # TODO How do we differentiate between __int128 and __m128i?
+            long_type = {"class": "Integer", "type": "long", "size": 8}
+            uid = self.hash(long_type)
+            self.types[uid] = long_type
+            struct = {
+                "size": 16,
+                "class": "Struct",
+                "fields": [
+                    {"name": "__int128_1", "type": uid, "offset": 0},
+                    {"name": "__int128_2", "type": uid, "offset": 8},
+                ],
+            }
+            uid = self.hash(struct)
+            self.types[uid] = struct
+            struct = self.add_flags(struct, flags)
+            return struct
+
         entry = self.add_flags(entry, flags)
         return entry
 
@@ -941,8 +1039,6 @@ class ElfCorpus(Corpus):
                 return self.parse_variable(imported)
             elif self.is_flag_type(imported):
                 return self.parse_underlying_type(imported, flags=flags)
-
-        # for development should be Ipython
         return self.parse_underlying_type(imported, flags=flags)
 
     def parse_typedef(self, die, flags=None):
