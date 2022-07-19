@@ -119,7 +119,6 @@ These are cases with gcc 12.1 dwarf and the library here that I can't resolve. I
   
 
 ## TODO:
-- stopped at function-as-parameter (maybe done?)
  - Add to tests:
    - what happens if you pass an unnamed reference or pointer - does dwarf say it gets space or?
    - Test cases for different kinds of unions

@@ -193,7 +193,6 @@ class ElfCorpus(Corpus):
         """
         allocator = self.parser.get_allocator()
         for order, param in enumerate(func.get("parameters", [])):
-
             res = self.parse_location(param)
             if not res:
                 continue
@@ -684,17 +683,35 @@ class ElfCorpus(Corpus):
             "class": "Struct",
         }
         fields = []
+        has_inheritance = False
         for child in die.iter_children():
 
             # DIE None
             if not child.tag:
                 continue
-            fields.append(self.parse_member(child))
+
+            # An inheritance tag is added as a pointer
+            if child.tag == "DW_TAG_inheritance":
+                has_inheritance = True
+                field = self.parse_member(child)
+
+                # Call the field name "inherited" to indicate that
+                if field.get("name") in ["unknown", None]:
+                    field["name"] = "inherited"
+            else:
+                field = self.parse_member(child)
+            fields.append(field)
 
         if fields:
             entry["fields"] = fields
-        entry = self.add_flags(entry, flags)
-        return entry
+
+        if has_inheritance:
+            entry = {
+                "class": "Pointer",
+                "size": 8,  # We are ignoring 32 bit
+                "underlying_type": entry,
+            }
+        return self.add_flags(entry, flags)
 
     def parse_string_type(self, die, flags=None):
         """
@@ -835,6 +852,13 @@ class ElfCorpus(Corpus):
         if underlying_type:
             entry.update(underlying_type)
         # Add the DW_AT_data_member_location (offset?)
+        return self.add_offset(die, entry)
+
+    def add_offset(self, die, entry):
+        """
+        Shared function to add offset based on DW_AT_data_member_location.
+        This can be used for a struct member or an inheritanc tags.
+        """
         if "DW_AT_data_member_location" in die.attributes:
             entry["offset"] = die.attributes["DW_AT_data_member_location"].value
         return entry
