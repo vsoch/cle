@@ -89,7 +89,7 @@ def classify(typ, types=None):
     elif classname == "Struct":
         cls = classify_struct(typ, types=types)
     elif classname == "Union":
-        cls = classify_union(typ)
+        cls = classify_union(typ, types=types)
     elif classname == "Array":
         cls = classify_array(typ, types=types)
 
@@ -254,6 +254,11 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
     size = typ.get("size", 0)
     types = types or {}
 
+    if aggregate == "Union":
+        import IPython
+
+        IPython.embed()
+
     # If an object is larger than eight eightbyes (i.e., 64) class MEMORY.
     # Note there is a double check here because we don't have faith in the size field
     if size > 64:
@@ -321,11 +326,14 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
     return Classification(aggregate, ebs)
 
 
-def classify_union(typ):
+def classify_union(typ, types):
     """
     Matt's model does not account for unions
     """
+    # TODO update when we know how to handle array eightbytes
     return Classification("Union", RegisterClass.MEMORY)
+    # TODO walk through with Tim
+    # return classify_aggregate(typ, "Union", types=types)
 
 
 def classify_array(typ, types=None):

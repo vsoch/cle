@@ -138,7 +138,7 @@ class ElfCorpus(Corpus):
                 func["direction"] = self.symbols[func.get("name")]
 
             # Set the allocator on the level of the function
-            self.add_locations_func(func)
+            self.add_function_locations(func)
 
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
@@ -186,7 +186,7 @@ class ElfCorpus(Corpus):
             underlying_type["name"] = name
             return copy.deepcopy(underlying_type)
 
-    def add_locations_func(self, func):
+    def add_function_locations(self, func):
         """
         Add locations to a function (recursively)
         This is where we create the allocator to respond to the classifications.
@@ -243,7 +243,7 @@ class ElfCorpus(Corpus):
             func_pointer = self.get_function_pointer(param, func, order)
             if func_pointer:
                 self.functions.append(func_pointer)
-                self.add_locations_func(func_pointer)
+                self.add_function_locations(func_pointer)
 
             # Pointers go in both directions
             param = add_direction(param, types=self.types)
