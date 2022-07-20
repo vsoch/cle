@@ -1,5 +1,6 @@
 from elftools.dwarf.die import DIE
 
+
 class ClassType:
     types = {
         "int": "Integer",
