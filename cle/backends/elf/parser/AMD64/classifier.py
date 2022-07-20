@@ -254,11 +254,6 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
     size = typ.get("size", 0)
     types = types or {}
 
-    if aggregate == "Union":
-        import IPython
-
-        IPython.embed()
-
     # If an object is larger than eight eightbyes (i.e., 64) class MEMORY.
     # Note there is a double check here because we don't have faith in the size field
     if size > 64:
