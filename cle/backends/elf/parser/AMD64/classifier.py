@@ -327,7 +327,6 @@ def classify_union(typ, types):
     """
     # TODO update when we know how to handle array eightbytes
     return Classification("Union", RegisterClass.MEMORY)
-    # TODO walk through with Tim
     # return classify_aggregate(typ, "Union", types=types)
 
 
