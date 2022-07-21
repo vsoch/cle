@@ -128,6 +128,8 @@ def classify_scalar(typ, size=None, classname=None, types=None):
         if size > 128:
 
             # TODO this should be some kind of eightbytes thing?
+            # berkeley-db-18.1.40-c7okyaricn3s5wx6lqo2exspq6tuninj/lib/libdb-18.1.so...
+            return 
             raise ValueError("We don't know how to classify IntegerVec size > 128")
 
         # We know that we need two eightbytes
