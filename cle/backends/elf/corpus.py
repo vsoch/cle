@@ -28,7 +28,7 @@ def create_location_lookup(res):
     """
     # Create a "best effort" lookup of type ids
     lookup = {}
-    if not eb.regclass:
+    if not res.regclass:
         return lookup
     for eb in res.regclass:
         for field in eb.fields:
