@@ -309,13 +309,18 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
                 field2 = fields.pop(0)
                 c1 = classify(field1, types=types)
                 c2 = classify(field2, types=types)
-                merged = merge(c1.regclass, c2.regclass)
+                
+                # This will be incorrect if we cannot classify either,
+                # but it's better this way than to raise an error and get
+                # no result (albeit imperfect).
+                if c1 and c2:
+                    merged = merge(c1.regclass, c2.regclass)
             else:
                 field1 = fields.pop(0)
                 c1 = classify(field1, types=types).regclass
-                if merged:
+                if merged and c1:
                     merged = merge(merged, c1)
-                else:
+                elif c1:
                     merged = c1
         eb.regclass = merged
     return Classification(aggregate, ebs)

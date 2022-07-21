@@ -28,6 +28,8 @@ def create_location_lookup(res):
     """
     # Create a "best effort" lookup of type ids
     lookup = {}
+    if not eb.regclass:
+        return lookup
     for eb in res.regclass:
         for field in eb.fields:
             if "location" not in field or "type_uid" not in field:
@@ -159,7 +161,7 @@ class ElfCorpus(Corpus):
                     continue
 
                 # Otherwise we got a register class
-                if loc:
+                if loc and loc.regclass:
                     func["return"]["location"] = return_allocator.get_register_string(
                         reg=loc.regclass, size=func["return"].get("size", 0)
                     )
