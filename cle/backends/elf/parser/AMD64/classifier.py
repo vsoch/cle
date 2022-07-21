@@ -25,7 +25,10 @@ class Eightbyte:
         self.regclass = RegisterClass.NO_CLASS
 
     def has_space_for(self, f):
-        return self.size + f.get("size") or 0 <= 8
+        try:
+            return self.size + f.get("size") or 0 <= 8
+        except:
+            return False
 
     def add(self, f, type_uid):
         self.size += f.get("size", 0)
