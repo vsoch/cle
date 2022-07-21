@@ -220,6 +220,10 @@ class ElfCorpus(Corpus):
                 for eb in res.regclass:
                     loc = allocator.get_register_string(reg=eb.regclass, size=8)
 
+                    # Workaround for if we return None in above
+                    if not loc:
+                        continue
+
                     # We've seen registers but now we see a stack location, ohno rollback
                     if has_register and "framebase" in loc:
                         do_rollback = True
