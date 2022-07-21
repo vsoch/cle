@@ -31,7 +31,7 @@ class Eightbyte:
             return False
 
     def add(self, f, type_uid):
-        self.size += f.get("size", 0)
+        self.size += f.get("size", 0) or 0
 
         # Don't add original reference so it mucks up types
         f = copy.deepcopy(f)
