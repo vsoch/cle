@@ -317,11 +317,11 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
                     merged = merge(c1.regclass, c2.regclass)
             else:
                 field1 = fields.pop(0)
-                c1 = classify(field1, types=types).regclass
-                if merged and c1:
-                    merged = merge(merged, c1)
-                elif c1:
-                    merged = c1
+                c1 = classify(field1, types=types)
+                if merged and c1 and c1.regclass:
+                    merged = merge(merged, c1.regclass)
+                elif c1 and c1.regclass:
+                    merged = c1.regclass
         eb.regclass = merged
     return Classification(aggregate, ebs)
 
