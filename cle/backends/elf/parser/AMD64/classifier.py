@@ -134,6 +134,9 @@ def classify_scalar(typ, size=None, classname=None, types=None):
         if size == 128:
             # Since we check __128 in base type parsing and reformat at struct,
             # we should never hit this case
+            # But this one does :)
+            # arpack-ng-3.4.0-nwftltslcbp5rcibuoxoerl5caqcdqzn/lib/libparpack.so
+            return 
             raise ValueError("We should not be parsing a size == 128.")
 
         # _Decimal32, _Decimal64, and __m64 are supposed to be SSE.
