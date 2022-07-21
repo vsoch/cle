@@ -199,6 +199,11 @@ class ElfCorpus(Corpus):
             if not res:
                 continue
 
+            # We hit a pointer and were givn a string
+            if isinstance(res, str):
+                param["location"] = res
+                continue
+
             # We are given a class directly by the classifier
             is_aggregate = False
             if isinstance(res.regclass, self.parser.register_class.RegisterClass):
