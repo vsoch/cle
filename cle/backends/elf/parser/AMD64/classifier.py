@@ -26,7 +26,7 @@ class Eightbyte:
 
     def has_space_for(self, f):
         try:
-            return self.size + f.get("size") or 0 <= 8
+            return (self.size + f.get("size") or 0) <= 8
         except:
             return False
 
@@ -132,7 +132,7 @@ def classify_scalar(typ, size=None, classname=None, types=None):
 
             # TODO this should be some kind of eightbytes thing?
             # berkeley-db-18.1.40-c7okyaricn3s5wx6lqo2exspq6tuninj/lib/libdb-18.1.so...
-            return 
+            return
             raise ValueError("We don't know how to classify IntegerVec size > 128")
 
         # We know that we need two eightbytes
@@ -141,7 +141,7 @@ def classify_scalar(typ, size=None, classname=None, types=None):
             # we should never hit this case
             # But this one does :)
             # arpack-ng-3.4.0-nwftltslcbp5rcibuoxoerl5caqcdqzn/lib/libparpack.so
-            return 
+            return
             raise ValueError("We should not be parsing a size == 128.")
 
         # _Decimal32, _Decimal64, and __m64 are supposed to be SSE.
@@ -317,7 +317,7 @@ def classify_aggregate(typ, aggregate="Struct", types=None):
                 field2 = fields.pop(0)
                 c1 = classify(field1, types=types)
                 c2 = classify(field2, types=types)
-                
+
                 # This will be incorrect if we cannot classify either,
                 # but it's better this way than to raise an error and get
                 # no result (albeit imperfect).

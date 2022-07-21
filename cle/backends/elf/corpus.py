@@ -897,17 +897,18 @@ class ElfCorpus(Corpus):
         member_size = self._find_nontraditional_size(die) or size
 
         # Children are the members of the array
-        entries = []
         children = list(die.iter_children())
 
         total_size = 0
-        total_count = 0
+        total_count = None
+        member_counts = []
         for child in children:
             if not child.tag:
                 continue
             member = None
 
             # Each array dimension is DW_TAG_subrange_type or DW_TAG_enumeration_type
+            # NOTE member type here is type of the INDEX
             if child.tag == "DW_TAG_subrange_type":
                 member = self.parse_subrange_type(child)
             elif child.tag == "DW_TAG_enumeration_type":
@@ -920,12 +921,15 @@ class ElfCorpus(Corpus):
 
             count = member.get("count", 0)
             size = member.get("size") or member_size
-            if count != "unknown" and size:
-                total_size += count * size
-            entries.append(member)
+            if count not in ["unknown", 0] and not total_count:
+                total_count = count
+            elif count not in ["unknown", 0]:
+                total_count = total_count * count
+            if count not in ["unknown", 0]:
+                member_counts.append(count)
 
-        entry["size"] = total_size
-        entry["count"] = total_count
+        entry["size"] = total_count * member_size
+        entry["counts"] = member_counts
 
         # Update info with the parent
         entry.update(
@@ -1010,7 +1014,7 @@ class ElfCorpus(Corpus):
                 pass
 
         # If the upper bound and count are missing, then the upper bound value is unknown.
-        else:
+        if "count" not in entry:
             entry["count"] = "unknown"
         entry = self.add_flags(entry, flags)
         return entry
