@@ -361,6 +361,11 @@ def classify_array(typ, types=None):
             classname = newtype["class"]
             break
 
+    # This is wrong, but we can't return if we don't know
+    # binutils-2.24-me2y7na3wmjftzdtjjse4grksibzjq2q/lib/libbfd-2.24.so...
+    if not typename:
+        return
+
     if not classname:
         classname = ClassType.get(typename)
 
