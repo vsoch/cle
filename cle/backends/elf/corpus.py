@@ -1000,9 +1000,14 @@ class ElfCorpus(Corpus):
             # The default lower bound is 0 for C, C++, D, Java, Objective C, Objective C++, Python, and UPC.
             # The default lower bound is 1 for Ada, COBOL, Fortran, Modula-2, Pascal and PL/I.
             lower_bound = 0
-            entry["count"] = (
-                die.attributes["DW_AT_upper_bound"].value - lower_bound
-            ) + 1
+
+            # fortrilinos-2.0.0-egurmfvolea7xwcw3w3t6wkeus5iz64j/lib64/libforteuchos.so...
+            try:
+                entry["count"] = (
+                    die.attributes["DW_AT_upper_bound"].value - lower_bound
+                ) + 1
+            except:
+                pass
 
         # If the upper bound and count are missing, then the upper bound value is unknown.
         else:
