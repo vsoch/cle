@@ -368,8 +368,8 @@ def classify_enum(typ):
     return Classification("Enum", RegisterClass.INTEGER)
 
 
-def classify_function(typ, count):
+def classify_function(typ):
+    # TODO this assumes all functions provided are pointers
     # auto [underlying_type, ptr_cnt] = unwrap_underlying_type(t);
-    if count > 0:
-        return classify_pointer(count)
+    return classify_pointer()
     # Return no class
