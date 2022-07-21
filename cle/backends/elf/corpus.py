@@ -78,7 +78,7 @@ def update_underlying_type(param, types, lookup=None, underlying_type=None):
 
     for field in underlying_type.get("fields", []):
         field_type = field.get("type")
-        if lookup and field_type in lookup:
+        if lookup and field_type in lookup and lookup[field_type]:
             field["location"] = lookup[field_type].pop(0)
             if field.get("class") == "Pointer":
                 field["direction"] = "both"
