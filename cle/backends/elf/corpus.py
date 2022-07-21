@@ -144,7 +144,7 @@ class ElfCorpus(Corpus):
 
             if "return" in func:
                 return_allocator = self.parser.get_return_allocator()
-                loc = self.parse_location(func["return"])
+                loc = self.parse_location(func["return"], return_allocator)
 
                 # Return is always an export
                 func["return"]["direction"] = "export"
@@ -195,7 +195,7 @@ class ElfCorpus(Corpus):
         """
         allocator = self.parser.get_allocator()
         for order, param in enumerate(func.get("parameters", [])):
-            res = self.parse_location(param)
+            res = self.parse_location(param, allocator)
             if not res:
                 continue
 
@@ -273,7 +273,7 @@ class ElfCorpus(Corpus):
         dumped = json.dumps(typ, sort_keys=True)
         return hashlib.md5(dumped.encode("utf-8")).hexdigest()
 
-    def parse_location(self, entry):
+    def parse_location(self, entry, allocator):
         """
         Look to see if the DIE has DW_AT_location, and if so, parse to get
         registers. The loc_parser is called by elf.py (once) and addde
