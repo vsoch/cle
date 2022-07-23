@@ -900,7 +900,7 @@ class ElfCorpus(Corpus):
         children = list(die.iter_children())
 
         total_size = 0
-        total_count = None
+        total_count = 0
         member_counts = []
         for child in children:
             if not child.tag:
