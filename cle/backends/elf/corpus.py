@@ -616,7 +616,7 @@ class ElfCorpus(Corpus):
 
             # Call sites
             elif child.tag in ["DW_TAG_GNU_call_site", "DW_TAG_call_site"]:
-                param = self.parse_call_site(child, die, flags=flags)
+                param = self.parse_call_site(child, die)
 
             # TODO is this only external stuff?
             elif child.tag == "DW_TAG_lexical_block":
