@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3        
     - name: Clone Examples
-      run: git clone https://github.com/buildsi/smeagle-examples /tmp/smeagle-examples
+      run: git clone https://github.com/buildsi/smeagle-examples ./examples
     - name: Install Library
       run: |
         # archinfo, pyvex, pyelftools, then cle
@@ -21,4 +21,4 @@ jobs:
     - name: Run Examples
       run: |
         docker run -t -v $PWD:/code gcc:12.1 bash -c "cd /code && make"
-        pytest -xs tests.py /tmp/smeagle-examples
+        pytest -xs tests.py
