@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3        
     - name: Clone Examples
-      run: git clone -b more-changes-whut https://github.com/buildsi/smeagle-examples ./examples
+      run: git clone https://github.com/buildsi/smeagle-examples ./examples
     - name: Install Library
       run: |
         # archinfo, pyvex, pyelftools, then cle
